@@ -12,4 +12,24 @@ The intention here is to share Angular-based code among studio Angular projects.
 
 [This](songhay/projects/songhay/player-video-you-tube) is the library for the YouTube video app of the b-roll player.
 
+## initial setup commands
+
+Starting in the root folder of this repo:
+
+```console
+ng new songhay --create-application=false --routing=true --style=scss --verbose=true
+cd songhay
+ng generate library @songhay/core --prefix=rx
+ng generate library @songhay/player-video-you-tube --prefix=rx
+```
+
+Note that a library-generation command like `ng generate library @songhay/player/video/you-tube --prefix=rx` does not work for CLI >=7.2.3.
+
+Also for studio-specific and historical reasons these commands are also needed:
+
+```console
+npm i @angular/http@7.2.0
+npm i ..\..\songhay-core\dist\
+```
+
 @[BryanWilhite](https://github.com/BryanWilhite)

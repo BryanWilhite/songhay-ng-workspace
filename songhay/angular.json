@@ -31,9 +31,7 @@
               "projects/songhay/core/tsconfig.lib.json",
               "projects/songhay/core/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -66,9 +64,7 @@
               "projects/songhay/player-video-you-tube/tsconfig.lib.json",
               "projects/songhay/player-video-you-tube/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
