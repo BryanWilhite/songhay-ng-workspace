@@ -1,0 +1,78 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "@songhay/core": {
+      "root": "projects/songhay/core",
+      "sourceRoot": "projects/songhay/core/src",
+      "projectType": "library",
+      "prefix": "rx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/songhay/core/tsconfig.lib.json",
+            "project": "projects/songhay/core/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/songhay/core/src/test.ts",
+            "tsConfig": "projects/songhay/core/tsconfig.spec.json",
+            "karmaConfig": "projects/songhay/core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/songhay/core/tsconfig.lib.json",
+              "projects/songhay/core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "@songhay/player-video-you-tube": {
+      "root": "projects/songhay/player-video-you-tube",
+      "sourceRoot": "projects/songhay/player-video-you-tube/src",
+      "projectType": "library",
+      "prefix": "rx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/songhay/player-video-you-tube/tsconfig.lib.json",
+            "project": "projects/songhay/player-video-you-tube/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/songhay/player-video-you-tube/src/test.ts",
+            "tsConfig": "projects/songhay/player-video-you-tube/tsconfig.spec.json",
+            "karmaConfig": "projects/songhay/player-video-you-tube/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/songhay/player-video-you-tube/tsconfig.lib.json",
+              "projects/songhay/player-video-you-tube/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "@songhay/core"
+}
