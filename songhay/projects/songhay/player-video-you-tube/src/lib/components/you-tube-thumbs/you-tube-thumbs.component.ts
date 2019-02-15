@@ -1,5 +1,8 @@
-import * as _ from 'lodash';
-import * as moment from 'moment';
+import * as lodash_ from 'lodash';
+const _ = lodash_;
+
+import * as moment_ from 'moment';
+const moment = moment_; // see https://github.com/BryanWilhite/songhay-ng-workspace/issues/2
 
 import {
     AfterViewInit,
@@ -15,7 +18,7 @@ import { AnimationBuilder, AnimationPlayer } from '@angular/animations';
 import { slideAnimations, slideAnimation } from './slide.animation';
 
 import { DomUtility } from 'songhay-core/utilities/dom.utility';
-import { DomSanitizerUtility } from '../../../../../../songhay-angular-core/src/lib/services/songhay-dom-sanitzer.utility';
+import { DomSanitizerUtility } from '@songhay/core';
 
 import { YouTubeScalars } from '../../models/you-tube-scalars';
 import { YouTubeSnippet } from '../../models/you-tube-snippet';

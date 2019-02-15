@@ -20,6 +20,8 @@ Starting in the root folder of this repo:
 ng new songhay --create-application=false --routing=true --style=scss --verbose=true
 cd songhay
 ng generate library @songhay/core --prefix=rx
+npm i moment lodash
+npm i @angular/animations @angular/cdk @angular/cdk-experimental @angular/material
 ng generate library @songhay/player-video-you-tube --prefix=rx
 ```
 
@@ -30,6 +32,13 @@ Also for studio-specific and historical reasons these commands are also needed:
 ```console
 npm i @angular/http@7.2.0
 npm i ..\..\songhay-core\dist\
+```
+
+Finally build the libraries:
+
+```console
+ng build @songhay/core
+ng build @songhay/player-video-you-tube
 ```
 
 @[BryanWilhite](https://github.com/BryanWilhite)

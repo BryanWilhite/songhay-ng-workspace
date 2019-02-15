@@ -4,9 +4,9 @@
             <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
         </div>
         <div class="video-strip row">
-            <rx-you-tube-thumbs *ngIf="youTubePresentationDataServices.videosDataService && youTubePresentationDataServices.videosDataService.isLoaded" [disableDefaultSort]="true" [thumbsAnimationDuration]="500" [thumbsHeaderLevel]="2" [thumbsTitle]="dataForYouTubePresentation.presentation.Title" [youTubeItems]="dataForYouTubePresentation.videos"></rx-you-tube-thumbs>
+            <rx-you-tube-thumbs *ngIf="youTubePresentationDataServices.videosDataService && youTubePresentationDataServices.videosDataService.isLoaded" [disableDefaultSort]="true" [thumbsAnimationDuration]="500" [thumbsHeaderLevel]="2" [thumbsTitle]="youTubePresentation.presentation.title" [youTubeItems]="youTubePresentation.videos"></rx-you-tube-thumbs>
         </div>
-        <div class="description container" data-ng-bind-html="dataForYouTubePresentation.presentation.Description[\'#text\']" *ngIf="youTubePresentationDataServices.presentationDataService.isLoaded"></div>
+        <div class="description container" data-ng-bind-html="youTubePresentation.presentation.Description[\'#text\']" *ngIf="youTubePresentationDataServices.presentationDataService.isLoaded"></div>
         <div class="credits container" *ngIf="youTubePresentationDataServices.presentationDataService && youTubePresentationDataServices.presentationDataService.isLoaded">
             <button class="btn btn-default" data-toggle="modal" data-target="#ImageCreditsModal" title="Presentation Credits" type="button"><span>&#160;</span></button>
         </div>
@@ -22,7 +22,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-xs-12">
-                                <div class="credits-flow" data-ng-bind-html="dataForYouTubePresentation.presentation.Credits[\'#text\']"></div>
+                                <div class="credits-flow" data-ng-bind-html="youTubePresentation.presentation.Credits[\'#text\']"></div>
                             </div>
                         </div>
                     </div>
