@@ -44,8 +44,8 @@ ng build @songhay/player-video-you-tube
 The libraries are in place (according to Songhay studio conventions) for crappy local installs:
 
 ```console
-npm i ..\..\songhay-ng-workspace\songhay\dist\core
-npm i ..\..\songhay-ng-workspace\songhay\dist\player-video-you-tube
+npm i ..\..\..\songhay-ng-workspace\songhay\dist\songhay\core
+npm i ..\..\..\songhay-ng-workspace\songhay\dist\songhay\player-video-you-tube
 ```
 
 This is temporary, pre-release situation before formal, `npm` publishing.
