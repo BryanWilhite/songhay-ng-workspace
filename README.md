@@ -41,4 +41,13 @@ ng build @songhay/core
 ng build @songhay/player-video-you-tube
 ```
 
+The libraries are in place (according to Songhay studio conventions) for crappy local installs:
+
+```console
+npm i ..\..\songhay-ng-workspace\songhay\dist\core
+npm i ..\..\songhay-ng-workspace\songhay\dist\player-video-you-tube
+```
+
+This is temporary, pre-release situation before formal, `npm` publishing.
+
 @[BryanWilhite](https://github.com/BryanWilhite)
