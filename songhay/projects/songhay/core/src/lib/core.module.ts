@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CoreComponent } from './core.component';
+
+import { AppDataService } from './services/app-data.service';
+import { DomSanitizerUtility } from './services/dom-sanitizer.utility';
 
 @NgModule({
-  declarations: [CoreComponent],
-  imports: [
-  ],
-  exports: [CoreComponent]
+    providers: [AppDataService, DomSanitizerUtility]
 })
 export class CoreModule { }
