@@ -5,7 +5,10 @@
     "entryFile": "src/public_api.ts",
     "umdModuleIds": {
       "lodash": "lodash",
-      "moment": "moment"
+      "moment": "moment",
+      "songhay-core/utilities/css.utility": "songhay-core",
+      "songhay-core/utilities/dom.utility": "songhay-core",
+      "@songhay/core": "@songhay/core"
     }
   }
 }
