@@ -10,6 +10,12 @@
             "problemMatcher": [
                 "$tslint5"
             ]
+        },
+        {
+            "type": "npm",
+            "script": "pack",
+            "path": "songhay/",
+            "problemMatcher": []
         }
     ]
 }

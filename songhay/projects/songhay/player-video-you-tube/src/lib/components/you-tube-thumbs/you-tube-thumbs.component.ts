@@ -17,7 +17,7 @@ import { AnimationBuilder, AnimationPlayer } from '@angular/animations';
 
 import { slideAnimations, slideAnimation } from './slide.animation';
 
-import { DomUtility } from 'songhay-core/utilities/dom.utility';
+import { DomUtility } from 'songhay/core/utilities/dom.utility';
 import { DomSanitizerUtility } from '@songhay/core';
 
 import { YouTubeScalars } from '../../models/you-tube-scalars';

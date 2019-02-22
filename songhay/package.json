@@ -1,5 +1,5 @@
 {
-  "name": "songhay",
+  "name": "songhay-ng-workspace",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -9,6 +9,7 @@
     "build": "npm run build:core && npm run build:player-video-you-tube",
     "test": "ng test",
     "lint": "ng lint",
+    "pack": "npm pack dist/songhay/core && npm pack dist/songhay/player-video-you-tube",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -29,7 +30,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "rxjs": "~6.3.3",
-    "songhay-core": "file:../../songhay-core/songhay-core-1.0.1.tgz",
+    "songhay": "file:../../songhay-core/songhay-0.0.1.tgz",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },

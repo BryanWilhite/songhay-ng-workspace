@@ -1,4 +1,4 @@
-import { Presentation } from 'songhay-core/models/presentation';
+import { Presentation } from 'songhay/core/models/presentation';
 
 /**
  * defines the JSON, converted from XML
