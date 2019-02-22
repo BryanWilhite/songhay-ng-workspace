@@ -29,7 +29,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "rxjs": "~6.3.3",
-    "songhay-core": "file:../../songhay-core/dist",
+    "songhay-core": "file:../../songhay-core/songhay-core-1.0.1.tgz",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },

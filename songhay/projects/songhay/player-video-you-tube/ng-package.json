@@ -6,8 +6,6 @@
     "umdModuleIds": {
       "lodash": "lodash",
       "moment": "moment",
-      "songhay-core/utilities/css.utility": "songhay-core",
-      "songhay-core/utilities/dom.utility": "songhay-core",
       "@songhay/core": "@songhay/core"
     }
   }
