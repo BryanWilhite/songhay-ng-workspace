@@ -1,3 +1,2 @@
-<p>
-  yt works!
-</p>
+<div *ngIf="youTubeDataService.isLoading">loading thumbs…</div>
+<rx-you-tube-thumbs *ngIf="youTubeDataService.isLoaded" [disableDefaultSort]="false" [thumbsAnimationDuration]="500" [thumbsHeaderLevel]="2" [thumbsTitle]="'songhay tube'" [titleRouterLink]="'/player/video/youtube/uploads/songhay/news'" [youTubeItems]="youTubeItems"></rx-you-tube-thumbs>
