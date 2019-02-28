@@ -10,7 +10,7 @@ import { YouTubePresentationStyles } from '../../models/you-tube-presentation-st
 import { YouTubePresentationDataServices } from '../../services/you-tube-presentation-data.services';
 
 @Component({
-    selector: 'app-you-tube-presentation',
+    selector: 'rx-you-tube-presentation',
     templateUrl: './you-tube-presentation.component.html',
     styleUrls: ['./you-tube-presentation.component.scss']
 })
