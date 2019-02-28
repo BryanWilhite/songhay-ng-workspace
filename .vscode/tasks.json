@@ -16,6 +16,14 @@
             "script": "pack",
             "path": "songhay/",
             "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "start",
+            "path": "songhay/",
+            "problemMatcher": [
+                "$tslint5"
+            ]
         }
     ]
 }

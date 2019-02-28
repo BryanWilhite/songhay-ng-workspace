@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
     "build:core": "ng build @songhay/core",
     "build:player-video-you-tube": "ng build @songhay/player-video-you-tube",
-    "build": "npm run build:core && npm run build:player-video-you-tube",
+    "build": "npm run build:core && npm run build:player-video-you-tube && ng build client",
     "test": "ng test",
     "lint": "ng lint",
     "pack": "npm pack dist/songhay/core && npm pack dist/songhay/player-video-you-tube",

@@ -205,5 +205,5 @@
       }
     }
   },
-  "defaultProject": "@songhay/core"
+  "defaultProject": "client"
 }
