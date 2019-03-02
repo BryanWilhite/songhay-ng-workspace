@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { MaterialModule } from './material.module';
-
-import { YouTubeRoutingModule } from './you-tube-routing.module';
 
 import { YouTubeDataService } from './services/you-tube-data.service';
 import { YouTubePresentationDataServices } from './services/you-tube-presentation-data.services';
@@ -14,7 +13,11 @@ import { YouTubeThumbsNavigationComponent } from './components/you-tube-thumbs-n
 import { YouTubeThumbsSetComponent } from './components/you-tube-thumbs-set/you-tube-thumbs-set.component';
 
 @NgModule({
-    imports: [CommonModule, MaterialModule, YouTubeRoutingModule],
+    imports: [
+        CommonModule,
+        MaterialModule,
+        RouterModule.forChild([{ path: '', component: YouTubeThumbsSetComponent }])
+    ],
     declarations: [
         YouTubePresentationComponent,
         YouTubeThumbsComponent,
@@ -26,11 +29,10 @@ import { YouTubeThumbsSetComponent } from './components/you-tube-thumbs-set/you-
         YouTubePresentationDataServices
     ],
     exports: [
-        YouTubeRoutingModule,
         YouTubePresentationComponent,
         YouTubeThumbsComponent,
         YouTubeThumbsNavigationComponent,
         YouTubeThumbsSetComponent
     ]
 })
-export class YouTubeModule {}
+export class YouTubeModule { }

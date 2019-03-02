@@ -12,6 +12,7 @@ export * from './lib/models/you-tube-item';
 export * from './lib/models/you-tube-presentation';
 export * from './lib/models/you-tube-presentation-style';
 export * from './lib/models/you-tube-resource-id';
+export * from './lib/models/you-tube-route-paths';
 export * from './lib/models/you-tube-scalars';
 export * from './lib/models/you-tube-snippet';
 export * from './lib/models/you-tube-thumbnail';
