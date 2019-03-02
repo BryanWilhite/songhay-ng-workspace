@@ -3,7 +3,6 @@
  */
 
 export * from './lib/you-tube.module';
-export * from './lib/you-tube-routing.module';
 export * from './lib/material.module';
 
 /* models */

@@ -24,6 +24,12 @@
             "problemMatcher": [
                 "$tslint5"
             ]
+        },
+        {
+            "type": "npm",
+            "script": "version:patch",
+            "path": "songhay/",
+            "problemMatcher": []
         }
     ]
 }

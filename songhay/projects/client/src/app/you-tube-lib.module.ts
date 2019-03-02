@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
-import { YouTubeModule, YouTubeRoutingModule } from '@songhay/player-video-you-tube';
+import { YouTubeModule } from '@songhay/player-video-you-tube';
 
 @NgModule({
   imports: [
-    YouTubeModule,
-    YouTubeRoutingModule
+    YouTubeModule
   ],
   exports: [
-    YouTubeModule,
-    YouTubeRoutingModule
+    YouTubeModule
   ]
 })
 export class YouTubeLibModule { }
