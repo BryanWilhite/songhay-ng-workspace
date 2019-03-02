@@ -1,10 +1,13 @@
 {
-  "name": "@songhay/player-video-you-tube",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "^7.2.0",
-    "@angular/core": "^7.2.0",
-    "songhay-core": "^0.0.1",
-    "@songhay/core": "^0.0.1"
-  }
+    "name": "@songhay/player-video-you-tube",
+    "version": "0.0.2",
+    "peerDependencies": {
+        "@angular/common": "^7.2.0",
+        "@angular/core": "^7.2.0",
+        "songhay-core": "^0.0.1",
+        "@songhay/core": "^0.0.1"
+    },
+    "scripts": {
+        "version:patch": "npm version patch -m \":rocket: :snowflake: version patch up to %s\""
+    }
 }

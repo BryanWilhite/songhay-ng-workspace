@@ -10,7 +10,6 @@
     "test": "ng test",
     "lint": "ng lint",
     "pack": "npm pack dist/songhay/core && npm pack dist/songhay/player-video-you-tube",
-    "version:patch": "npm version patch -m \":rocket: :snowflake: version patch up to %s\"",
     "e2e": "ng e2e"
   },
   "private": true,
