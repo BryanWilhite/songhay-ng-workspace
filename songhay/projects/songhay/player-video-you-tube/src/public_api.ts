@@ -29,3 +29,6 @@ export * from './lib/components/you-tube-thumbs-set/you-tube-thumbs-set.componen
 /* services */
 export * from './lib/services/you-tube-data.service';
 export * from './lib/services/you-tube-presentation-data.services';
+
+/* utilities */
+export * from './lib/utilities/you-tube-route.utility';
