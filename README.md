@@ -10,9 +10,13 @@ The miserable details around how to get the Angular library actually working in 
 
 [These](songhay/projects/songhay/core) are the core types building on top of the more framework-agnostic `songhay-core` [repo](https://github.com/BryanWilhite/songhay-core).
 
+:books: `typedoc` [documentation](https://bryanwilhite.github.io/songhay-ng-workspace/core) is available.
+
 ## `@songhay/player-video-you-tube` project
 
 [This](songhay/projects/songhay/player-video-you-tube) is the library for the YouTube video app of the b-roll player.
+
+:books: `typedoc` [documentation](https://bryanwilhite.github.io/songhay-ng-workspace/player-video-you-tube) is available.
 
 ## initial setup commands
 
@@ -33,7 +37,7 @@ Also for studio-specific and historical reasons these commands are also needed:
 
 ```console
 npm i @angular/http@7.2.0
-npm i ..\..\..\songhay-core\songhay-0.0.2.tgz
+npm i songhay
 ```
 
 Finally build the  with the current build script (from the `songhay/` [folder](./songhay)):
@@ -41,14 +45,5 @@ Finally build the  with the current build script (from the `songhay/` [folder](.
 ```console
 npm build
 ```
-
-The libraries are in place (according to Songhay studio conventions) for crappy local installs:
-
-```console
-npm i ..\..\..\songhay-ng-workspace\songhay\songhay-core-0.0.1.tgz
-npm i ..\..\..\songhay-ng-workspace\songhay\songhay-player-video-you-tube-0.0.1.tgz
-```
-
-This is temporary, pre-release situation before formal, `npm` publishing.
 
 @[BryanWilhite](https://github.com/BryanWilhite)

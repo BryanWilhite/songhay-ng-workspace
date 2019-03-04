@@ -1,5 +1,5 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558 
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
@@ -7,9 +7,7 @@
             "type": "npm",
             "script": "build",
             "path": "songhay/",
-            "problemMatcher": [
-                "$tslint5"
-            ]
+            "problemMatcher": ["$tslint5"]
         },
         {
             "type": "npm",
@@ -21,9 +19,19 @@
             "type": "npm",
             "script": "start",
             "path": "songhay/",
-            "problemMatcher": [
-                "$tslint5"
-            ]
+            "problemMatcher": ["$tslint5"]
+        },
+        {
+            "type": "npm",
+            "script": "version:major",
+            "path": "songhay/projects/songhay/core/",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "version:minor",
+            "path": "songhay/projects/songhay/core/",
+            "problemMatcher": []
         },
         {
             "type": "npm",
@@ -33,8 +41,76 @@
         },
         {
             "type": "npm",
+            "script": "version:major",
+            "path": "songhay/projects/songhay/player-video-you-tube/",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "version:minor",
+            "path": "songhay/projects/songhay/player-video-you-tube/",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
             "script": "version:patch",
             "path": "songhay/projects/songhay/player-video-you-tube/",
+            "problemMatcher": []
+        },
+        {
+            "label": "typedoc for @songhay/core: generate docs",
+            "type": "shell",
+            "command": "typedoc",
+            "args": [
+                "--exclude",
+                "'**/*.spec.ts'",
+                "--mode",
+                "modules",
+                "--tsconfig",
+                "./songhay/tsconfig.json",
+                "--out",
+                "./docs/core",
+                "./songhay/projects/songhay/core/src"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "typedoc for @songhay/player-video-you-tube: generate docs",
+            "type": "shell",
+            "command": "typedoc",
+            "args": [
+                "--exclude",
+                "'**/*.spec.ts'",
+                "--mode",
+                "modules",
+                "--tsconfig",
+                "./songhay/tsconfig.json",
+                "--out",
+                "./docs/player-video-you-tube",
+                "./songhay/projects/songhay/player-video-you-tube/src"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "typedoc: add .nojekyll file for GitHub",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/docs"
+            },
+            "linux": {
+                "command": "touch",
+                "args": [".nojekyll"]
+            },
+            "windows": {
+                "command": "New-Item",
+                "args": ["-ItemType", "file", ".nojekyll"]
+            },
             "problemMatcher": []
         }
     ]
