@@ -1,5 +1,6 @@
 {
     "name": "@songhay/player-video-you-tube",
+    "description": "Songhay Player (b-roll player) for YouTube® channel uploads",
     "version": "0.0.3",
     "peerDependencies": {
         "@angular/common": "^7.2.0",
@@ -11,5 +12,19 @@
         "version:major": "npm version major -m \":rocket: :snowflake: version major up to %s\"",
         "version:minor": "npm version minor -m \":rocket: :snowflake: version minor up to %s\"",
         "version:patch": "npm version patch -m \":rocket: :snowflake: version patch up to %s\""
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/BryanWilhite/songhay-ng-workspace.git"
+    },
+    "keywords": [],
+    "author": {
+        "name": "Bryan D. Wilhite",
+        "email": "rasx@songhaysystem.com"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/BryanWilhite/songhay-ng-workspace/issues"
+    },
+    "homepage": "https://github.com/BryanWilhite/songhay-ng-workspace#readme"
 }
