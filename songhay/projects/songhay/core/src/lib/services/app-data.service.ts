@@ -7,6 +7,7 @@ import { Http, Response, RequestOptionsArgs } from '@angular/http';
  *
  * @export
  * @class AppDataService
+ * @deprecated see https://github.com/BryanWilhite/songhay-ng-workspace/issues/8#issuecomment-472557958
  */
 @Injectable()
 export class AppDataService {
@@ -115,7 +116,7 @@ export class AppDataService {
     }
 
     /**
-     *
+     * loads JSON from the specified URI
      *
      * @template TFromJson
      * @param {string} uri
