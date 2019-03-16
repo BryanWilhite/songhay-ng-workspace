@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ActivatedRouteMock } from '../../../../../core/mocks/activated-route-mock';
+import { ActivatedRouteMock } from '@songhay/core';
 import { YouTubeDataServiceMock } from '../../mocks/you-tube-data-service.mock';
 
 import { YouTubeDataService } from '../../services/you-tube-data.service';
