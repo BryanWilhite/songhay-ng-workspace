@@ -4,6 +4,8 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { AppDataStoreOptions } from './app-data-store.options';
 import { filter } from 'rxjs/operators';
 
+type SendMethods = 'delete' | 'patch' | 'post' | 'put';
+
 @Injectable()
 export class AppDataStore<TDomain, TError> implements OnDestroy {
     /**
@@ -200,7 +202,7 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
      * @memberof AppDataStore
      */
     send(
-        method: 'delete' | 'patch' | 'post' | 'put',
+        method: SendMethods,
         uri: string,
         options: {
             headers?:
@@ -283,7 +285,7 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
      * @memberof AppDataStore
      */
     sendAsync(
-        method: 'delete' | 'patch' | 'post' | 'put',
+        method: SendMethods,
         uri: string,
         options: {
             headers?:
