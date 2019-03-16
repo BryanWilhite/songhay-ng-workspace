@@ -4,10 +4,25 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "ng test: test by selected project",
+            "type": "shell",
+            "command": "ng",
+            "args": [
+                "test",
+                "--project=${selectedText}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/songhay"
+            },
+            "problemMatcher": []
+        },
+        {
             "type": "npm",
             "script": "build",
             "path": "songhay/",
-            "problemMatcher": ["$tslint5"]
+            "problemMatcher": [
+                "$tslint5"
+            ]
         },
         {
             "type": "npm",
@@ -19,7 +34,9 @@
             "type": "npm",
             "script": "start",
             "path": "songhay/",
-            "problemMatcher": ["$tslint5"]
+            "problemMatcher": [
+                "$tslint5"
+            ]
         },
         {
             "type": "npm",
@@ -105,11 +122,17 @@
             },
             "linux": {
                 "command": "touch",
-                "args": [".nojekyll"]
+                "args": [
+                    ".nojekyll"
+                ]
             },
             "windows": {
                 "command": "New-Item",
-                "args": ["-ItemType", "file", ".nojekyll"]
+                "args": [
+                    "-ItemType",
+                    "file",
+                    ".nojekyll"
+                ]
             },
             "problemMatcher": []
         }
