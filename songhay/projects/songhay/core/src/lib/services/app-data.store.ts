@@ -8,6 +8,16 @@ import { AppDataStoreOptions } from './app-data-store.options';
 import { HttpClientOptions } from '../models/http-client-options';
 import { SendMethods } from '../models/send-methods.type';
 
+/**
+ * Defines the core Observable data store
+ * with optional support for Promises.
+ *
+ * @export
+ * @class AppDataStore
+ * @implements {OnDestroy}
+ * @template TDomain
+ * @template TError
+ */
 @Injectable()
 export class AppDataStore<TDomain, TError> implements OnDestroy {
     /**
@@ -72,6 +82,13 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
         this.setupObservables();
     }
 
+    /**
+     * A lifecycle hook that is called
+     * when a directive, pipe,
+     * or service is destroyed.
+     *
+     * @memberof AppDataStore
+     */
     ngOnDestroy(): void {
         this.subscriptions.forEach(i => {
             if (i) {
