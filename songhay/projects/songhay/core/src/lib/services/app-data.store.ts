@@ -186,7 +186,7 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
     send(
         method: SendMethods,
         uri: string,
-        body?: any,
+        body: {} | null = null,
         options: HttpClientOptions = {}
     ): void {
         const defaultNext = (data: object) => {
@@ -255,7 +255,7 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
     sendAsync(
         method: SendMethods,
         uri: string,
-        body?: any,
+        body: {} | null = null,
         options: HttpClientOptions = {}
     ): Promise<object> {
         let promise: Promise<object>;
@@ -293,6 +293,18 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
         return domainData;
     }
 
+    protected indicateError(uri: string, error: any): void {
+        this.isError = true;
+        this.serviceErrorSubject.next(error);
+        console.error(`${AppDataStore.name}.indicateError`, {
+            uri,
+            isError: this.isError,
+            isLoaded: this.isLoaded,
+            isLoading: this.isBusy,
+            error
+        });
+    }
+
     private doNextDomainSubject(
         subject: BehaviorSubject<TDomain>,
         data: object,
@@ -307,18 +319,6 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
     private indicateBusyState(): void {
         this.isLoaded = false;
         this.isBusy = true;
-    }
-
-    private indicateError(uri: string, error: any): void {
-        this.isError = true;
-        this.serviceErrorSubject.next(error);
-        console.error(`${AppDataStore.name}.indicateError`, {
-            uri,
-            isError: this.isError,
-            isLoaded: this.isLoaded,
-            isLoading: this.isBusy,
-            error
-        });
     }
 
     private indicateLoadedState(): void {
