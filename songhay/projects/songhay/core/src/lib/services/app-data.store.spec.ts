@@ -1,15 +1,15 @@
+import { skip } from 'rxjs/operators';
 import { TestBed, inject, async } from '@angular/core/testing';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
 
 import { Typicode } from '../mocks/typicode.models';
 
-import { AppDataStore } from './app-data.store';
 import { AppDataStoreOptions } from './app-data-store.options';
-import { skip } from 'rxjs/operators';
+import { AppDataStore } from './app-data.store';
 
 const LIVE_API_BASE_URI = 'http://jsonplaceholder.typicode.com';
 
-describe(`${AppDataStore.name} with initial, \`object\` value `, () => {
+describe(`${AppDataStore.name} with initial, \`object\` value and \`any\` error`, () => {
     const optionsForObject: AppDataStoreOptions<object, any> = {
         initialValue: () => ({ greeting: 'Hello world!' })
     };
@@ -38,32 +38,24 @@ describe(`${AppDataStore.name} with initial, \`object\` value `, () => {
                 console.log('object: initial value', data);
                 isNext = true;
             });
-            expect(isNext).toEqual(
-                true,
-                'Calling next in stream was expected.'
-            );
+            expect(isNext).toEqual(true);
         })
     ));
 
     it('should throw a 404 from live server', async(
         inject([AppDataStore], (service: AppDataStore<object, any>) => {
-            const userId = 1;
-            const uri = `${LIVE_API_BASE_URI}/users/wrong/${userId}`;
-            let isNext = false;
-            service.serviceData.pipe(skip(1)).subscribe(data => {
-                console.log('Users: 404 get', data);
-                isNext = true;
-            });
-            service.serviceError.subscribe(error => {
-                console.log('Users: 404 get ERROR', error);
+            const userId = 11;
+            const uri = `${LIVE_API_BASE_URI}/users/${userId}`;
+            service.serviceError.pipe(skip(1)).subscribe(exception => {
+                console.log('Users: 404 get ERROR', { exception });
+
+                const error = exception as HttpErrorResponse;
+                expect(error).toBeTruthy();
+                expect(error.status).toEqual(404);
+
+                expect(service.isError).toEqual(true);
             });
             service.load(uri);
-
-            expect(isNext).toEqual(
-                false,
-                'Calling next in stream was not expected.'
-            );
-            expect(service.isError).toEqual(true, 'An error was expected.');
         })
     ));
 
@@ -192,11 +184,15 @@ describe(`${AppDataStore.name} with initial, \`object\` value `, () => {
                 let result: any;
                 try {
                     result = await service.loadAsync(uri);
-                } catch {
-                    console.log('Photo: 404 result', result);
-                }
+                } catch (exception) {
+                    console.log('Photo: 404 result', { result, exception });
 
-                expect(service.isError).toEqual(true);
+                    const error = exception as HttpErrorResponse;
+                    expect(error).toBeTruthy();
+                    expect(error.status).toEqual(404);
+
+                    expect(service.isError).toEqual(true);
+                }
             }
         ));
     });

@@ -1,8 +1,10 @@
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
+
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
+
 import { AppDataStoreOptions } from './app-data-store.options';
-import { filter } from 'rxjs/operators';
 
 type SendMethods = 'delete' | 'get' | 'patch' | 'post' | 'put';
 
