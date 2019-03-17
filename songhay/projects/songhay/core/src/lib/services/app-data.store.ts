@@ -61,9 +61,10 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
      */
     serviceError: Observable<TError>;
 
-    private domainSubject: BehaviorSubject<TDomain>;
+    protected domainSubject: BehaviorSubject<TDomain>;
+    protected subscriptions: Subscription[];
+
     private serviceErrorSubject: BehaviorSubject<TError>;
-    private subscriptions: Subscription[];
 
     /**
      *Creates an instance of AppDataStore.
@@ -130,10 +131,7 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
      *         })} [options={}]
      * @memberof AppDataStore
      */
-    load(
-        uri: string,
-        options: HttpClientOptions = {}
-    ): void {
+    load(uri: string, options: HttpClientOptions = {}): void {
         this.send('get', uri, null, options);
     }
 
@@ -159,10 +157,7 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
      *         })} [options={}]
      * @memberof AppDataStore
      */
-    loadAsync(
-        uri: string,
-        options: HttpClientOptions = {}
-    ): Promise<object> {
+    loadAsync(uri: string, options: HttpClientOptions = {}): Promise<object> {
         return this.sendAsync('get', uri, null, options);
     }
 
@@ -290,16 +285,20 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
         return promise;
     }
 
-    private doNextDomainSubject(
-        subject: BehaviorSubject<TDomain>,
-        data: object,
-        method: SendMethods
-    ) {
+    protected getDomainData(data: object, method: SendMethods): TDomain {
         const domainData =
             this.options && this.options.domainConverter
                 ? this.options.domainConverter(method, data)
                 : ((data as unknown) as TDomain);
+        return domainData;
+    }
 
+    private doNextDomainSubject(
+        subject: BehaviorSubject<TDomain>,
+        data: object,
+        method: SendMethods
+    ): void {
+        const domainData = this.getDomainData(data, method);
         if (domainData) {
             subject.next(domainData);
         }
@@ -331,8 +330,7 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
         if (this.options && this.options.errorConverter) {
             const initialErrorState = this.options.errorConverter(null);
             this.serviceErrorSubject = new BehaviorSubject(initialErrorState);
-            this.serviceError = this.serviceErrorSubject
-                .asObservable();
+            this.serviceError = this.serviceErrorSubject.asObservable();
         } else {
             this.serviceErrorSubject = new BehaviorSubject(null);
             this.serviceError = this.serviceErrorSubject
