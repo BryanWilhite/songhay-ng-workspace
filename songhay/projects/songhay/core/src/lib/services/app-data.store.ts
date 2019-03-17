@@ -1,5 +1,5 @@
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import { filter, skip } from 'rxjs/operators';
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
@@ -314,10 +314,14 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
         if (this.options && this.options.errorConverter) {
             const initialErrorState = this.options.errorConverter(null);
             this.serviceErrorSubject = new BehaviorSubject(initialErrorState);
+            this.serviceError = this.serviceErrorSubject
+                .asObservable();
         } else {
             this.serviceErrorSubject = new BehaviorSubject(null);
+            this.serviceError = this.serviceErrorSubject
+                .asObservable()
+                .pipe(skip(1)); // skip initial value, `null`
         }
-        this.serviceError = this.serviceErrorSubject.asObservable();
 
         if (this.options && this.options.initialValue) {
             const initialValue = this.options.initialValue();

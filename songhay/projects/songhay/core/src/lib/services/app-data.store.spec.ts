@@ -46,7 +46,7 @@ describe(`${AppDataStore.name} with initial, \`object\` value and \`any\` error`
         inject([AppDataStore], (service: AppDataStore<object, any>) => {
             const userId = 11;
             const uri = `${LIVE_API_BASE_URI}/users/${userId}`;
-            service.serviceError.pipe(skip(1)).subscribe(exception => {
+            service.serviceError.subscribe(exception => {
                 console.log('Users: 404 get ERROR', { exception });
 
                 const error = exception as HttpErrorResponse;
