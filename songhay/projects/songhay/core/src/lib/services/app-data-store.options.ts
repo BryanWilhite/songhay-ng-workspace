@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { SendMethods } from '../models/send-methods.type';
 
 /**
- * defines options for @type {AppDataService}
+ * defines options for @type {AppDataStore}
  *
  * @export
  * @class AppDataStoreOptions
@@ -19,7 +19,7 @@ export class AppDataStoreOptions<TDomain, TError> {
      *
      * @memberof AppDataStoreOptions
      */
-    domainConverter?: (method: SendMethods, data: object) => TDomain;
+    domainConverter?: (method: SendMethods, data: object) => TDomain | TDomain[];
 
     /**
      * converts the server error type

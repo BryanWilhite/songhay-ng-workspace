@@ -1,4 +1,3 @@
-import { skip } from 'rxjs/operators';
 import { TestBed, inject, async } from '@angular/core/testing';
 import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
 
@@ -9,7 +8,9 @@ import { AppDataStore } from './app-data.store';
 
 const LIVE_API_BASE_URI = 'http://jsonplaceholder.typicode.com';
 
-describe(`${AppDataStore.name} with initial, \`object\` value and \`any\` error`, () => {
+describe(`${
+    AppDataStore.name
+} with initial, \`object\` value and \`any\` error`, () => {
     const optionsForObject: AppDataStoreOptions<object, any> = {
         initialValue: () => ({ greeting: 'Hello world!' })
     };
@@ -34,11 +35,23 @@ describe(`${AppDataStore.name} with initial, \`object\` value and \`any\` error`
     it('should load initial value', async(
         inject([AppDataStore], (service: AppDataStore<object, any>) => {
             let isNext = false;
-            service.serviceData.subscribe(data => {
-                console.log('object: initial value', data);
-                isNext = true;
-            });
-            expect(isNext).toEqual(true);
+
+            service.serviceData
+                .subscribe(data => {
+                    // internal `BehaviorSubject` will emit last value upon subscription:
+                    console.log('object: initial value', data);
+
+                    expect(data).toBeTruthy();
+                    expect(
+                        Object.keys(data).findIndex(k => k === 'greeting')
+                    ).toBeGreaterThan(-1);
+
+                    isNext = true;
+                })
+                .add(() => {
+                    expect(isNext).toEqual(true);
+                })
+                .unsubscribe();
         })
     ));
 
@@ -77,11 +90,20 @@ describe(`${AppDataStore.name} with initial, \`object\` value and \`any\` error`
                 [AppDataStore],
                 (service: AppDataStore<Typicode.Photo, any>) => {
                     let isNext = false;
-                    service.serviceData.subscribe(data => {
-                        console.log('Photo: initial value', data);
-                        isNext = true;
-                    });
-                    expect(isNext).toEqual(false);
+
+                    service.serviceData
+                        .subscribe(data => {
+                            console.log(
+                                'Photo: initial value [should not run]',
+                                data
+                            );
+                            isNext = true;
+                        })
+                        .add(() => {
+                            console.log('Photo: initial value');
+                            expect(isNext).toEqual(false);
+                        })
+                        .unsubscribe();
                 }
             )
         ));

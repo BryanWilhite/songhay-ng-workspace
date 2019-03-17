@@ -61,9 +61,9 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
      */
     serviceError: Observable<TError>;
 
-    protected domainSubject: BehaviorSubject<TDomain>;
     protected subscriptions: Subscription[];
 
+    private domainSubject: BehaviorSubject<TDomain>;
     private serviceErrorSubject: BehaviorSubject<TError>;
 
     /**
@@ -285,14 +285,6 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
         return promise;
     }
 
-    protected getDomainData(data: object, method: SendMethods): TDomain {
-        const domainData =
-            this.options && this.options.domainConverter
-                ? this.options.domainConverter(method, data)
-                : ((data as unknown) as TDomain);
-        return domainData;
-    }
-
     protected indicateError(uri: string, error: any): void {
         this.isError = true;
         this.serviceErrorSubject.next(error);
@@ -303,6 +295,14 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
             isLoading: this.isBusy,
             error
         });
+    }
+
+    private getDomainData(data: object, method: SendMethods): TDomain {
+        const domainData =
+            this.options && this.options.domainConverter
+                ? this.options.domainConverter(method, data) as TDomain
+                : ((data as unknown) as TDomain);
+        return domainData;
     }
 
     private doNextDomainSubject(

@@ -1,4 +1,4 @@
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subscription, BehaviorSubject } from 'rxjs';
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -19,10 +19,10 @@ import { AppDataStore } from './app-data.store';
  * @template TError
  */
 @Injectable()
-export class AppTabularDataStore<
-    TDomain extends [],
+export class AppTabularDataStore<TDomain, TError> extends AppDataStore<
+    TDomain,
     TError
-> extends AppDataStore<TDomain, TError> {
+> {
     /**
      * gets the tabular data
      * of the internal data store
@@ -31,11 +31,12 @@ export class AppTabularDataStore<
      * @type {Observable<TDomain>}
      * @memberof AppTabularDataStore
      */
-    get rows(): Observable<TDomain> {
-        return this.domainSubject.asObservable();
+    get rows(): Observable<TDomain[]> {
+        return this.tabularDomainSubject.asObservable();
     }
 
-    private dataStore: { rows: TDomain };
+    private tabularDomainSubject: BehaviorSubject<TDomain[]>;
+    private dataStore: { rows: TDomain[] };
 
     /**
      *Creates an instance of AppDataStore.
@@ -80,11 +81,11 @@ export class AppTabularDataStore<
     sendToChangeRows(
         method: SendMethods,
         uri: string,
-        onNext: (data: object, rows: TDomain) => void,
+        onNext: (data: object, rows: TDomain[]) => void,
         body: {} | null = null,
         options: HttpClientOptions = {}
     ): void {
-        const defaultNext = data => {
+        const defaultNext = (data: object) => {
             onNext(data, this.dataStore.rows);
             this.doNextTabularDomainSubject(data, method);
         };
@@ -126,8 +127,16 @@ export class AppTabularDataStore<
         data: object,
         method: SendMethods
     ): void {
-        const domainData = this.getDomainData(data, method);
+        const domainData = this.getTabularDomainData(data, method);
         this.dataStore.rows = domainData;
-        this.domainSubject.next(Object.assign({}, this.dataStore).rows);
+        this.tabularDomainSubject.next(Object.assign({}, this.dataStore).rows);
+    }
+
+    private getTabularDomainData(data: object, method: SendMethods): TDomain[] {
+        const domainData =
+            this.tabularOptions && this.tabularOptions.domainConverter
+                ? this.tabularOptions.domainConverter(method, data) as TDomain[]
+                : ((data as unknown) as TDomain[]);
+        return domainData;
     }
 }
