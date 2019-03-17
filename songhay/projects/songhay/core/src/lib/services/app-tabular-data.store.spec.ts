@@ -1,5 +1,5 @@
 import { TestBed, inject, async } from '@angular/core/testing';
-import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { Typicode } from '../mocks/typicode.models';
 
@@ -8,7 +8,9 @@ import { AppTabularDataStore } from './app-tabular-data.store';
 
 const LIVE_API_BASE_URI = 'http://jsonplaceholder.typicode.com';
 
-describe(`${AppTabularDataStore.name} with initial, \`object[]\` value and \`any\` error`, () => {
+describe(`${
+    AppTabularDataStore.name
+} with initial, \`object[]\` value and \`any\` error`, () => {
     const optionsForObject: AppDataStoreOptions<object, any> = {
         initialValue: () => [{ greeting: 'Hello world!' }]
     };
@@ -30,18 +32,35 @@ describe(`${AppTabularDataStore.name} with initial, \`object[]\` value and \`any
         }
     ));
 
-    describe('Photo service with `null` default value and `any` error', () => {
-        const optionsForPhoto: AppDataStoreOptions<Typicode.Photo, any> = {};
+    describe('User service with `null` default value and `any` error', () => {
+        const optionsForUser: AppDataStoreOptions<Typicode.User, any> = {};
 
         beforeEach(() => {
             TestBed.configureTestingModule({
                 imports: [HttpClientModule],
                 providers: [
-                    { provide: AppDataStoreOptions, useValue: optionsForPhoto },
+                    { provide: AppDataStoreOptions, useValue: optionsForUser },
                     AppTabularDataStore
                 ]
             });
         });
-    });
 
+        it('should get Users from live server', async(
+            inject(
+                [AppTabularDataStore],
+                (service: AppTabularDataStore<Typicode.Photo, any>) => {
+                    const uri = `${LIVE_API_BASE_URI}/users`;
+                    service.serviceData.subscribe(data => {
+                        console.log('Users: get', data);
+                        expect(service.isError).toEqual(
+                            false,
+                            'An error was not expected.'
+                        );
+                        expect(data).toBeTruthy();
+                    });
+                    service.load(uri);
+                }
+            )
+        ));
+    });
 });
