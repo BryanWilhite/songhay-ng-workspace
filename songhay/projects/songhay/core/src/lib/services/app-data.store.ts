@@ -5,8 +5,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
 
 import { AppDataStoreOptions } from './app-data-store.options';
-
-type SendMethods = 'delete' | 'get' | 'patch' | 'post' | 'put';
+import { SendMethods } from '../models/send-methods.type';
 
 @Injectable()
 export class AppDataStore<TDomain, TError> implements OnDestroy {
@@ -224,7 +223,7 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
     ): void {
         const defaultNext = (data: object) => {
             this.indicateLoadedState();
-            this.doNextDomainSubject(this.domainSubject, data);
+            this.doNextDomainSubject(this.domainSubject, data, method);
         };
         const defaultError = (error: any) => this.indicateError(uri, error);
 
@@ -335,11 +334,12 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
 
     private doNextDomainSubject(
         subject: BehaviorSubject<TDomain>,
-        data: object
+        data: object,
+        method: SendMethods
     ) {
         const domainData =
             this.options && this.options.domainConverter
-                ? this.options.domainConverter(data)
+                ? this.options.domainConverter(method, data)
                 : ((data as unknown) as TDomain);
 
         if (domainData) {
