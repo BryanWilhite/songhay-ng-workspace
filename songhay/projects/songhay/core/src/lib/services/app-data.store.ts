@@ -4,7 +4,7 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { AppDataStoreOptions } from './app-data-store.options';
 import { filter } from 'rxjs/operators';
 
-type SendMethods = 'delete' | 'patch' | 'post' | 'put';
+type SendMethods = 'delete' | 'get' | 'patch' | 'post' | 'put';
 
 @Injectable()
 export class AppDataStore<TDomain, TError> implements OnDestroy {
@@ -59,7 +59,10 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
      * @param {AppDataStoreOptions<TDomain, TError>} [options]
      * @memberof AppDataStore
      */
-    constructor(private client: HttpClient, private options?: AppDataStoreOptions<TDomain, TError>) {
+    constructor(
+        private client: HttpClient,
+        private options?: AppDataStoreOptions<TDomain, TError>
+    ) {
         this.isError = false;
         this.isLoaded = false;
         this.isBusy = false;
@@ -68,7 +71,11 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
     }
 
     ngOnDestroy(): void {
-        this.subscriptions.forEach(i => { if (i) { i.unsubscribe(); } });
+        this.subscriptions.forEach(i => {
+            if (i) {
+                i.unsubscribe();
+            }
+        });
     }
 
     /**
@@ -108,30 +115,22 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
         uri: string,
         options: {
             headers?:
-            | HttpHeaders
-            | {
-                [header: string]: string | string[];
-            };
+                | HttpHeaders
+                | {
+                      [header: string]: string | string[];
+                  };
             observe?: 'body';
             params?:
-            | HttpParams
-            | {
-                [param: string]: string | string[];
-            };
+                | HttpParams
+                | {
+                      [param: string]: string | string[];
+                  };
             reportProgress?: boolean;
             responseType?: 'json';
             withCredentials?: boolean;
         } = {}
     ): void {
-        this.indicateBusyState();
-        const s = this.client.get(uri, options).subscribe(
-            data => {
-                this.indicateLoadedState();
-                this.doNextDomainSubject(this.domainSubject, data);
-            },
-            error => this.indicateError(uri, error)
-        );
-        this.subscriptions.push(s);
+        this.send('get', uri, null, options);
     }
 
     /**
@@ -160,23 +159,22 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
         uri: string,
         options: {
             headers?:
-            | HttpHeaders
-            | {
-                [header: string]: string | string[];
-            };
+                | HttpHeaders
+                | {
+                      [header: string]: string | string[];
+                  };
             observe?: 'body';
             params?:
-            | HttpParams
-            | {
-                [param: string]: string | string[];
-            };
+                | HttpParams
+                | {
+                      [param: string]: string | string[];
+                  };
             reportProgress?: boolean;
             responseType?: 'json';
             withCredentials?: boolean;
         } = {}
     ): Promise<object> {
-        this.indicateBusyState();
-        return this.client.get(uri, options).toPromise();
+        return this.sendAsync('get', uri, null, options);
     }
 
     /**
@@ -204,62 +202,63 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
     send(
         method: SendMethods,
         uri: string,
+        body?: any,
         options: {
             headers?:
-            | HttpHeaders
-            | {
-                [header: string]: string | string[];
-            };
+                | HttpHeaders
+                | {
+                      [header: string]: string | string[];
+                  };
             observe?: 'body';
             params?:
-            | HttpParams
-            | {
-                [param: string]: string | string[];
-            };
+                | HttpParams
+                | {
+                      [param: string]: string | string[];
+                  };
             reportProgress?: boolean;
             responseType?: 'json';
             withCredentials?: boolean;
         } = {}
     ): void {
+        const defaultNext = (data: object) => {
+            this.indicateLoadedState();
+            this.doNextDomainSubject(this.domainSubject, data);
+        };
+        const defaultError = (error: any) => this.indicateError(uri, error);
+
+        let sub: Subscription;
+
         this.indicateBusyState();
+
         switch (method) {
             case 'delete':
-                this.client.delete(uri, options).subscribe(
-                    data => {
-                        this.indicateLoadedState();
-                        this.doNextDomainSubject(this.domainSubject, data);
-                    },
-                    error => this.indicateError(uri, error)
-                );
+                sub = this.client
+                    .delete(uri, options)
+                    .subscribe(defaultNext, defaultError);
+                break;
+            case 'get':
+                sub = this.client
+                    .get(uri, options)
+                    .subscribe(defaultNext, defaultError);
                 break;
             case 'patch':
-                this.client.patch(uri, options).subscribe(
-                    data => {
-                        this.indicateLoadedState();
-                        this.doNextDomainSubject(this.domainSubject, data);
-                    },
-                    error => this.indicateError(uri, error)
-                );
+                sub = this.client
+                    .patch(uri, body, options)
+                    .subscribe(defaultNext, defaultError);
                 break;
             case 'post':
-                this.client.post(uri, options).subscribe(
-                    data => {
-                        this.indicateLoadedState();
-                        this.doNextDomainSubject(this.domainSubject, data);
-                    },
-                    error => this.indicateError(uri, error)
-                );
+                sub = this.client
+                    .patch(uri, body, options)
+                    .subscribe(defaultNext, defaultError);
                 break;
             case 'put':
-                this.client.put(uri, options).subscribe(
-                    data => {
-                        this.indicateLoadedState();
-                        this.doNextDomainSubject(this.domainSubject, data);
-                    },
-                    error => this.indicateError(uri, error)
-                );
+                sub = this.client
+                    .patch(uri, body, options)
+                    .subscribe(defaultNext, defaultError);
                 break;
         }
+
+        this.subscriptions.push(sub);
     }
 
     /**
@@ -287,18 +286,19 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
     sendAsync(
         method: SendMethods,
         uri: string,
+        body?: any,
         options: {
             headers?:
-            | HttpHeaders
-            | {
-                [header: string]: string | string[];
-            };
+                | HttpHeaders
+                | {
+                      [header: string]: string | string[];
+                  };
             observe?: 'body';
             params?:
-            | HttpParams
-            | {
-                [param: string]: string | string[];
-            };
+                | HttpParams
+                | {
+                      [param: string]: string | string[];
+                  };
             reportProgress?: boolean;
             responseType?: 'json';
             withCredentials?: boolean;
@@ -310,14 +310,17 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
             case 'delete':
                 promise = this.client.delete(uri, options).toPromise();
                 break;
+            case 'get':
+                promise = this.client.get(uri, options).toPromise();
+                break;
             case 'patch':
-                promise = this.client.patch(uri, options).toPromise();
+                promise = this.client.patch(uri, body, options).toPromise();
                 break;
             case 'post':
-                promise = this.client.post(uri, options).toPromise();
+                promise = this.client.post(uri, body, options).toPromise();
                 break;
             case 'put':
-                promise = this.client.put(uri, options).toPromise();
+                promise = this.client.put(uri, body, options).toPromise();
                 break;
         }
 
@@ -328,13 +331,18 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
         return promise;
     }
 
-    private doNextDomainSubject(subject: BehaviorSubject<TDomain>, data: object) {
-        const domainData = (this.options && this.options.domainConverter) ?
-            this.options.domainConverter(data)
-            :
-            (data as unknown) as TDomain;
+    private doNextDomainSubject(
+        subject: BehaviorSubject<TDomain>,
+        data: object
+    ) {
+        const domainData =
+            this.options && this.options.domainConverter
+                ? this.options.domainConverter(data)
+                : ((data as unknown) as TDomain);
 
-        if (domainData) { subject.next(domainData); }
+        if (domainData) {
+            subject.next(domainData);
+        }
     }
 
     private indicateBusyState(): void {
@@ -343,10 +351,9 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
     }
 
     private indicateError(uri: string, error: any): void {
-        this.serviceErrorSubject.next(error);
         this.isError = true;
-        console.error({
-            memberName: `${AppDataStore.name}.load()`,
+        this.serviceErrorSubject.next(error);
+        console.error(`${AppDataStore.name}.indicateError`, {
             uri,
             isError: this.isError,
             isLoaded: this.isLoaded,
@@ -377,12 +384,10 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
         }
 
         const filterOutAnyNullInitialValue = (x: TDomain, i: number) =>
-            ((i === 0) && (!x)) ? false : true;
+            i === 0 && !x ? false : true;
 
         this.serviceData = this.domainSubject
             .asObservable()
-            .pipe(
-                filter(filterOutAnyNullInitialValue)
-            );
+            .pipe(filter(filterOutAnyNullInitialValue));
     }
 }
