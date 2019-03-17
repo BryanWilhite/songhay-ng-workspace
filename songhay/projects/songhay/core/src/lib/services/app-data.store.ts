@@ -1,10 +1,11 @@
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
 
 import { AppDataStoreOptions } from './app-data-store.options';
+import { HttpClientOptions } from '../models/http-client-options';
 import { SendMethods } from '../models/send-methods.type';
 
 @Injectable()
@@ -114,22 +115,7 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
      */
     load(
         uri: string,
-        options: {
-            headers?:
-                | HttpHeaders
-                | {
-                      [header: string]: string | string[];
-                  };
-            observe?: 'body';
-            params?:
-                | HttpParams
-                | {
-                      [param: string]: string | string[];
-                  };
-            reportProgress?: boolean;
-            responseType?: 'json';
-            withCredentials?: boolean;
-        } = {}
+        options: HttpClientOptions = {}
     ): void {
         this.send('get', uri, null, options);
     }
@@ -158,22 +144,7 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
      */
     loadAsync(
         uri: string,
-        options: {
-            headers?:
-                | HttpHeaders
-                | {
-                      [header: string]: string | string[];
-                  };
-            observe?: 'body';
-            params?:
-                | HttpParams
-                | {
-                      [param: string]: string | string[];
-                  };
-            reportProgress?: boolean;
-            responseType?: 'json';
-            withCredentials?: boolean;
-        } = {}
+        options: HttpClientOptions = {}
     ): Promise<object> {
         return this.sendAsync('get', uri, null, options);
     }
@@ -204,22 +175,7 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
         method: SendMethods,
         uri: string,
         body?: any,
-        options: {
-            headers?:
-                | HttpHeaders
-                | {
-                      [header: string]: string | string[];
-                  };
-            observe?: 'body';
-            params?:
-                | HttpParams
-                | {
-                      [param: string]: string | string[];
-                  };
-            reportProgress?: boolean;
-            responseType?: 'json';
-            withCredentials?: boolean;
-        } = {}
+        options: HttpClientOptions = {}
     ): void {
         const defaultNext = (data: object) => {
             this.indicateLoadedState();
@@ -288,22 +244,7 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
         method: SendMethods,
         uri: string,
         body?: any,
-        options: {
-            headers?:
-                | HttpHeaders
-                | {
-                      [header: string]: string | string[];
-                  };
-            observe?: 'body';
-            params?:
-                | HttpParams
-                | {
-                      [param: string]: string | string[];
-                  };
-            reportProgress?: boolean;
-            responseType?: 'json';
-            withCredentials?: boolean;
-        } = {}
+        options: HttpClientOptions = {}
     ): Promise<object> {
         let promise: Promise<object>;
         this.indicateBusyState();
