@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DomSanitizerUtility | @songhay/core</title>
+	<title>HttpClientOptions | @songhay/core</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,38 +56,24 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_lib_services_dom_sanitizer_utility_.html">&quot;lib/services/dom-sanitizer.utility&quot;</a>
+					<a href="../modules/_lib_models_http_client_options_.html">&quot;lib/models/http-client-options&quot;</a>
 				</li>
 				<li>
-					<a href="_lib_services_dom_sanitizer_utility_.domsanitizerutility.html">DomSanitizerUtility</a>
+					<a href="_lib_models_http_client_options_.httpclientoptions.html">HttpClientOptions</a>
 				</li>
 			</ul>
-			<h1>Class DomSanitizerUtility</h1>
+			<h1>Class HttpClientOptions</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>static members for DOM manipulation</p>
-					</div>
-					<dl class="tsd-comment-tags">
-						<dt>export</dt>
-						<dd></dd>
-						<dt>class</dt>
-						<dd><p>DomSanitizerUtility</p>
-						</dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">DomSanitizerUtility</span>
+						<span class="target">HttpClientOptions</span>
 					</li>
 				</ul>
 			</section>
@@ -96,53 +82,80 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Methods</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_lib_services_dom_sanitizer_utility_.domsanitizerutility.html#getsanitizedhtml" class="tsd-kind-icon">get<wbr>Sanitized<wbr>Html</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_lib_models_http_client_options_.httpclientoptions.html#headers" class="tsd-kind-icon">headers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_lib_models_http_client_options_.httpclientoptions.html#observe" class="tsd-kind-icon">observe</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_lib_models_http_client_options_.httpclientoptions.html#params" class="tsd-kind-icon">params</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_lib_models_http_client_options_.httpclientoptions.html#reportprogress" class="tsd-kind-icon">report<wbr>Progress</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_lib_models_http_client_options_.httpclientoptions.html#responsetype" class="tsd-kind-icon">response<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_lib_models_http_client_options_.httpclientoptions.html#withcredentials" class="tsd-kind-icon">with<wbr>Credentials</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="getsanitizedhtml" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Sanitized<wbr>Html</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Sanitized<wbr>Html<span class="tsd-signature-symbol">(</span>sanitizer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DomSanitizer</span>, element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SafeHtml</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/7a9daaf/songhay/projects/songhay/core/src/lib/services/dom-sanitizer.utility.ts#L19">lib/services/dom-sanitizer.utility.ts:19</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>gets @type {SafeHtml} with the specified @type {DomSanitizer}</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>static</dt>
-									<dd></dd>
-									<dt>memberof</dt>
-									<dd><p>DomSanitizerUtility</p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>sanitizer: <span class="tsd-signature-type">DomSanitizer</span></h5>
-								</li>
-								<li>
-									<h5>element: <span class="tsd-signature-type">Element</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">SafeHtml</span></h4>
-						</li>
-					</ul>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="headers" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> headers</h3>
+					<div class="tsd-signature tsd-kind-icon">headers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HttpHeaders</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/7a9daaf/songhay/projects/songhay/core/src/lib/models/http-client-options.ts#L4">lib/models/http-client-options.ts:4</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="observe" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> observe</h3>
+					<div class="tsd-signature tsd-kind-icon">observe<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"body"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/7a9daaf/songhay/projects/songhay/core/src/lib/models/http-client-options.ts#L9">lib/models/http-client-options.ts:9</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="params" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> params</h3>
+					<div class="tsd-signature tsd-kind-icon">params<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HttpParams</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/7a9daaf/songhay/projects/songhay/core/src/lib/models/http-client-options.ts#L10">lib/models/http-client-options.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="reportprogress" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> report<wbr>Progress</h3>
+					<div class="tsd-signature tsd-kind-icon">report<wbr>Progress<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/7a9daaf/songhay/projects/songhay/core/src/lib/models/http-client-options.ts#L15">lib/models/http-client-options.ts:15</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="responsetype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> response<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">response<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"json"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/7a9daaf/songhay/projects/songhay/core/src/lib/models/http-client-options.ts#L16">lib/models/http-client-options.ts:16</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="withcredentials" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> with<wbr>Credentials</h3>
+					<div class="tsd-signature tsd-kind-icon">with<wbr>Credentials<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/7a9daaf/songhay/projects/songhay/core/src/lib/models/http-client-options.ts#L17">lib/models/http-client-options.ts:17</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -161,7 +174,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_lib_mocks_typicode_models_.html">"lib/mocks/typicode.models"</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="../modules/_lib_models_http_client_options_.html">"lib/models/http-<wbr>client-<wbr>options"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -179,7 +192,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_lib_services_app_tabular_data_store_.html">"lib/services/app-<wbr>tabular-<wbr>data.store"</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_lib_services_dom_sanitizer_utility_.html">"lib/services/dom-<wbr>sanitizer.utility"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -195,10 +208,25 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_lib_services_dom_sanitizer_utility_.domsanitizerutility.html" class="tsd-kind-icon">Dom<wbr>Sanitizer<wbr>Utility</a>
+						<a href="_lib_models_http_client_options_.httpclientoptions.html" class="tsd-kind-icon">Http<wbr>Client<wbr>Options</a>
 						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_lib_services_dom_sanitizer_utility_.domsanitizerutility.html#getsanitizedhtml" class="tsd-kind-icon">get<wbr>Sanitized<wbr>Html</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_lib_models_http_client_options_.httpclientoptions.html#headers" class="tsd-kind-icon">headers</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_lib_models_http_client_options_.httpclientoptions.html#observe" class="tsd-kind-icon">observe</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_lib_models_http_client_options_.httpclientoptions.html#params" class="tsd-kind-icon">params</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_lib_models_http_client_options_.httpclientoptions.html#reportprogress" class="tsd-kind-icon">report<wbr>Progress</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_lib_models_http_client_options_.httpclientoptions.html#responsetype" class="tsd-kind-icon">response<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_lib_models_http_client_options_.httpclientoptions.html#withcredentials" class="tsd-kind-icon">with<wbr>Credentials</a>
 							</li>
 						</ul>
 					</li>
