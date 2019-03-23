@@ -27,6 +27,9 @@ export * from './lib/components/you-tube-thumbs-navigation/you-tube-thumbs-navig
 export * from './lib/components/you-tube-thumbs-set/you-tube-thumbs-set.component';
 
 /* services */
+export * from './lib/services/you-tube-channel-data.store';
+export * from './lib/services/you-tube-channel-set-data.store';
+export * from './lib/services/you-tube-channels-index-data.store';
 export * from './lib/services/you-tube-data.service';
 export * from './lib/services/you-tube-presentation-data.services';
 

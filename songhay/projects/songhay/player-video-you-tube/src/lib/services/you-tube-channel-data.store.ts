@@ -1,15 +1,15 @@
-import { AppDataStore, AppDataStoreOptions } from '@songhay/core';
-import { YouTubeItem, YouTubeScalars } from '@songhay/player-video-you-tube';
-import { SendMethods } from 'projects/songhay/core/src/public_api';
+import { AppDataStore, AppDataStoreOptions, SendMethods } from '@songhay/core';
+import { YouTubeItem } from '../models/you-tube-item';
+import { YouTubeScalars } from '../models/you-tube-scalars';
 
 /**
  * Stores YouTube Channel item data, curated by the Songhay studio.
  *
  * @export
- * @class YouTubeItemDataStore
+ * @class YouTubeChannelDataStore
  * @extends {AppDataStore<YouTubeItem[], any>}
  */
-export class YouTubeItemDataStore extends AppDataStore<YouTubeItem[], any> {
+export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
     /**
      * returns @type {AppDataStoreOptions<YouTubeItem[], any>}
      * for this store
@@ -17,7 +17,7 @@ export class YouTubeItemDataStore extends AppDataStore<YouTubeItem[], any> {
      * @readonly
      * @static
      * @type {AppDataStoreOptions<YouTubeItem[], any>}
-     * @memberof YouTubeItemDataStore
+     * @memberof YouTubeChannelDataStore
      */
     static get options(): AppDataStoreOptions<YouTubeItem[], any> {
         return {
@@ -25,7 +25,7 @@ export class YouTubeItemDataStore extends AppDataStore<YouTubeItem[], any> {
                 switch (method) {
                     default:
                     case 'get':
-                        return YouTubeItemDataStore.getItems(data);
+                        return YouTubeChannelDataStore.getItems(data);
                 }
             }
         };
@@ -52,7 +52,7 @@ export class YouTubeItemDataStore extends AppDataStore<YouTubeItem[], any> {
      * @param {SendMethods} method
      * @param {string} [channelId]
      * @returns {string}
-     * @memberof YouTubeItemDataStore
+     * @memberof YouTubeChannelDataStore
      */
     static getUri(method: SendMethods, channelId?: string): string {
         switch (method) {
