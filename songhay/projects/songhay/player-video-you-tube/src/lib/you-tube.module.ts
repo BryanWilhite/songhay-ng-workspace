@@ -24,7 +24,8 @@ import { YouTubeThumbsSetComponent } from './components/you-tube-thumbs-set/you-
     declarations: [
         YouTubePresentationComponent,
         YouTubeThumbsComponent,
-        YouTubeThumbsNavigationComponent
+        YouTubeThumbsNavigationComponent,
+        YouTubeThumbsSetComponent
     ],
     providers: [
         YouTubeChannelDataStore,

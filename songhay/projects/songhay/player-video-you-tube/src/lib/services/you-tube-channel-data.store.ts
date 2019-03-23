@@ -11,27 +11,6 @@ import { YouTubeScalars } from '../models/you-tube-scalars';
  */
 export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
     /**
-     * returns @type {AppDataStoreOptions<YouTubeItem[], any>}
-     * for this store
-     *
-     * @readonly
-     * @static
-     * @type {AppDataStoreOptions<YouTubeItem[], any>}
-     * @memberof YouTubeChannelDataStore
-     */
-    static get options(): AppDataStoreOptions<YouTubeItem[], any> {
-        return {
-            domainConverter: (method, data) => {
-                switch (method) {
-                    default:
-                    case 'get':
-                        return YouTubeChannelDataStore.getItems(data);
-                }
-            }
-        };
-    }
-
-    /**
      * gets @type {YouTubeItem[]}
      * from JSON of the shape { items: [] } }
      *
@@ -43,6 +22,29 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
     static getItems(json: {}): YouTubeItem[] {
         const items = json['items'] as YouTubeItem[];
         return items;
+    }
+
+    /**
+     * returns @type {AppDataStoreOptions<YouTubeItem[], any>}
+     * for this store
+     *
+     * @readonly
+     * @static
+     * @type {AppDataStoreOptions<YouTubeItem[], any>}
+     * @memberof YouTubeChannelDataStore
+     */
+    static getOptions(): AppDataStoreOptions<YouTubeItem[], any> {
+        const options: AppDataStoreOptions<YouTubeItem[], any> = {
+            domainConverter: (method, data) => {
+                switch (method) {
+                    default:
+                    case 'get':
+                        return YouTubeChannelDataStore.getItems(data);
+                }
+            }
+        };
+
+        return options;
     }
 
     /**

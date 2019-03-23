@@ -14,27 +14,6 @@ export class YouTubeChannelSetDataStore extends AppDataStore<
     any
 > {
     /**
-     * returns @type {AppDataStoreOptions<Map<string, YouTubeItem[]>, any>}
-     * for this store
-     *
-     * @readonly
-     * @static
-     * @type {AppDataStoreOptions<Map<string, YouTubeItem[]>, any>}
-     * @memberof YouTubeItemDataStore
-     */
-    static get options(): AppDataStoreOptions<Map<string, YouTubeItem[]>, any> {
-        return {
-            domainConverter: (method, data) => {
-                switch (method) {
-                    default:
-                    case 'get':
-                        return YouTubeChannelSetDataStore.getItemsMap(data);
-                }
-            }
-        };
-    }
-
-    /**
      * gets @type {Map<string, YouTubeItem[]>}
      * from JSON of the shape { set: [{ items: [] }] }
      *
@@ -62,5 +41,27 @@ export class YouTubeChannelSetDataStore extends AppDataStore<
                 return [key, items] as [string, YouTubeItem[]];
             })
         );
+    }
+
+    /**
+     * returns @type {AppDataStoreOptions<Map<string, YouTubeItem[]>, any>}
+     * for this store
+     *
+     * @readonly
+     * @static
+     * @type {AppDataStoreOptions<Map<string, YouTubeItem[]>, any>}
+     * @memberof YouTubeItemDataStore
+     */
+    static getOptions(): AppDataStoreOptions<Map<string, YouTubeItem[]>, any> {
+        const options: AppDataStoreOptions<Map<string, YouTubeItem[]>, any> = {
+            domainConverter: (method, data) => {
+                switch (method) {
+                    default:
+                    case 'get':
+                        return YouTubeChannelSetDataStore.getItemsMap(data);
+                }
+            }
+        };
+        return options;
     }
 }
