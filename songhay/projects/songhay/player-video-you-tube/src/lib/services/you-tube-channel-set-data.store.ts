@@ -21,7 +21,7 @@ export class YouTubeChannelSetDataStore extends AppDataStore<
      * @static
      * @param {{}} json
      * @returns {Map<string, YouTubeItem[]>}
-     * @memberof YouTubeDataService
+     * @memberof YouTubeChannelSetDataStore
      */
     static getItemsMap(json: {}): Map<string, YouTubeItem[]> {
         const set = Array.from(json['set']).filter(i => {
@@ -51,7 +51,7 @@ export class YouTubeChannelSetDataStore extends AppDataStore<
      * @readonly
      * @static
      * @type {AppDataStoreOptions<Map<string, YouTubeItem[]>, any>}
-     * @memberof YouTubeItemDataStore
+     * @memberof YouTubeChannelSetDataStore
      */
     static getOptions(): AppDataStoreOptions<Map<string, YouTubeItem[]>, any> {
         const options: AppDataStoreOptions<Map<string, YouTubeItem[]>, any> = {

@@ -4,11 +4,12 @@ import { RouterModule } from '@angular/router';
 
 import { MaterialModule } from './material.module';
 
-import { YouTubeDataService } from './services/you-tube-data.service';
-import { YouTubePresentationDataServices } from './services/you-tube-presentation-data.services';
 import { YouTubeChannelDataStore } from './services/you-tube-channel-data.store';
 import { YouTubeChannelSetDataStore } from './services/you-tube-channel-set-data.store';
 import { YouTubeChannelsIndexDataStore } from './services/you-tube-channels-index-data.store';
+import { YouTubeChannelsPresentationDataStore } from './services/you-tube-channels-presentation-data.store';
+import { YouTubeDataService } from './services/you-tube-data.service';
+import { YouTubePresentationDataServices } from './services/you-tube-presentation-data.services';
 
 import { YouTubePresentationComponent } from './components/you-tube-presentation/you-tube-presentation.component';
 import { YouTubeThumbsComponent } from './components/you-tube-thumbs/you-tube-thumbs.component';
@@ -31,6 +32,7 @@ import { YouTubeThumbsSetComponent } from './components/you-tube-thumbs-set/you-
         YouTubeChannelDataStore,
         YouTubeChannelSetDataStore,
         YouTubeChannelsIndexDataStore,
+        YouTubeChannelsPresentationDataStore,
         YouTubeDataService,
         YouTubePresentationDataServices
     ],

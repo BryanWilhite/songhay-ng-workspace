@@ -17,7 +17,7 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
      * @static
      * @param {{}} json
      * @returns {YouTubeItem[]}
-     * @memberof YouTubeDataService
+     * @memberof YouTubeChannelDataStore
      */
     static getItems(json: {}): YouTubeItem[] {
         const items = json['items'] as YouTubeItem[];
