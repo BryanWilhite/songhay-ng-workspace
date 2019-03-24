@@ -52,17 +52,17 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
      *
      * @static
      * @param {SendMethods} method
-     * @param {string} [channelId]
+     * @param {string} [suffix]
      * @returns {string}
      * @memberof YouTubeChannelDataStore
      */
-    static getUri(method: SendMethods, channelId?: string): string {
+    static getUri(method: SendMethods, suffix?: string): string {
         switch (method) {
             default:
             case 'get':
                 return `${YouTubeScalars.rxYouTubeApiRootUri}${
-                    YouTubeScalars.rxYouTubeApiPlaylistPath
-                }${channelId}`;
+                    YouTubeScalars.rxYouTubeApiPlaylistsIndexPath
+                }${suffix}`;
         }
     }
 }

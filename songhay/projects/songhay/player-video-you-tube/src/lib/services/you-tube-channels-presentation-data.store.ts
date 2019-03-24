@@ -1,16 +1,16 @@
 import { AppDataStore, SendMethods } from '@songhay/core';
-import { GenericWebIndex } from '../models/generic-web-index';
 import { YouTubeScalars } from '../models/you-tube-scalars';
+import { YouTubePresentation } from '../models/you-tube-presentation';
 
 /**
  * Stores YouTube Channel index data, curated by the Songhay studio.
  *
  * @export
- * @class YouTubeChannelsIndexDataStore
- * @extends {AppDataStore<GenericWebIndex, any>}
+ * @class YouTubeChannelsPresentationDataStore
+ * @extends {AppDataStore<YouTubePresentation, any>}
  */
-export class YouTubeChannelsIndexDataStore extends AppDataStore<
-    GenericWebIndex,
+export class YouTubeChannelsPresentationDataStore extends AppDataStore<
+    YouTubePresentation,
     any
 > {
     /**
@@ -20,15 +20,13 @@ export class YouTubeChannelsIndexDataStore extends AppDataStore<
      * @param {SendMethods} method
      * @param {string} [id]
      * @returns {string}
-     * @memberof YouTubeChannelsIndexDataStore
+     * @memberof YouTubeChannelsPresentationDataStore
      */
     static getUri(method: SendMethods, id?: string): string {
         switch (method) {
             default:
             case 'get':
-                return `${YouTubeScalars.rxYouTubeApiRootUri}${
-                    YouTubeScalars.rxYouTubeApiVideosPath
-                }${id}`;
+                return `${YouTubeScalars.rxYouTubeApiRootUri}${id}`;
         }
     }
 }

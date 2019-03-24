@@ -1,6 +1,7 @@
-import { AppDataStore, AppDataStoreOptions } from '@songhay/core';
+import { AppDataStore, AppDataStoreOptions, SendMethods } from '@songhay/core';
 import { YouTubeChannelDataStore } from './you-tube-channel-data.store';
 import { YouTubeItem } from '../models/you-tube-item';
+import { YouTubeScalars } from '../models/you-tube-scalars';
 
 /**
  * Stores map of YouTube items for displaying sets of thumbnails by channel.
@@ -63,5 +64,25 @@ export class YouTubeChannelSetDataStore extends AppDataStore<
             }
         };
         return options;
+    }
+
+    /**
+     * gets the URI based on the specified @type {SendMethods}
+     *
+     * @static
+     * @param {SendMethods} method
+     * @param {string} [suffix]
+     * @param {string} [id]
+     * @returns {string}
+     * @memberof YouTubeChannelSetDataStore
+     */
+    static getUri(method: SendMethods, suffix?: string, id?: string): string {
+        switch (method) {
+            default:
+            case 'get':
+                return `${YouTubeScalars.rxYouTubeApiRootUri}${
+                    YouTubeScalars.rxYouTubeApiPlaylistsPath
+                }${suffix}/${id}`;
+        }
     }
 }
