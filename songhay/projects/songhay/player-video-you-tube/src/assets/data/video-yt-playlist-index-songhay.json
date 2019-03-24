@@ -1,0 +1,1533 @@
+{
+    "ClientId": "youtube-index-songhay",
+    "SegmentId": 0,
+    "SegmentName": "YouTube Index for songhaysystem.com",
+    "Documents": [
+        {
+            "ClientId": "code",
+            "DocumentId": 0,
+            "Title": "Code",
+            "Fragments": [
+                {
+                    "ClientId": "advanced-systems-concepts-inc",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-01-22T15:27:48Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "amazon-web-services",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T23:10:15Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "amazon-web-services-webinar-channel",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T22:36:26Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "angular-firebase",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T17:41:33Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "angularair",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-20T19:08:16Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "angularconnect",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-02-18T16:54:57Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "angularnyc",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-19T00:02:09Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "apollo-graphql",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-12-05T01:02:16Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "assemblytv",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-02-25T07:45:00Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "atlassian",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-18T18:07:47Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "aureliacasts",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-03-15T13:00:03Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "azure-logic-apps",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T19:08:37Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "brian-lagunas",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-13T23:53:16Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "corey-schafer",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-18T17:00:03Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "derek-banas",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T13:19:10Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "devchat-tv",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T23:41:23Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "edward-kmett",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-12-13T22:16:36Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "facebook-developers",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T23:29:43Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "gdc",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-13T15:45:01Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "github",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-14T17:29:51Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "google-chrome-developers",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-13T23:29:36Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "google-cloud",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T23:45:07Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "google-developers",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T20:37:49Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "google-webmasters",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T09:47:22Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "goto-conferences",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T12:55:49Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "haskellcast",
+                    "FragmentId": 0,
+                    "ModificationDate": "2014-06-10T15:01:03Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "icfp-video",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-12-17T02:51:39Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "indiecade",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-03-20T19:45:41Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "javascript-evangelist",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-11-29T07:33:54Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "javascriptla",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-02-27T21:11:13Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "lambda-world",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-01-31T15:16:19Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "linkedin-learning",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-07T23:45:15Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "mark-jay",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-09-01T22:20:26Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "microsoft-azure",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-18T16:00:09Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "microsoft-developer",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T16:00:15Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "microsoft-ignite",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-12-06T02:55:51Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "microsoft-office-365",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T17:33:41Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "microsoft-research",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T16:59:34Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "microsoft-visual-studio",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T20:57:13Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "ms-dev-show",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-12-11T01:11:04Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "ndc-conferences",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T12:52:49Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "ng-conf",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T19:42:19Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "net-foundation",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T19:42:05Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "net-rocks",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-02-05T23:50:11Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "netflix-ui-engineering",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-02-01T05:16:57Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "nghouston-angular-meetup",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-20T17:49:23Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "ody-mbegbu",
+                    "FragmentId": 0,
+                    "ModificationDate": "2017-12-26T00:32:40Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "open-data-science",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-02-22T17:47:06Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "philly-posh",
+                    "FragmentId": 0,
+                    "ModificationDate": "2016-11-07T03:55:00Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "powershell-org",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-05-04T18:00:28Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "pycon-2017",
+                    "FragmentId": 0,
+                    "ModificationDate": "2017-05-22T00:58:17Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "pydata",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-17T12:39:20Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "rangle-io",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-09T19:52:00Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "relativity",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-07T19:37:06Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "serverlessconf",
+                    "FragmentId": 0,
+                    "ModificationDate": "2017-08-28T19:51:05Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "ssw-tv-videos-for-developers-by-developers",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-01T07:29:09Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "steven-skiena",
+                    "FragmentId": 0,
+                    "ModificationDate": "2017-03-20T23:06:47Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "the-data-science-show",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-01-13T14:33:46Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "the-magic-of-sql",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-12-20T09:51:30Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "victor-lavrenko",
+                    "FragmentId": 0,
+                    "ModificationDate": "2015-09-18T13:30:53Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "wolfram",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T20:07:29Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "wpcrafter-com-wordpress-for-non-techies",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T22:42:24Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "wpf",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-07-06T06:37:24Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "xamarin",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-02-22T18:00:05Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                }
+            ],
+            "WebKeywords": [],
+            "Segments": []
+        },
+        {
+            "ClientId": "hardware",
+            "DocumentId": 0,
+            "Title": "Hardware",
+            "Fragments": [
+                {
+                    "ClientId": "amd",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T14:42:10Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "asus",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-19T16:28:32Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "autogef-hl",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T18:15:01Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "canonusa",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-15T13:51:50Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "cultofmactv",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-04T16:27:03Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "dubspot",
+                    "FragmentId": 0,
+                    "ModificationDate": "2016-06-22T16:06:32Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "ehx",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-04T19:16:27Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "formlabs",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-01T09:47:44Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "fullychargedshow",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T08:00:30Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "goodereader",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T13:02:17Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "google-design",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-15T19:21:32Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "ifixit-video",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-19T18:09:32Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "ieee-spectrum",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-01-30T05:14:32Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "kitgurutech",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T14:51:02Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "lenovo",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-19T18:06:10Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "level1linux",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-18T22:14:18Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "level1techs",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T04:30:00Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "logitech",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-15T17:10:41Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "matthews-studio-equipment",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-13T15:16:48Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "mjlorton",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-12-19T18:48:10Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "mobiletechreview",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T22:00:02Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "mspoweruser",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-02-20T20:01:04Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "muff-wiggler",
+                    "FragmentId": 0,
+                    "ModificationDate": "2015-12-31T07:48:07Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "neowin",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T19:00:07Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "novationtv",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T15:49:54Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "nsquaredmagic",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-09-06T01:43:03Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "pcper",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T15:29:40Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "playstation",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T00:24:41Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "raspberry-pi",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-14T16:07:13Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "redline-reviews",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T17:00:01Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "rewa-technology",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-20T12:47:56Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "schiitferbrainz",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-10-30T15:06:31Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "silicon-valley-virtual-reality",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-03-13T20:45:17Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "sparkfun-electronics",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T21:04:10Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "stereophile",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-05-21T04:25:35Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "strange-parts",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-09T15:04:55Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "surface",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-02-08T22:59:07Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "synology",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-02-20T06:05:01Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "the-linux-foundation",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-15T19:11:14Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "the-mac-observer",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-01-10T01:04:07Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "the-tuesday-night-machines",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T19:12:45Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "theraspberrypiguy",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-02-04T21:09:18Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "toyota-usa",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T19:00:03Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "transport-evolved",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T13:00:02Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "twittwich",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T00:10:20Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "uravgconsumer",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T15:05:07Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "wacom",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T14:55:16Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "windows-iot",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-09-17T16:15:26Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "xbox",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T23:58:22Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "xotic-pc",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T15:12:56Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                }
+            ],
+            "WebKeywords": [],
+            "Segments": []
+        },
+        {
+            "ClientId": "media-building",
+            "DocumentId": 0,
+            "Title": "Media Building",
+            "Fragments": [
+                {
+                    "ClientId": "500px",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-02-12T14:48:29Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "adobe-creative-cloud",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T21:59:27Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "amazon-kdp",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-02-13T00:00:33Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "ant-pruitt",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T21:48:05Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "autodesk",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T21:22:01Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "autodesk-education",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-11-29T21:53:40Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "blackmagic-design",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-05T13:14:25Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "blender-foundation",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-02-03T20:44:57Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "blender-guru",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-15T08:17:08Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "blenderwiz",
+                    "FragmentId": 0,
+                    "ModificationDate": "2014-08-14T04:14:11Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "cd-baby",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-15T23:30:15Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "cg-cookie-blender",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-18T14:19:57Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "cg-geek",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T14:36:29Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "cg-masters",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-02-15T06:06:53Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "celemony",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-10-02T10:36:23Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "dave-dugdale",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-08T16:50:01Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "digitalfoundry",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T15:19:30Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "eyeonsoftware",
+                    "FragmentId": 0,
+                    "ModificationDate": "2014-09-09T16:36:48Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "famous",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-18T18:25:30Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "gleb-alexandrov",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-05T14:24:06Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "high-resolution",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-01-02T17:57:01Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "joe-bowser",
+                    "FragmentId": 0,
+                    "ModificationDate": "2017-10-20T18:15:19Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "kelbyone",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T13:27:24Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "hootsuite",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-20T19:00:03Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "izotope-inc",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T15:40:17Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "magix",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-19T15:27:51Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "mchanga",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-01-09T07:49:04Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "native-instruments",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T17:01:38Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "pixel-corps",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-10-01T23:04:59Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "produce-like-a-pro",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T18:02:55Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "recordingrevolution",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T11:25:38Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "remington-graphics",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-01-09T23:01:40Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "roli",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T15:29:33Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "ross-draws",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-08T19:00:03Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "sci-fi-animator",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-01-06T02:49:07Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "sonysoftwareofficial",
+                    "FragmentId": 0,
+                    "ModificationDate": "2016-03-09T19:26:37Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "the-cgbros",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T20:00:00Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "this-week-in-photo-twip",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T16:47:13Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "unity",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T01:12:35Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "ux-lx",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-02-14T11:18:36Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "ux-salon",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-02-28T00:18:01Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "vincent-flanders",
+                    "FragmentId": 0,
+                    "ModificationDate": "2015-05-11T02:47:41Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "wowza-media-systems",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T15:26:18Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                }
+            ],
+            "WebKeywords": [],
+            "Segments": []
+        },
+        {
+            "ClientId": "news",
+            "DocumentId": 0,
+            "Title": "News",
+            "Fragments": [
+                {
+                    "ClientId": "android-authority",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-19T22:28:21Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "blacks-in-technology",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-07T04:09:40Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "cnet",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T13:00:11Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "daily-tech-news-show",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T21:36:10Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "e-for-electric",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T20:14:15Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "engadget",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T13:00:06Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "first-ring-daily",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T18:13:16Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "idg-tv",
+                    "FragmentId": 0,
+                    "ModificationDate": "2017-08-14T18:19:01Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "macworld",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T19:28:15Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "newegg-tv",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-16T00:08:26Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "pcworldvideos",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T20:27:31Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "security-now",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-20T06:34:40Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "tested",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T14:00:05Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "the-verge",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T14:00:04Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "thisweekintech",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-18T05:54:56Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "twit-live-specials",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-19T20:31:02Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "twitmacbreak",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-20T05:09:22Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "windows-central",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T19:13:42Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "windows-weekly",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T05:00:05Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                }
+            ],
+            "WebKeywords": [],
+            "Segments": []
+        },
+        {
+            "ClientId": "personalities",
+            "DocumentId": 0,
+            "Title": "Personalities",
+            "Fragments": [
+                {
+                    "ClientId": "barnacules-nerdgasm",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T03:28:41Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "brad-sams",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T22:53:52Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "byte-review",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-10T21:00:03Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "computerhistory",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-11T21:24:43Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "donovanbrown-com",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-03-05T14:47:44Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "hak5",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-19T14:00:06Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "hardwarecanucks",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T15:00:07Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "imore-show",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T18:02:58Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "j-williams",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T21:32:15Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "jayztwocents",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-20T20:34:38Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "jerry-neutron",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-20T23:57:43Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "lamarr-wilson",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T22:55:46Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "linustechtips",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T19:00:47Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "marques-brownlee",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-18T22:53:56Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "mrmobile-michael-fisher",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T17:52:01Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "scott-nimrod",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T12:27:43Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "sethbling",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-16T19:00:03Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "techaltar",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-19T11:00:00Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "tekthing",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T15:02:02Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "terry-white",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-23T12:15:01Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "tedx-talks",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-22T14:37:08Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "the-new-screen-savers",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-12-29T19:12:42Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "the-science-elf",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-09T16:59:54Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "what-the-tech-podcast",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-19T21:32:23Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                }
+            ],
+            "WebKeywords": [],
+            "Segments": []
+        },
+        {
+            "ClientId": "previous-clients",
+            "DocumentId": 0,
+            "Title": "Previous Clients and Affiliations",
+            "Fragments": [
+                {
+                    "ClientId": "20th-century-fox",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-20T12:59:50Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "amazon",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-21T21:55:53Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "amgen",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-08T18:13:08Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "cetera-financial-group",
+                    "FragmentId": 0,
+                    "ModificationDate": "2015-11-18T18:46:42Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "emmett-ochs-management-department",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-19T22:50:32Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "fujitsutenlimited",
+                    "FragmentId": 0,
+                    "ModificationDate": "2018-11-30T07:56:08Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "house-of-blues",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-02-05T21:03:55Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "pimco",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-20T17:10:44Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "ucla",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-02-27T00:04:30Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                },
+                {
+                    "ClientId": "universal-studios-hollywood",
+                    "FragmentId": 0,
+                    "ModificationDate": "2019-03-11T16:29:25Z",
+                    "NextFragments": [],
+                    "PrevFragments": []
+                }
+            ],
+            "WebKeywords": [],
+            "Segments": []
+        }
+    ],
+    "ChildSegments": [],
+    "SegmentDocuments": []
+}

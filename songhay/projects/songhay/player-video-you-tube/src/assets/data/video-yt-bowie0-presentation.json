@@ -1,0 +1,96 @@
+{
+    "Presentation": {
+        "@ClientId": "2008-10-28-22-48-06-IDANAYZBIDAOAYZB-1",
+        "@Category": "4304",
+        "@ModDate": "2008-10-28T23:48:37",
+        "@PubDate": "2008-10-28T22:48:06",
+        "@Uri": "./swf_video/?key=bowie0",
+        "@UriHeader": "93217",
+        "@UriFooter": "-1",
+        "@Template": "9058",
+        "@IntroUri": "./p_bowie0.html",
+        "LayoutMetadata": {
+            "@version": "1.0",
+            "@backgroundColor": "#000",
+            "@borderColor": "#000",
+            "playlist": { "@backgroundColor": "#000", "@color": "#fff" },
+            "prose": { "@backgroundColor": "#000", "@color": "#fff" },
+            "title": {
+                "@backgroundColor": "#767676",
+                "@color": "#fff",
+                "@display": "block"
+            }
+        },
+        "Title": "the rasx() Bowie Collection (YouTube.com)",
+        "Description": {
+            "@ClientId": "2008-10-28-22-50-21-IDACQKECIDADQKEC-1",
+            "@Header": "93220",
+            "@Footer": "-1",
+            "#text": "<div>I have been exposing my teenaged, virginal fascination with David Bowie on the Web since “<a href=\"http://songhay7lxv/dev_kintespace/rasx05.html\">Black Tie White Noise</a>” (1998). For legal reasons alone, I would have never imagined that the day would come when I could watch David Bowie music videos leisurely on demand at <em>any</em> resolution for no additional cost. Even though my selections at YouTube.com can disappear at any moment, I have finally revised my imagination and present my long-time Bowie favorites.</div><div> </div><div>Legal machinations aside, my intentions are to share with you my favorite music video of all time, “Ashes to Ashes,” why I call myself “the kinté space oddity,” some comedy from <a href=\"http://www.kintespace.com/rasx30.html\">the Seu Jorge character</a> and a possible glimpse at Luther Vandross (Bowie’s vocal arranger for the <a title=\"Buy this product at Amazon.com\" href=\"http://www.amazon.com/exec/obidos/ASIN/B000TEVFPQ/thekintespacec00A/\"><em>Young Americans</em></a> project) on an old ’70s Tee Vee show. Let’s see what happens: It’s too late to be hateful. The European Man is <a href=\"http://songhay7lxv/dev_kintespace/rasx15.html\">here</a>.</div><div> </div>"
+        },
+        "Credits": {
+            "@ClientId": "2008-10-28-22-51-02-IDACALECIDADALEC-1",
+            "@Header": "93219",
+            "@Footer": "-1",
+            "#text": "<div><a href=\"http://www.youtube.com/user/DavidBowieTv\">David Bowie TV</a> presents “I’m Afraid of Americans,” “Ashes to Ashes,” “Life on Mars?” and “Space Oddity”</div><div> </div><div><a href=\"http://www.youtube.com/user/bloggocentricidades\">bloggocentricidades</a> presents “Life On Mars (Seu Jorge)”</div><div> </div><div><a href=\"http://www.youtube.com/user/davidcantello\">davidcantello</a> presents “David Bowie with Luther Vandross (?) on Dick Cavett (1974)”</div><div> </div><div>Presentation Design and Research by. . . . . . . <strong>Bryan Wilhite</strong></div>"
+        },
+        "Copyright": {
+            "@Name": "David Bowie",
+            "@Year": "2008",
+            "@Header": "-1",
+            "@Footer": "-1"
+        },
+        "ItemGroup": {
+            "Item": [
+                {
+                    "@ClientId": "2008-10-28-22-48-06-IDARBYZBIDASBYZB-1",
+                    "@Uri": "http://youtube.com/v/4OMR4PE_Jfk",
+                    "@Header": "-1",
+                    "@Footer": "-1",
+                    "@Format": "Block",
+                    "#text": "I’m Afraid of Americans"
+                },
+                {
+                    "@ClientId": "2008-10-28-22-53-30-IDANZZZBIDAOZZZB-1",
+                    "@Uri": "http://youtube.com/v/HIl56jg3wSo",
+                    "@Header": "-1",
+                    "@Footer": "-1",
+                    "@Format": "Block",
+                    "#text": "Ashes to Ashes"
+                },
+                {
+                    "@ClientId": "2008-10-28-22-54-53-IDANRIWCIDAORIWC-1",
+                    "@Uri": "http://youtube.com/v/4Z-o5r47dDI",
+                    "@Header": "-1",
+                    "@Footer": "-1",
+                    "@Format": "Block",
+                    "#text": "David Bowie with Luther Vandross (?) on Dick Cavett (1974)"
+                },
+                {
+                    "@ClientId": "2008-10-28-22-59-15-IDACAJWCIDADAJWC-1",
+                    "@Uri": "http://youtube.com/v/nnNJVHNopuo",
+                    "@Header": "-1",
+                    "@Footer": "-1",
+                    "@Format": "Block",
+                    "div": "Life on Mars?"
+                },
+                {
+                    "@ClientId": "2008-10-28-22-59-51-IDACQJWCIDADQJWC-1",
+                    "@Uri": "http://youtube.com/v/w6l8zrsf4LY",
+                    "@Header": "-1",
+                    "@Footer": "-1",
+                    "@Format": "Block",
+                    "#text": "Life On Mars (Seu Jorge)"
+                },
+                {
+                    "@ClientId": "2008-10-28-23-02-34-IDACAKWCIDADAKWC-1",
+                    "@Uri": "http://youtube.com/v/tw07JpVaTlo",
+                    "@Header": "-1",
+                    "@Footer": "-1",
+                    "@Format": "Block",
+                    "#text": "Space Oddity"
+                }
+            ]
+        }
+    }
+}
