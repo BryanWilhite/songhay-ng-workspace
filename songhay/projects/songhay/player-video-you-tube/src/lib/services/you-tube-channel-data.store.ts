@@ -19,12 +19,19 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
      * from JSON of the shape { items: [] } }
      *
      * @static
-     * @param {{}} json
+     * @param {{ items: {} }} json
      * @returns {YouTubeItem[]}
      * @memberof YouTubeChannelDataStore
      */
     static getItems(json: {}): YouTubeItem[] {
-        const items = json['items'] as YouTubeItem[];
+        const data = json as { items: {} };
+        if (!data) {
+            throw Error('The expected YouTubeItem[] data shape is not here.');
+        }
+        const items = data.items as YouTubeItem[];
+        if (!items) {
+            throw Error('The expected YouTubeItem[] data is not here.');
+        }
         return items;
     }
 
@@ -76,9 +83,6 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
      * @memberof YouTubeChannelDataStore
      */
     constructor(injector: Injector) {
-        super(
-            injector.get<HttpClient>(HttpClient),
-            YouTubeChannelDataStore.getOptions()
-        );
+        super(injector.get(HttpClient), YouTubeChannelDataStore.getOptions());
     }
 }
