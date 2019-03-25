@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;lib/mocks/you-tube-data-service.mock&quot; | @songhay/player-video-you-tube</title>
+	<title>GenericWebIndex | @songhay/player-video-you-tube</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,26 +56,127 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_lib_mocks_you_tube_data_service_mock_.html">&quot;lib/mocks/you-tube-data-service.mock&quot;</a>
+					<a href="../modules/_lib_models_generic_web_index_.html">&quot;lib/models/generic-web-index&quot;</a>
+				</li>
+				<li>
+					<a href="_lib_models_generic_web_index_.genericwebindex.html">GenericWebIndex</a>
 				</li>
 			</ul>
-			<h1>External module &quot;lib/mocks/you-tube-data-service.mock&quot;</h1>
+			<h1>Interface GenericWebIndex</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Defines an index based on GenericWeb types.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>export</dt>
+						<dd></dd>
+						<dt>interface</dt>
+						<dd><p>GenericWebIndex</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">GenericWebIndex</span>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Classes</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-parent-kind-external-module"><a href="../classes/_lib_mocks_you_tube_data_service_mock_.youtubedataservicemock.html" class="tsd-kind-icon">You<wbr>Tube<wbr>Data<wbr>Service<wbr>Mock</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_lib_models_generic_web_index_.genericwebindex.html#clientid" class="tsd-kind-icon">client<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_lib_models_generic_web_index_.genericwebindex.html#documents" class="tsd-kind-icon">documents</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_lib_models_generic_web_index_.genericwebindex.html#segmentname" class="tsd-kind-icon">segment<wbr>Name</a></li>
 							</ul>
 						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="clientid" class="tsd-anchor"></a>
+					<h3>client<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">client<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/player-video-you-tube/src/lib/models/generic-web-index.ts#L16">lib/models/generic-web-index.ts:16</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>type{segment.clientid}</dt>
+							<dd></dd>
+							<dt>type</dt>
+							<dd><p>{string}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>GenericWebIndex</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="documents" class="tsd-anchor"></a>
+					<h3>documents</h3>
+					<div class="tsd-signature tsd-kind-icon">documents<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/player-video-you-tube/src/lib/models/generic-web-index.ts#L28">lib/models/generic-web-index.ts:28</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>patched version of @type {Document[]} with {Fragment[]}</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{{
+									clientId: string;
+									fragments: Fragment[];
+									modificationDate: Date;
+								}[]}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>GenericWebIndex</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="segmentname" class="tsd-anchor"></a>
+					<h3>segment<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">segment<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/player-video-you-tube/src/lib/models/generic-web-index.ts#L40">lib/models/generic-web-index.ts:40</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>type{segment.segmentname}</dt>
+							<dd></dd>
+							<dt>type</dt>
+							<dd><p>{string}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>GenericWebIndex</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 			</section>
@@ -87,15 +188,30 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_lib_mocks_you_tube_data_service_mock_.html">"lib/mocks/you-<wbr>tube-<wbr>data-<wbr>service.mock"</a>
+						<a href="../modules/_lib_models_generic_web_index_.html">"lib/models/generic-<wbr>web-<wbr>index"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_lib_mocks_you_tube_data_service_mock_.youtubedataservicemock.html" class="tsd-kind-icon">You<wbr>Tube<wbr>Data<wbr>Service<wbr>Mock</a>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_lib_models_generic_web_index_.genericwebindex.html" class="tsd-kind-icon">Generic<wbr>Web<wbr>Index</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_lib_models_generic_web_index_.genericwebindex.html#clientid" class="tsd-kind-icon">client<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_lib_models_generic_web_index_.genericwebindex.html#documents" class="tsd-kind-icon">documents</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_lib_models_generic_web_index_.genericwebindex.html#segmentname" class="tsd-kind-icon">segment<wbr>Name</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 				</ul>
 			</nav>
 		</div>
