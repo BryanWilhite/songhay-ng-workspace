@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { AppDataStore, SendMethods } from '@songhay/core';
 import { GenericWebIndex } from '../models/generic-web-index';
 import { YouTubeScalars } from '../models/you-tube-scalars';
@@ -9,6 +10,7 @@ import { YouTubeScalars } from '../models/you-tube-scalars';
  * @class YouTubeChannelsIndexDataStore
  * @extends {AppDataStore<GenericWebIndex, any>}
  */
+@Injectable()
 export class YouTubeChannelsIndexDataStore extends AppDataStore<
     GenericWebIndex,
     any

@@ -1,4 +1,7 @@
+import { Injectable, Injector } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { AppDataStore, AppDataStoreOptions, SendMethods } from '@songhay/core';
+
 import { YouTubeItem } from '../models/you-tube-item';
 import { YouTubeScalars } from '../models/you-tube-scalars';
 
@@ -9,6 +12,7 @@ import { YouTubeScalars } from '../models/you-tube-scalars';
  * @class YouTubeChannelDataStore
  * @extends {AppDataStore<YouTubeItem[], any>}
  */
+@Injectable()
 export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
     /**
      * gets @type {YouTubeItem[]}
@@ -64,5 +68,17 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
                     YouTubeScalars.rxYouTubeApiPlaylistsIndexPath
                 }${suffix}`;
         }
+    }
+
+    /**
+     * Creates an instance of @type {YouTubeChannelDataStore}.
+     * @param {Injector} injector
+     * @memberof YouTubeChannelDataStore
+     */
+    constructor(injector: Injector) {
+        super(
+            injector.get<HttpClient>(HttpClient),
+            YouTubeChannelDataStore.getOptions()
+        );
     }
 }

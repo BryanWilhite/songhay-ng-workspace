@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { AppDataStore, SendMethods } from '@songhay/core';
 import { YouTubeScalars } from '../models/you-tube-scalars';
 import { YouTubePresentation } from '../models/you-tube-presentation';
@@ -9,6 +10,7 @@ import { YouTubePresentation } from '../models/you-tube-presentation';
  * @class YouTubeChannelsPresentationDataStore
  * @extends {AppDataStore<YouTubePresentation, any>}
  */
+@Injectable()
 export class YouTubeChannelsPresentationDataStore extends AppDataStore<
     YouTubePresentation,
     any

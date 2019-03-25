@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { AppDataStore, AppDataStoreOptions, SendMethods } from '@songhay/core';
 import { YouTubeChannelDataStore } from './you-tube-channel-data.store';
 import { YouTubeItem } from '../models/you-tube-item';
@@ -10,6 +11,7 @@ import { YouTubeScalars } from '../models/you-tube-scalars';
  * @class YouTubeChannelSetDataStore
  * @extends {AppDataStore<Map<string, YouTubeItem[]>, any>}
  */
+@Injectable()
 export class YouTubeChannelSetDataStore extends AppDataStore<
     Map<string, YouTubeItem[]>,
     any
