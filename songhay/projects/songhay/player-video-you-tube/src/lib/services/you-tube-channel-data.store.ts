@@ -45,16 +45,14 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
      * @memberof YouTubeChannelDataStore
      */
     static getOptions(): AppDataStoreOptions<YouTubeItem[], any> {
-        const options: AppDataStoreOptions<YouTubeItem[], any> = {
-            domainConverter: (method, data) => {
-                switch (method) {
-                    default:
-                    case 'get':
-                        return YouTubeChannelDataStore.getItems(data);
-                }
+        const options = new AppDataStoreOptions<YouTubeItem[], any>();
+        options.domainConverter = (method, data) => {
+            switch (method) {
+                default:
+                case 'get':
+                    return this.getItems(data);
             }
         };
-
         return options;
     }
 

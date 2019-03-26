@@ -74,7 +74,7 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
      */
     constructor(
         private client: HttpClient,
-        private options?: AppDataStoreOptions<TDomain, TError>
+        public options?: AppDataStoreOptions<TDomain, TError>
     ) {
         this.isError = false;
         this.isLoaded = false;
