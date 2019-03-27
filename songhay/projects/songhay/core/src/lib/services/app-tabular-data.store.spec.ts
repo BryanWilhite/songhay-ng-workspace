@@ -8,19 +8,24 @@ import { AppTabularDataStore } from './app-tabular-data.store';
 
 const LIVE_API_BASE_URI = 'http://jsonplaceholder.typicode.com';
 
+class MockDomainStore extends AppTabularDataStore<object, any> {
+    protected get options(): AppDataStoreOptions<object, any> {
+        return {
+            initialValue: () => ({ greeting: 'Hello world!' })
+        };
+    }
+}
+
+class MockUserDomainStore extends AppTabularDataStore<Typicode.User, any> {}
+
 describe(`${
     AppTabularDataStore.name
 } with initial, \`object[]\` value and \`any\` error`, () => {
-    const optionsForObject: AppDataStoreOptions<object, any> = {
-        initialValue: () => [{ greeting: 'Hello world!' }]
-    };
-
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientModule],
             providers: [
-                { provide: AppDataStoreOptions, useValue: optionsForObject },
-                AppTabularDataStore
+                { provide: AppTabularDataStore, useClass: MockDomainStore }
             ]
         });
     });
@@ -33,14 +38,11 @@ describe(`${
     ));
 
     describe('User service with `null` default value and `any` error', () => {
-        const optionsForUser: AppDataStoreOptions<Typicode.User, any> = {};
-
         beforeEach(() => {
             TestBed.configureTestingModule({
                 imports: [HttpClientModule],
                 providers: [
-                    { provide: AppDataStoreOptions, useValue: optionsForUser },
-                    AppTabularDataStore
+                    { provide: AppTabularDataStore, useClass: MockUserDomainStore }
                 ]
             });
         });

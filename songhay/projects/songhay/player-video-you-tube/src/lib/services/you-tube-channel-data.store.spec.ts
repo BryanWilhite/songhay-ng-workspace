@@ -10,29 +10,17 @@ import { YouTubeChannelDataStore } from './you-tube-channel-data.store.js';
 import * as videos from '../mocks/data/video-yt-bowie0-videos.json';
 
 describe(`${YouTubeChannelDataStore.name}`, () => {
-    const getOptionsMethodName = 'getOptions';
-    let spyOnGetOptions: jasmine.Spy;
-
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule],
             providers: [YouTubeChannelDataStore]
         });
-
-        spyOnGetOptions = spyOn(YouTubeChannelDataStore, getOptionsMethodName);
     });
 
     it('should instantiate', inject(
         [YouTubeChannelDataStore],
         (service: YouTubeChannelDataStore) => {
             expect(service).toBeTruthy();
-        }
-    ));
-
-    it(`should call ${getOptionsMethodName} once`, inject(
-        [YouTubeChannelDataStore],
-        (service: YouTubeChannelDataStore) => {
-            expect(spyOnGetOptions).toHaveBeenCalledTimes(1);
         }
     ));
 
@@ -73,8 +61,6 @@ describe(`${YouTubeChannelDataStore.name}`, () => {
                         endpointMethod,
                         suffix
                     );
-                    const spy = spyOn(service.options, 'domainConverter').and.callThrough();
-                    service.serviceData.subscribe(data => expect(spy).toHaveBeenCalledTimes(1));
                     service.load(uri);
 
                     const testRequest: TestRequest = controller.expectOne(uri);

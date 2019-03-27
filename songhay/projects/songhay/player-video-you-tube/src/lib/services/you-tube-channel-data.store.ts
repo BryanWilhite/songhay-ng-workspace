@@ -36,27 +36,6 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
     }
 
     /**
-     * returns @type {AppDataStoreOptions<YouTubeItem[], any>}
-     * for this store
-     *
-     * @readonly
-     * @static
-     * @type {AppDataStoreOptions<YouTubeItem[], any>}
-     * @memberof YouTubeChannelDataStore
-     */
-    static getOptions(): AppDataStoreOptions<YouTubeItem[], any> {
-        const options = new AppDataStoreOptions<YouTubeItem[], any>();
-        options.domainConverter = (method, data) => {
-            switch (method) {
-                default:
-                case 'get':
-                    return this.getItems(data);
-            }
-        };
-        return options;
-    }
-
-    /**
      * gets the URI based on the specified @type {SendMethods}
      *
      * @static
@@ -81,6 +60,27 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
      * @memberof YouTubeChannelDataStore
      */
     constructor(injector: Injector) {
-        super(injector.get(HttpClient), YouTubeChannelDataStore.getOptions());
+        super(injector.get(HttpClient), this.options);
+    }
+
+    /**
+     * returns @type {AppDataStoreOptions<YouTubeItem[], any>}
+     * for this store
+     *
+     * @readonly
+     * @static
+     * @type {AppDataStoreOptions<YouTubeItem[], any>}
+     * @memberof YouTubeChannelDataStore
+     */
+    get options(): AppDataStoreOptions<YouTubeItem[], any> {
+        const options = new AppDataStoreOptions<YouTubeItem[], any>();
+        options.domainConverter = (method, data) => {
+            switch (method) {
+                default:
+                case 'get':
+                    return YouTubeChannelDataStore.getItems(data);
+            }
+        };
+        return options;
     }
 }

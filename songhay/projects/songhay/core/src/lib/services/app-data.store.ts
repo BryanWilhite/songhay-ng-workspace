@@ -72,10 +72,7 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
      * @param {AppDataStoreOptions<TDomain, TError>} [options]
      * @memberof AppDataStore
      */
-    constructor(
-        private client: HttpClient,
-        public options?: AppDataStoreOptions<TDomain, TError>
-    ) {
+    constructor(private client: HttpClient) {
         this.isError = false;
         this.isLoaded = false;
         this.isBusy = false;
@@ -300,7 +297,7 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
     private getDomainData(data: object, method: SendMethods): TDomain {
         const domainData =
             this.options && this.options.domainConverter
-                ? this.options.domainConverter(method, data) as TDomain
+                ? (this.options.domainConverter(method, data) as TDomain)
                 : ((data as unknown) as TDomain);
         return domainData;
     }
@@ -351,5 +348,18 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
         this.serviceData = this.domainSubject
             .asObservable()
             .pipe(filter(filterOutAnyNullInitialValue));
+    }
+
+    /**
+     * returns domain-specific options
+     * to be overridden in a subclass
+     *
+     * @readonly
+     * @protected
+     * @type {AppDataStoreOptions<TDomain, TError>}
+     * @memberof AppDataStore
+     */
+    protected get options(): AppDataStoreOptions<TDomain, TError> {
+        return null;
     }
 }

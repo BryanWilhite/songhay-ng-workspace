@@ -1,5 +1,3 @@
-import { Injectable } from '@angular/core';
-
 import { SendMethods } from '../models/send-methods.type';
 
 /**
@@ -10,7 +8,6 @@ import { SendMethods } from '../models/send-methods.type';
  * @template TDomain
  * @template TError
  */
-@Injectable()
 export class AppDataStoreOptions<TDomain, TError> {
 
     /**

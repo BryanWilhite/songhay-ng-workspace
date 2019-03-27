@@ -8,20 +8,23 @@ import { AppDataStore } from './app-data.store';
 
 const LIVE_API_BASE_URI = 'http://jsonplaceholder.typicode.com';
 
+class MockDomainStore extends AppDataStore<object, any> {
+    protected get options(): AppDataStoreOptions<object, any> {
+        return {
+            initialValue: () => ({ greeting: 'Hello world!' })
+        };
+    }
+}
+
+class MockPhotoDomainStore extends AppDataStore<Typicode.Photo, any> {}
+
 describe(`${
     AppDataStore.name
 } with initial, \`object\` value and \`any\` error`, () => {
-    const optionsForObject: AppDataStoreOptions<object, any> = {
-        initialValue: () => ({ greeting: 'Hello world!' })
-    };
-
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientModule],
-            providers: [
-                { provide: AppDataStoreOptions, useValue: optionsForObject },
-                AppDataStore
-            ]
+            providers: [{ provide: AppDataStore, useClass: MockDomainStore }]
         });
     });
 
@@ -73,14 +76,11 @@ describe(`${
     ));
 
     describe('Photo service with `null` default value and `any` error', () => {
-        const optionsForPhoto: AppDataStoreOptions<Typicode.Photo, any> = {};
-
         beforeEach(() => {
             TestBed.configureTestingModule({
                 imports: [HttpClientModule],
                 providers: [
-                    { provide: AppDataStoreOptions, useValue: optionsForPhoto },
-                    AppDataStore
+                    { provide: AppDataStore, useClass: MockPhotoDomainStore }
                 ]
             });
         });

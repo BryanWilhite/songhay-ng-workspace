@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';
 
 import { HttpClientOptions } from '../models/http-client-options';
 import { SendMethods } from '../models/send-methods.type';
-import { AppDataStoreOptions } from './app-data-store.options';
 import { AppDataStore } from './app-data.store';
 
 /**
@@ -44,11 +43,8 @@ export class AppTabularDataStore<TDomain, TError> extends AppDataStore<
      * @param {AppDataStoreOptions<TDomain, TError>} [tabularOptions]
      * @memberof AppDataStore
      */
-    constructor(
-        private tabularClient: HttpClient,
-        private tabularOptions?: AppDataStoreOptions<TDomain, TError>
-    ) {
-        super(tabularClient, tabularOptions);
+    constructor(private tabularClient: HttpClient) {
+        super(tabularClient);
     }
 
     /**
@@ -134,8 +130,11 @@ export class AppTabularDataStore<TDomain, TError> extends AppDataStore<
 
     private getTabularDomainData(data: object, method: SendMethods): TDomain[] {
         const domainData =
-            this.tabularOptions && this.tabularOptions.domainConverter
-                ? this.tabularOptions.domainConverter(method, data) as TDomain[]
+            this.options && this.options.domainConverter
+                ? (this.options.domainConverter(
+                      method,
+                      data
+                  ) as TDomain[])
                 : ((data as unknown) as TDomain[]);
         return domainData;
     }
