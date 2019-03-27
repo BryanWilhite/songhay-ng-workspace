@@ -172,7 +172,7 @@ describe(YouTubeDataService.name, () => {
          })();
     });
 
-    it(`should call ${
+    xit(`should call ${
         YouTubeDataService.loadChannelsIndexMethodName
     }()`, done => {
         inject([YouTubeDataService], (service: YouTubeDataService) => {
