@@ -5,39 +5,45 @@ import {
     TestRequest
 } from '@angular/common/http/testing';
 
-import { YouTubeChannelDataStore } from './you-tube-channel-data.store.js';
+import { YouTubeChannelSetDataStore } from './you-tube-channel-set-data.store';
 
-import * as videos from '../mocks/data/video-yt-bowie0-videos.json';
+import * as playlists from '../mocks/data/video-yt-playlists-songhay-news.json';
 
-describe(`${YouTubeChannelDataStore.name} observable data service`, () => {
+describe(`${YouTubeChannelSetDataStore} observable data service`, () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule],
-            providers: [YouTubeChannelDataStore]
+            providers: [YouTubeChannelSetDataStore]
         });
     });
 
     it('should instantiate', inject(
-        [YouTubeChannelDataStore],
-        (service: YouTubeChannelDataStore) => {
+        [YouTubeChannelSetDataStore],
+        (service: YouTubeChannelSetDataStore) => {
             expect(service).toBeTruthy();
         }
     ));
 
-    const suffix = 'bowie0';
+    const suffix = 'songhay';
+    const id = 'news';
     const endpointMethod = 'get';
-    const endpoint = YouTubeChannelDataStore.getUri(endpointMethod, '{suffix}');
+    const endpoint = YouTubeChannelSetDataStore.getUri(
+        endpointMethod,
+        '{suffix}',
+        '{id}'
+    );
     describe(`endpoint: ${endpoint}`, () => {
-        it(`should ${endpointMethod} \`${suffix}\` once`, async(
+        it(`should ${endpointMethod} \`${suffix}\` \`${id}\` once`, async(
             inject(
-                [YouTubeChannelDataStore, HttpTestingController],
+                [YouTubeChannelSetDataStore, HttpTestingController],
                 (
-                    service: YouTubeChannelDataStore,
+                    service: YouTubeChannelSetDataStore,
                     controller: HttpTestingController
                 ) => {
-                    const uri = YouTubeChannelDataStore.getUri(
+                    const uri = YouTubeChannelSetDataStore.getUri(
                         endpointMethod,
-                        suffix
+                        suffix,
+                        id
                     );
                     service.serviceData.subscribe();
                     service.load(uri);
@@ -45,20 +51,20 @@ describe(`${YouTubeChannelDataStore.name} observable data service`, () => {
                     const control: TestRequest = controller.expectOne(uri);
                     expect(control.request.method).toBe(endpointMethod.toUpperCase());
 
-                    control.flush({ items: videos.items });
+                    control.flush({ set: playlists.set });
                 }
             )
         ));
 
-        const methodName = 'getItems';
+        const methodName = 'getItemsMap';
         it(`should call ${methodName} once and convert items to the domain`, async(
             inject(
-                [YouTubeChannelDataStore, HttpTestingController],
+                [YouTubeChannelSetDataStore, HttpTestingController],
                 (
-                    service: YouTubeChannelDataStore,
+                    service: YouTubeChannelSetDataStore,
                     controller: HttpTestingController
                 ) => {
-                    const uri = YouTubeChannelDataStore.getUri(
+                    const uri = YouTubeChannelSetDataStore.getUri(
                         endpointMethod,
                         suffix
                     );
@@ -70,11 +76,11 @@ describe(`${YouTubeChannelDataStore.name} observable data service`, () => {
 
                     const control: TestRequest = controller.expectOne(uri);
                     const spy = spyOn(
-                        YouTubeChannelDataStore,
+                        YouTubeChannelSetDataStore,
                         methodName
                     ).and.callThrough();
 
-                    control.flush({ items: videos.items });
+                    control.flush({ set: playlists.set });
 
                     expect(spy).toHaveBeenCalledTimes(1);
                 }

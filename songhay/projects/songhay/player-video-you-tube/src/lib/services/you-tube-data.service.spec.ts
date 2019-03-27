@@ -103,7 +103,7 @@ describe(YouTubeDataService.name, () => {
          })();
     });
 
-    it(`should call ${YouTubeDataService.loadChannelSetMethodName}()`, done => {
+    xit(`should call ${YouTubeDataService.loadChannelSetMethodName}()`, done => {
         inject([YouTubeDataService], (service: YouTubeDataService) => {
             expect(service).not.toBeNull('the expected service is not here');
 

@@ -26,17 +26,17 @@ export class YouTubeChannelSetDataStore extends AppDataStore<
      * @memberof YouTubeChannelSetDataStore
      */
     static getItemsMap(json: {}): Map<string, YouTubeItem[]> {
-        const set = Array.from(json['set']).filter(i => {
-            const test = i && i['items'];
-            if (!test) {
-                console.warn({
-                    component: YouTubeChannelSetDataStore.name,
-                    message: 'getItemsMap(): item filtered out',
-                    itemFilteredOut: i
-                });
-            }
-            return test;
+        const data = json as { set: [] };
+        if (!data) {
+            throw Error('The expected YouTubeItem[] data shape is not here.');
+        }
+        const set = Array.from(data.set).filter(i => {
+            const datum = i as { items: [] };
+            return !datum ? false : true;
         });
+        if (!set || !set.length) {
+            throw Error('The expected YouTubeItem[] data mapping is not here.');
+        }
         return new Map(
             set.map(o => {
                 const items = YouTubeChannelDataStore.getItems(o);
@@ -44,28 +44,6 @@ export class YouTubeChannelSetDataStore extends AppDataStore<
                 return [key, items] as [string, YouTubeItem[]];
             })
         );
-    }
-
-    /**
-     * returns @type {AppDataStoreOptions<Map<string, YouTubeItem[]>, any>}
-     * for this store
-     *
-     * @readonly
-     * @static
-     * @type {AppDataStoreOptions<Map<string, YouTubeItem[]>, any>}
-     * @memberof YouTubeChannelSetDataStore
-     */
-    static getOptions(): AppDataStoreOptions<Map<string, YouTubeItem[]>, any> {
-        const options: AppDataStoreOptions<Map<string, YouTubeItem[]>, any> = {
-            domainConverter: (method, data) => {
-                switch (method) {
-                    default:
-                    case 'get':
-                        return YouTubeChannelSetDataStore.getItemsMap(data);
-                }
-            }
-        };
-        return options;
     }
 
     /**
@@ -86,5 +64,27 @@ export class YouTubeChannelSetDataStore extends AppDataStore<
                     YouTubeScalars.rxYouTubeApiPlaylistsPath
                 }${suffix}/${id}`;
         }
+    }
+
+    /**
+     * returns @type {AppDataStoreOptions<Map<string, YouTubeItem[]>, any>}
+     * for this store
+     *
+     * @readonly
+     * @static
+     * @type {AppDataStoreOptions<Map<string, YouTubeItem[]>, any>}
+     * @memberof YouTubeChannelSetDataStore
+     */
+    get options(): AppDataStoreOptions<Map<string, YouTubeItem[]>, any> {
+        const options: AppDataStoreOptions<Map<string, YouTubeItem[]>, any> = {
+            domainConverter: (method, data) => {
+                switch (method) {
+                    default:
+                    case 'get':
+                        return YouTubeChannelSetDataStore.getItemsMap(data);
+                }
+            }
+        };
+        return options;
     }
 }
