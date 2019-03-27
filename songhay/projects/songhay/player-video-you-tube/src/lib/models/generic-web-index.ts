@@ -29,6 +29,7 @@ export interface GenericWebIndex {
         clientId: string;
         fragments: Fragment[];
         modificationDate: Date;
+        title: string;
     }[];
 
     /**
