@@ -282,6 +282,19 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
         return promise;
     }
 
+    /**
+     * returns domain-specific options
+     * to be overridden in a subclass
+     *
+     * @readonly
+     * @protected
+     * @type {AppDataStoreOptions<TDomain, TError>}
+     * @memberof AppDataStore
+     */
+    get options(): AppDataStoreOptions<TDomain, TError> {
+        return null;
+    }
+
     protected indicateError(uri: string, error: any): void {
         this.isError = true;
         this.serviceErrorSubject.next(error);
@@ -348,18 +361,5 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
         this.serviceData = this.domainSubject
             .asObservable()
             .pipe(filter(filterOutAnyNullInitialValue));
-    }
-
-    /**
-     * returns domain-specific options
-     * to be overridden in a subclass
-     *
-     * @readonly
-     * @protected
-     * @type {AppDataStoreOptions<TDomain, TError>}
-     * @memberof AppDataStore
-     */
-    protected get options(): AppDataStoreOptions<TDomain, TError> {
-        return null;
     }
 }

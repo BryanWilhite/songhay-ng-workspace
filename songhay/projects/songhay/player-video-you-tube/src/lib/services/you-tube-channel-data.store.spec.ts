@@ -42,10 +42,10 @@ describe(`${YouTubeChannelDataStore.name}`, () => {
                     service.serviceData.subscribe();
                     service.load(uri);
 
-                    const testRequest: TestRequest = controller.expectOne(uri);
-                    expect(testRequest.request.method).toBe('GET');
+                    const control: TestRequest = controller.expectOne(uri);
+                    expect(control.request.method).toBe(endpointMethod.toUpperCase());
 
-                    testRequest.flush(videos);
+                    control.flush({ items: videos.items });
                 }
             )
         ));
@@ -63,13 +63,20 @@ describe(`${YouTubeChannelDataStore.name}`, () => {
                         suffix
                     );
 
-                    service.serviceData.subscribe();
+                    service.serviceData.subscribe(data =>
+                        console.log({ endpoint, data })
+                    );
                     service.load(uri);
 
-                    const testRequest: TestRequest = controller.expectOne(uri);
-                    expect(testRequest.request.method).toBe('GET');
+                    const control: TestRequest = controller.expectOne(uri);
+                    const spy = spyOn(
+                        YouTubeChannelDataStore,
+                        methodName
+                    ).and.callThrough();
 
-                    testRequest.flush(videos['default']);
+                    control.flush({ items: videos.items });
+
+                    expect(spy).toHaveBeenCalledTimes(1);
                 }
             )
         ));

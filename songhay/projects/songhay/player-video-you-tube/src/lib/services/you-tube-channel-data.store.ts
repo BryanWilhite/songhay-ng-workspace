@@ -14,6 +14,27 @@ import { YouTubeScalars } from '../models/you-tube-scalars';
 @Injectable()
 export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
     /**
+     * gets @type {YouTubeItem[]}
+     * from JSON of the shape { items: [] } }
+     *
+     * @static
+     * @param {{ items: {} }} json
+     * @returns {YouTubeItem[]}
+     * @memberof YouTubeChannelDataStore
+     */
+    static getItems(json: {}): YouTubeItem[] {
+        const data = json as { items: {} };
+        if (!data) {
+            throw Error('The expected YouTubeItem[] data shape is not here.');
+        }
+        const items = data.items as YouTubeItem[];
+        if (!items) {
+            throw Error('The expected YouTubeItem[] data is not here.');
+        }
+        return items;
+    }
+
+    /**
      * gets the URI based on the specified @type {SendMethods}
      *
      * @static
@@ -33,28 +54,6 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
     }
 
     /**
-     * gets @type {YouTubeItem[]}
-     * from JSON of the shape { items: [] } }
-     *
-     * @static
-     * @param {{ items: {} }} json
-     * @returns {YouTubeItem[]}
-     * @memberof YouTubeChannelDataStore
-     */
-    getItems(json: {}): YouTubeItem[] {
-        const data = json as { items: {} };
-        if (!data) {
-            throw Error('The expected YouTubeItem[] data shape is not here.');
-        }
-        console.log('yip', data);
-        const items = data.items as YouTubeItem[];
-        if (!items) {
-            throw Error('The expected YouTubeItem[] data is not here.');
-        }
-        return items;
-    }
-
-    /**
      * returns @type {AppDataStoreOptions<YouTubeItem[], any>}
      * for this store
      *
@@ -69,7 +68,7 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
             switch (method) {
                 default:
                 case 'get':
-                    return this.getItems(data);
+                    return YouTubeChannelDataStore.getItems(data);
             }
         };
         return options;
