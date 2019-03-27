@@ -50,7 +50,8 @@ describe(`${YouTubeChannelDataStore.name}`, () => {
             )
         ));
 
-        it('should call `options.domainConverter` once', async(
+        const methodName = 'getItems';
+        it(`should call ${methodName} once and convert items to the domain`, async(
             inject(
                 [YouTubeChannelDataStore, HttpTestingController],
                 (
@@ -61,12 +62,14 @@ describe(`${YouTubeChannelDataStore.name}`, () => {
                         endpointMethod,
                         suffix
                     );
+
+                    service.serviceData.subscribe();
                     service.load(uri);
 
                     const testRequest: TestRequest = controller.expectOne(uri);
                     expect(testRequest.request.method).toBe('GET');
 
-                    testRequest.flush(videos);
+                    testRequest.flush(videos['default']);
                 }
             )
         ));
