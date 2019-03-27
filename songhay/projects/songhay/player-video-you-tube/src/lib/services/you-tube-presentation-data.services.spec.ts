@@ -35,7 +35,7 @@ describe(YouTubePresentationDataServices.name, () => {
         }
     ));
 
-    it(`should call ${
+    xit(`should call ${
         YouTubePresentationDataServices.loadPresentationMethodName
     }()`, done => {
         inject(
@@ -121,7 +121,7 @@ describe(YouTubePresentationDataServices.name, () => {
         )();
     });
 
-    it(`should call ${
+    xit(`should call ${
         YouTubePresentationDataServices.loadVideosMethodName
     }()`, done => {
         inject(
