@@ -7,7 +7,7 @@ import { Presentation } from 'songhay/core/models/presentation';
  * @export
  * @class YouTubePresentation
  */
-export class YouTubePresentation {
+export interface YouTubePresentation {
     /**
      * gen-web Presentation
      *

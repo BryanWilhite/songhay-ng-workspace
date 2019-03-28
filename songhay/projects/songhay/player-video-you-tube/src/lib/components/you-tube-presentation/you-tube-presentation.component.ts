@@ -1,13 +1,13 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { CssUtility } from 'songhay/core/utilities/css.utility';
-import { Presentation } from 'songhay/core/models/presentation';
 
 import { YouTubePresentation } from '../../models/you-tube-presentation';
 import { YouTubePresentationStyles } from '../../models/you-tube-presentation-style';
-import { YouTubePresentationDataServices } from '../../services/you-tube-presentation-data.services';
+import { YouTubeChannelDataStore } from '../../services/you-tube-channel-data.store';
+import { YouTubeChannelsPresentationDataStore } from '../../services/you-tube-channels-presentation-data.store';
 
 @Component({
     selector: 'rx-you-tube-presentation',
@@ -22,53 +22,36 @@ export class YouTubePresentationComponent implements OnInit {
     youTubePresentation: YouTubePresentation;
 
     constructor(
-        public youTubePresentationDataServices: YouTubePresentationDataServices,
+        public youTubeChannelDataStore: YouTubeChannelDataStore,
+        public youTubeChannelsPresentationDataStore: YouTubeChannelsPresentationDataStore,
         private location: Location,
         private route: ActivatedRoute
     ) {}
 
     ngOnInit() {
+        const gotoNotFound = error => {
+            console.warn({ error });
+            this.location.replaceState('/not-found');
+        };
+
         this.route.params.subscribe(params => {
             this.id = params['id'] as string;
         });
 
-        this.youTubePresentationDataServices
-            .loadPresentation(this.id)
-            .catch(() => {
-                console.log(
-                    'The expected data is not here.',
-                    '[id:',
-                    this.id,
-                    ']'
-                );
-                if (this.id) {
-                    this.location.replaceState('/not-found');
-                }
-            });
-
-        this.youTubePresentationDataServices.loadVideos(this.id).catch(() => {
-            console.log('The expected data is not here.', '[id:', this.id, ']');
-            if (this.id) {
-                this.location.replaceState('/not-found');
-            }
+        this.youTubeChannelDataStore.serviceError.subscribe(gotoNotFound);
+        this.youTubeChannelDataStore.serviceData.subscribe(data => {
+            this.youTubePresentation.videos = data;
         });
 
-        this.youTubePresentationDataServices.presentationLoaded.subscribe(
-            json => {
-                this.youTubePresentation.presentation = json as Presentation;
-
-                // if (scope.clientVM) {
-                //     scope.clientVM.style.body = this.getBodyStyle();
-                // }
+        this.youTubeChannelsPresentationDataStore.serviceError.subscribe(gotoNotFound);
+        this.youTubeChannelsPresentationDataStore.serviceData.subscribe(
+            data => {
+                this.youTubePresentation.presentation = data;
                 this.youTubePresentationStyles.playlist = this.getPlaylistStyle();
                 this.youTubePresentationStyles.prose = this.getProseStyle();
                 this.youTubePresentationStyles.title = this.getTitleStyle();
             }
         );
-
-        this.youTubePresentationDataServices.videosLoaded.subscribe(json => {
-            this.youTubePresentation.videos = json as {}[];
-        });
     }
 
     getBodyStyle(): {} {
