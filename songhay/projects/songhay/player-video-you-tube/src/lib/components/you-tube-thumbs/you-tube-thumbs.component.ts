@@ -183,7 +183,7 @@ export class YouTubeThumbsComponent implements AfterViewInit {
         return `${YouTubeScalars.rxYouTubeWatchRootUri}${videoId}`;
     }
 
-    slideThumbs(direction: string): void {
+    slideThumbs(direction: 'forward' | 'back'): void {
         console.log({ direction: direction });
 
         const duration = this.thumbsAnimationDuration
