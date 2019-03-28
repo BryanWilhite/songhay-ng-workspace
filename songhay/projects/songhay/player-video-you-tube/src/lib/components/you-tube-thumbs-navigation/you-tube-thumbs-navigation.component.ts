@@ -1,13 +1,17 @@
+import { Subscription, merge } from 'rxjs';
 import {
     ChangeDetectionStrategy,
     Component,
     OnInit,
-    Input
+    Input,
+    OnDestroy
 } from '@angular/core';
 import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
-import { YouTubeDataService } from '../../services/you-tube-data.service';
+import { GenericWebIndex } from '../../models/generic-web-index';
+import { GenericWebIndexUtility } from '../../utilities/generic-web-index.utility';
+import { YouTubeChannelsIndexDataStore } from '../../services/you-tube-channels-index-data.store';
 
 @Component({
     selector: 'rx-you-tube-thumbs-navigation',
@@ -15,63 +19,63 @@ import { YouTubeDataService } from '../../services/you-tube-data.service';
     styleUrls: ['./you-tube-thumbs-navigation.component.scss'],
     changeDetection: ChangeDetectionStrategy.Default
 })
-export class YouTubeThumbsNavigationComponent implements OnInit {
+export class YouTubeThumbsNavigationComponent implements OnInit, OnDestroy {
     @Input()
     channelsIndexName: string;
 
-    channels: { ClientId: string; Title: string }[];
+    channels: {
+        clientId: string;
+        title: string;
+    }[];
     channelsName: string;
     channelTitle: string;
 
     private channelSetId: string;
+    private subscriptions: Subscription[] = [];
 
     constructor(
-        public youTubeDataService: YouTubeDataService,
+        public youTubeChannelsIndexDataStore: YouTubeChannelsIndexDataStore,
         private location: Location,
         private route: ActivatedRoute
     ) {}
 
     ngOnInit() {
-        this.route.params.subscribe(params => {
+        const sub = merge(
+            this.route.params,
+            this.youTubeChannelsIndexDataStore.serviceData
+        ).subscribe(data => {
+            const params = data as Params;
+            const index = data as GenericWebIndex;
+
             this.channelSetId = params['id'] as string;
-            this.setChannelTitle();
+
+            this.channelsName = GenericWebIndexUtility.getChannelsSetDisplayName(
+                index
+            );
+            this.channels = index.documents as {
+                clientId: string;
+                title: string;
+            }[];
+            this.channelTitle = GenericWebIndexUtility.getChannelsSetTitle(
+                this.channelSetId,
+                index
+            );
+
+            this.subscriptions.push(sub);
         });
 
-        this.youTubeDataService.loadChannelsIndex(this.channelsIndexName);
+        this.youTubeChannelsIndexDataStore.load(
+            YouTubeChannelsIndexDataStore.getUri('get', this.channelsIndexName)
+        );
+    }
 
-        this.youTubeDataService.channelsIndexLoaded.subscribe(json => {
-            this.channelsName = json['SegmentName'];
-            this.setChannels(json);
-            this.setChannelTitle();
-        });
+    ngOnDestroy(): void {
+        for (const sub of this.subscriptions) {
+            sub.unsubscribe();
+        }
     }
 
     goBack() {
         this.location.back();
-    }
-
-    private setChannels(json: {}): void {
-        const docs = json['Documents'] as {}[];
-        if (!docs) {
-            console.warn({
-                name: YouTubeThumbsNavigationComponent.name,
-                message: 'the expected channel documents are not here'
-            });
-            return;
-        }
-        this.channels = docs.map(o => {
-            return { ClientId: o['ClientId'], Title: o['Title'] };
-        });
-    }
-
-    private setChannelTitle(): void {
-        if (!this.channels) {
-            return;
-        }
-
-        const document = this.channels.find(i => {
-            return i.ClientId === this.channelSetId;
-        });
-        this.channelTitle = document.Title;
     }
 }

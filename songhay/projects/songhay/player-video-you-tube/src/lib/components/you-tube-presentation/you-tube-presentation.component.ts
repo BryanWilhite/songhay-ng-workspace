@@ -1,5 +1,7 @@
+import { Subscription } from 'rxjs';
+
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { CssUtility } from 'songhay/core/utilities/css.utility';
@@ -14,12 +16,14 @@ import { YouTubeChannelsPresentationDataStore } from '../../services/you-tube-ch
     templateUrl: './you-tube-presentation.component.html',
     styleUrls: ['./you-tube-presentation.component.scss']
 })
-export class YouTubePresentationComponent implements OnInit {
+export class YouTubePresentationComponent implements OnInit, OnDestroy {
     id: string;
 
     youTubePresentationStyles: YouTubePresentationStyles;
 
     youTubePresentation: YouTubePresentation;
+
+    private subscriptions: Subscription[] = [];
 
     constructor(
         public youTubeChannelDataStore: YouTubeChannelDataStore,
@@ -43,7 +47,9 @@ export class YouTubePresentationComponent implements OnInit {
             this.youTubePresentation.videos = data;
         });
 
-        this.youTubeChannelsPresentationDataStore.serviceError.subscribe(gotoNotFound);
+        this.youTubeChannelsPresentationDataStore.serviceError.subscribe(
+            gotoNotFound
+        );
         this.youTubeChannelsPresentationDataStore.serviceData.subscribe(
             data => {
                 this.youTubePresentation.presentation = data;
@@ -52,6 +58,19 @@ export class YouTubePresentationComponent implements OnInit {
                 this.youTubePresentationStyles.title = this.getTitleStyle();
             }
         );
+
+        this.youTubeChannelDataStore.load(
+            YouTubeChannelDataStore.getUri('get', this.id)
+        );
+        this.youTubeChannelsPresentationDataStore.load(
+            YouTubeChannelsPresentationDataStore.getUri('get', this.id)
+        );
+    }
+
+    ngOnDestroy(): void {
+        for (const sub of this.subscriptions) {
+            sub.unsubscribe();
+        }
     }
 
     getBodyStyle(): {} {
