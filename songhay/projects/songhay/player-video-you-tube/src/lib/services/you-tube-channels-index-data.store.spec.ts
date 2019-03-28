@@ -11,7 +11,7 @@ import * as index from '../mocks/data/video-yt-playlist-index-songhay.json';
 
 const segment = index['default'];
 
-describe(`${YouTubeChannelsIndexDataStore} observable data service`, () => {
+describe(`${YouTubeChannelsIndexDataStore.name} observable data service`, () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule],

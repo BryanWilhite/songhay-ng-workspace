@@ -11,7 +11,7 @@ import * as presentation from '../mocks/data/video-yt-bowie0-presentation.json';
 
 const segment = presentation['default'];
 
-describe(`${YouTubeChannelsPresentationDataStore} observable data service`, () => {
+describe(`${YouTubeChannelsPresentationDataStore.name} observable data service`, () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule],

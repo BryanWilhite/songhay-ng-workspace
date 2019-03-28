@@ -9,7 +9,7 @@ import { YouTubeChannelSetDataStore } from './you-tube-channel-set-data.store';
 
 import * as playlists from '../mocks/data/video-yt-playlists-songhay-news.json';
 
-describe(`${YouTubeChannelSetDataStore} observable data service`, () => {
+describe(`${YouTubeChannelSetDataStore.name} observable data service`, () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule],
