@@ -1,13 +1,16 @@
+import { Subscription } from 'rxjs';
+
 import { Location } from '@angular/common';
 import {
     ChangeDetectionStrategy,
     Component,
     Input,
-    OnInit
+    OnInit,
+    OnDestroy
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { YouTubeDataService } from '../../services/you-tube-data.service';
+import { YouTubeChannelSetDataStore } from '../../services/you-tube-channel-set-data.store';
 import { YouTubeItem } from '../../models/you-tube-item';
 
 @Component({
@@ -16,40 +19,55 @@ import { YouTubeItem } from '../../models/you-tube-item';
     styleUrls: ['./you-tube-thumbs-set.component.scss'],
     changeDetection: ChangeDetectionStrategy.Default
 })
-export class YouTubeThumbsSetComponent implements OnInit {
+export class YouTubeThumbsSetComponent implements OnInit, OnDestroy {
     @Input()
     thumbsSetSuffix: string;
 
     youTubeItemsKeys: string[];
     youTubeItemsMap: Map<string, YouTubeItem[]>;
 
+    private subscriptions: Subscription[] = [];
+
     constructor(
-        public youTubeDataService: YouTubeDataService,
+        public youTubeChannelSetDataStore: YouTubeChannelSetDataStore,
         private location: Location,
         private route: ActivatedRoute
     ) {}
 
     ngOnInit() {
-        this.route.params.subscribe(params => {
+        const gotoNotFound = error => {
+            console.warn({ component: YouTubeThumbsSetComponent.name, error });
+            this.location.replaceState('/not-found');
+        };
+
+        const sub0 = this.route.params.subscribe(params => {
             const id = params['id'] as string;
             const suffix = params['suffix'] as string;
 
-            this.youTubeDataService.loadChannelSet(suffix, id).catch(() => {
-                console.warn({
-                    component: YouTubeThumbsSetComponent.name,
-                    id,
-                    message: 'The expected data is not here.'
-                });
-
-                if (id) {
-                    this.location.replaceState('/not-found');
-                }
-            });
+            const uri = YouTubeChannelSetDataStore.getUri('get', suffix, id);
+            this.youTubeChannelSetDataStore.load(uri);
         });
 
-        this.youTubeDataService.channelSetLoaded.subscribe(json => {
-            this.youTubeItemsMap = YouTubeDataService.getItemsMap(json);
-            this.youTubeItemsKeys = Array.from(this.youTubeItemsMap.keys()).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+        const sub1 = this.youTubeChannelSetDataStore.serviceError.subscribe(gotoNotFound);
+        const sub2 = this.youTubeChannelSetDataStore.serviceData.subscribe(data => {
+            this.youTubeItemsMap = data;
+            this.youTubeItemsKeys = this.getKeys();
         });
+
+        for (const sub of [sub0, sub1, sub2]) {
+            this.subscriptions.push(sub);
+        }
+    }
+
+    ngOnDestroy(): void {
+        for (const sub of this.subscriptions) {
+            sub.unsubscribe();
+        }
+    }
+
+    private getKeys(): string[] {
+        return Array.from(this.youTubeItemsMap.keys()).sort((a, b) =>
+            a.toLowerCase().localeCompare(b.toLowerCase())
+        );
     }
 }

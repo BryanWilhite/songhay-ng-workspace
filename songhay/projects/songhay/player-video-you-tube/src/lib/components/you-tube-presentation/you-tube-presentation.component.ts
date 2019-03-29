@@ -34,23 +34,37 @@ export class YouTubePresentationComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         const gotoNotFound = error => {
-            console.warn({ error });
+            console.warn({
+                component: YouTubePresentationComponent.name,
+                error
+            });
             this.location.replaceState('/not-found');
         };
 
-        this.route.params.subscribe(params => {
+        const sub0 = this.route.params.subscribe(params => {
             this.id = params['id'] as string;
+
+            this.youTubeChannelDataStore.load(
+                YouTubeChannelDataStore.getUri('get', this.id)
+            );
+            this.youTubeChannelsPresentationDataStore.load(
+                YouTubeChannelsPresentationDataStore.getUri('get', this.id)
+            );
         });
 
-        this.youTubeChannelDataStore.serviceError.subscribe(gotoNotFound);
-        this.youTubeChannelDataStore.serviceData.subscribe(data => {
-            this.youTubePresentation.videos = data;
-        });
-
-        this.youTubeChannelsPresentationDataStore.serviceError.subscribe(
+        const sub1 = this.youTubeChannelDataStore.serviceError.subscribe(
             gotoNotFound
         );
-        this.youTubeChannelsPresentationDataStore.serviceData.subscribe(
+        const sub2 = this.youTubeChannelDataStore.serviceData.subscribe(
+            data => {
+                this.youTubePresentation.videos = data;
+            }
+        );
+
+        const sub3 = this.youTubeChannelsPresentationDataStore.serviceError.subscribe(
+            gotoNotFound
+        );
+        const sub4 = this.youTubeChannelsPresentationDataStore.serviceData.subscribe(
             data => {
                 this.youTubePresentation.presentation = data;
                 this.youTubePresentationStyles.playlist = this.getPlaylistStyle();
@@ -59,12 +73,9 @@ export class YouTubePresentationComponent implements OnInit, OnDestroy {
             }
         );
 
-        this.youTubeChannelDataStore.load(
-            YouTubeChannelDataStore.getUri('get', this.id)
-        );
-        this.youTubeChannelsPresentationDataStore.load(
-            YouTubeChannelsPresentationDataStore.getUri('get', this.id)
-        );
+        for (const sub of [sub0, sub1, sub2, sub3, sub4]) {
+            this.subscriptions.push(sub);
+        }
     }
 
     ngOnDestroy(): void {
