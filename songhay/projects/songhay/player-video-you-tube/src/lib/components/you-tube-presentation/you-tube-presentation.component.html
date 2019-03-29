@@ -1,6 +1,6 @@
 <div class="container body-content ng-cloak video presentation yt">
     <div class="row">
-        <div class="player-box loading" *ngIf="youTubeChannelsPresentationDataStore?.isLoading">
+        <div class="player-box loading" *ngIf="youTubeChannelsPresentationDataStore?.isBusy">
             <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
         </div>
         <div class="video-strip row">

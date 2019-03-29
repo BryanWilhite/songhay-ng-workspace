@@ -302,7 +302,7 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
             uri,
             isError: this.isError,
             isLoaded: this.isLoaded,
-            isLoading: this.isBusy,
+            isBusy: this.isBusy,
             error
         });
     }
