@@ -1,29 +1,26 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { Location } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+
+import {
+    HttpClientTestingModule,
+    HttpTestingController,
+    TestRequest
+} from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ActivatedRouteMock } from '@songhay/core';
-import { YouTubeDataServiceMock } from '../../mocks/you-tube-data-service.mock';
 
+import { YouTubeChannelsIndexDataStore } from '../../services/you-tube-channels-index-data.store';
 import { YouTubeThumbsNavigationComponent } from './you-tube-thumbs-navigation.component';
-import { YouTubeDataService } from '../../services/you-tube-data.service';
 
 describe(YouTubeThumbsNavigationComponent.name, () => {
-    const location = jasmine.createSpyObj(Location.name, ['back']);
-    const router = jasmine.createSpyObj(Router.name, ['navigate']);
     let component: YouTubeThumbsNavigationComponent;
     let fixture: ComponentFixture<YouTubeThumbsNavigationComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
+            imports: [HttpClientTestingModule, RouterTestingModule],
             declarations: [YouTubeThumbsNavigationComponent],
-            providers: [
-                { provide: Location, useValue: location },
-                { provide: ActivatedRoute, useClass: ActivatedRouteMock },
-                { provide: Router, useValue: router },
-                { provide: YouTubeDataService, useClass: YouTubeDataServiceMock }
-            ],
+            providers: [YouTubeChannelsIndexDataStore],
             schemas: [NO_ERRORS_SCHEMA]
         }).compileComponents();
     }));
