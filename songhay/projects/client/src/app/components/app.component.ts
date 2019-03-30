@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'workspace client for libraries';
+  title = 'songhay-ng-workspace';
 }
