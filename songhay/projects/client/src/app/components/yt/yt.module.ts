@@ -3,7 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { YouTubeLibModule } from './you-tube-lib.module';
+
+import {
+    YouTubeChannelDataStore,
+    MaterialModule,
+    YouTubeThumbsComponent
+} from '@songhay/player-video-you-tube';
 
 import { IndexComponent } from './index.component';
 import { ThumbsComponent } from './thumbs/thumbs.component';
@@ -17,9 +22,10 @@ const routes: Routes = [
     imports: [
         CommonModule,
         HttpClientModule,
-        RouterModule.forChild(routes),
-        YouTubeLibModule
+        MaterialModule,
+        RouterModule.forChild(routes)
     ],
-    declarations: [IndexComponent, ThumbsComponent]
+    providers: [YouTubeChannelDataStore],
+    declarations: [YouTubeThumbsComponent, IndexComponent, ThumbsComponent]
 })
 export class YtModule {}
