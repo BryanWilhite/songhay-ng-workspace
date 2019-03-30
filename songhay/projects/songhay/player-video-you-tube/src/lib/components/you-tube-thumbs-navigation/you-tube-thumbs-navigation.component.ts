@@ -1,4 +1,6 @@
 import { Subscription, merge } from 'rxjs';
+import { filter } from 'rxjs/operators';
+
 import {
     ChangeDetectionStrategy,
     Component,
@@ -43,26 +45,34 @@ export class YouTubeThumbsNavigationComponent implements OnInit, OnDestroy {
         const sub = merge(
             this.route.params,
             this.youTubeChannelsIndexDataStore.serviceData
-        ).subscribe(data => {
-            const params = data as Params;
-            const index = data as GenericWebIndex;
+        )
+            .pipe(
+                filter(data =>
+                    !(data as Params) || !(data as GenericWebIndex)
+                        ? false
+                        : true
+                )
+            )
+            .subscribe(data => {
+                const params = data as Params;
+                const index = data as GenericWebIndex;
 
-            this.channelSetId = params['id'] as string;
+                this.channelSetId = params['id'] as string;
 
-            this.channelsName = GenericWebIndexUtility.getChannelsSetDisplayName(
-                index
-            );
-            this.channels = index.documents as {
-                clientId: string;
-                title: string;
-            }[];
-            this.channelTitle = GenericWebIndexUtility.getChannelsSetTitle(
-                this.channelSetId,
-                index
-            );
+                this.channelsName = GenericWebIndexUtility.getChannelsSetDisplayName(
+                    index
+                );
+                this.channels = index.documents as {
+                    clientId: string;
+                    title: string;
+                }[];
+                this.channelTitle = GenericWebIndexUtility.getChannelsSetTitle(
+                    this.channelSetId,
+                    index
+                );
 
-            this.subscriptions.push(sub);
-        });
+                this.subscriptions.push(sub);
+            });
 
         this.youTubeChannelsIndexDataStore.load(
             YouTubeChannelsIndexDataStore.getUri('get', this.channelsIndexName)
