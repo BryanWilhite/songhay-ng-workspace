@@ -6,6 +6,7 @@ export * from './lib/you-tube.module';
 export * from './lib/material.module';
 
 /* models */
+export * from './lib/models/generic-web-index';
 export * from './lib/models/you-tube-content-details';
 export * from './lib/models/you-tube-item';
 export * from './lib/models/you-tube-presentation';
@@ -16,9 +17,6 @@ export * from './lib/models/you-tube-scalars';
 export * from './lib/models/you-tube-snippet';
 export * from './lib/models/you-tube-thumbnail';
 export * from './lib/models/you-tube-thumbnails';
-
-/* mocks */
-export * from './lib/mocks/you-tube-data-service.mock';
 
 /* components */
 export * from './lib/components/you-tube-presentation/you-tube-presentation.component';
@@ -35,4 +33,5 @@ export * from './lib/services/you-tube-data.service';
 export * from './lib/services/you-tube-presentation-data.services';
 
 /* utilities */
+export * from './lib/utilities/generic-web-index.utility';
 export * from './lib/utilities/you-tube-route.utility';
