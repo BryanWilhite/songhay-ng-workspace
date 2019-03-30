@@ -1,5 +1,4 @@
-import { Subscription, merge } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import { Subscription, zip } from 'rxjs';
 
 import {
     ChangeDetectionStrategy,
@@ -42,37 +41,29 @@ export class YouTubeThumbsNavigationComponent implements OnInit, OnDestroy {
     ) {}
 
     ngOnInit() {
-        const sub = merge(
+        const sub = zip(
             this.route.params,
             this.youTubeChannelsIndexDataStore.serviceData
-        )
-            .pipe(
-                filter(data =>
-                    !(data as Params) || !(data as GenericWebIndex)
-                        ? false
-                        : true
-                )
-            )
-            .subscribe(data => {
-                const params = data as Params;
-                const index = data as GenericWebIndex;
+        ).subscribe(data => {
+            const params = data[0];
+            const index = data[1];
 
-                this.channelSetId = params['id'] as string;
+            this.channelSetId = params['id'] as string;
 
-                this.channelsName = GenericWebIndexUtility.getChannelsSetDisplayName(
-                    index
-                );
-                this.channels = index.documents as {
-                    clientId: string;
-                    title: string;
-                }[];
-                this.channelTitle = GenericWebIndexUtility.getChannelsSetTitle(
-                    this.channelSetId,
-                    index
-                );
+            this.channelsName = GenericWebIndexUtility.getChannelsSetDisplayName(
+                index
+            );
+            this.channels = index.documents as {
+                clientId: string;
+                title: string;
+            }[];
+            this.channelTitle = GenericWebIndexUtility.getChannelsSetTitle(
+                this.channelSetId,
+                index
+            );
 
-                this.subscriptions.push(sub);
-            });
+            this.subscriptions.push(sub);
+        });
 
         this.youTubeChannelsIndexDataStore.load(
             YouTubeChannelsIndexDataStore.getUri('get', this.channelsIndexName)
