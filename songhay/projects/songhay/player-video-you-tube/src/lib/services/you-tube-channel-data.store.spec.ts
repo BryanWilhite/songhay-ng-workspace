@@ -24,11 +24,11 @@ describe(`${YouTubeChannelDataStore.name} observable data service`, () => {
         }
     ));
 
-    const suffix = 'bowie0';
+    const id = 'bowie0';
     const endpointMethod = 'get';
-    const endpoint = YouTubeChannelDataStore.getUri(endpointMethod, '{suffix}');
+    const endpoint = YouTubeChannelDataStore.getUri(endpointMethod, '{id}');
     describe(`endpoint: ${endpoint}`, () => {
-        it(`should ${endpointMethod} \`${suffix}\` once`, async(
+        it(`should ${endpointMethod} \`${id}\` once`, async(
             inject(
                 [YouTubeChannelDataStore, HttpTestingController],
                 (
@@ -37,7 +37,7 @@ describe(`${YouTubeChannelDataStore.name} observable data service`, () => {
                 ) => {
                     const uri = YouTubeChannelDataStore.getUri(
                         endpointMethod,
-                        suffix
+                        id
                     );
                     service.serviceData.subscribe();
                     service.load(uri);
@@ -60,7 +60,7 @@ describe(`${YouTubeChannelDataStore.name} observable data service`, () => {
                 ) => {
                     const uri = YouTubeChannelDataStore.getUri(
                         endpointMethod,
-                        suffix
+                        id
                     );
 
                     service.serviceData.subscribe(data =>

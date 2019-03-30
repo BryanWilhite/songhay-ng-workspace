@@ -48,7 +48,7 @@ export class YouTubeChannelsIndexDataStore extends AppDataStore<
             default:
             case 'get':
                 return `${YouTubeScalars.rxYouTubeApiRootUri}${
-                    YouTubeScalars.rxYouTubeApiVideosPath
+                    YouTubeScalars.rxYouTubeApiPlaylistsIndexPath
                 }${id}`;
         }
     }
