@@ -7,7 +7,7 @@ import {
 
 import { YouTubeChannelDataStore } from './you-tube-channel-data.store.js';
 
-import * as videos from '../mocks/data/video-yt-bowie0-videos.json';
+import * as uploads from '../mocks/data/video-yt-playlist-uploads-songhay-top-ten.json';
 
 describe(`${YouTubeChannelDataStore.name} observable data service`, () => {
     beforeEach(() => {
@@ -24,7 +24,7 @@ describe(`${YouTubeChannelDataStore.name} observable data service`, () => {
         }
     ));
 
-    const id = 'bowie0';
+    const id = 'youtube-index-songhay-top-ten';
     const endpointMethod = 'get';
     const endpoint = YouTubeChannelDataStore.getUri(endpointMethod, '{id}');
     describe(`endpoint: ${endpoint}`, () => {
@@ -45,7 +45,7 @@ describe(`${YouTubeChannelDataStore.name} observable data service`, () => {
                     const control: TestRequest = controller.expectOne(uri);
                     expect(control.request.method).toBe(endpointMethod.toUpperCase());
 
-                    control.flush({ items: videos.items });
+                    control.flush({ items: uploads.items });
                 }
             )
         ));
@@ -74,7 +74,7 @@ describe(`${YouTubeChannelDataStore.name} observable data service`, () => {
                         methodName
                     ).and.callThrough();
 
-                    control.flush({ items: videos.items });
+                    control.flush({ items: uploads.items });
 
                     expect(spy).toHaveBeenCalledTimes(1);
                 }
