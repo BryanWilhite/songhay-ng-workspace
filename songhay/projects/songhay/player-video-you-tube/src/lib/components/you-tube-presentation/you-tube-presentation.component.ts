@@ -9,7 +9,7 @@ import { CssUtility } from 'songhay/core/utilities/css.utility';
 import { YouTubePresentation } from '../../models/you-tube-presentation';
 import { YouTubePresentationStyles } from '../../models/you-tube-presentation-style';
 import { YouTubeChannelDataStore } from '../../services/you-tube-channel-data.store';
-import { YouTubeChannelsPresentationDataStore } from '../../services/you-tube-channels-presentation-data.store';
+import { YouTubePresentationDataStore } from '../../services/you-tube-presentation-data.store';
 
 @Component({
     selector: 'rx-you-tube-presentation',
@@ -27,7 +27,7 @@ export class YouTubePresentationComponent implements OnInit, OnDestroy {
 
     constructor(
         public youTubeChannelDataStore: YouTubeChannelDataStore,
-        public youTubeChannelsPresentationDataStore: YouTubeChannelsPresentationDataStore,
+        public youTubeChannelsPresentationDataStore: YouTubePresentationDataStore,
         private location: Location,
         private route: ActivatedRoute
     ) {}
@@ -48,7 +48,7 @@ export class YouTubePresentationComponent implements OnInit, OnDestroy {
                 YouTubeChannelDataStore.getUri('get', this.id)
             );
             this.youTubeChannelsPresentationDataStore.load(
-                YouTubeChannelsPresentationDataStore.getUri('get', this.id)
+                YouTubePresentationDataStore.getUri('get', this.id)
             );
         });
 

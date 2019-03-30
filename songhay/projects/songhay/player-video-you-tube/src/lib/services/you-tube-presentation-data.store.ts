@@ -8,11 +8,11 @@ import { Presentation } from 'songhay/core/models/presentation';
  * Stores YouTube Channel index data, curated by the Songhay studio.
  *
  * @export
- * @class YouTubeChannelsPresentationDataStore
+ * @class YouTubePresentationDataStore
  * @extends {AppDataStore<YouTubePresentation, any>}
  */
 @Injectable()
-export class YouTubeChannelsPresentationDataStore extends AppDataStore<
+export class YouTubePresentationDataStore extends AppDataStore<
     Presentation,
     any
 > {
@@ -23,7 +23,7 @@ export class YouTubeChannelsPresentationDataStore extends AppDataStore<
      * @static
      * @param {{}} json
      * @returns {Presentation}
-     * @memberof YouTubeChannelsPresentationDataStore
+     * @memberof YouTubePresentationDataStore
      */
     static getPresentation(json: {}): Presentation {
         const data = json as { Presentation: {} };
@@ -44,7 +44,7 @@ export class YouTubeChannelsPresentationDataStore extends AppDataStore<
      * @param {SendMethods} method
      * @param {string} [id]
      * @returns {string}
-     * @memberof YouTubeChannelsPresentationDataStore
+     * @memberof YouTubePresentationDataStore
      */
     static getUri(method: SendMethods, id?: string): string {
         switch (method) {
@@ -61,7 +61,7 @@ export class YouTubeChannelsPresentationDataStore extends AppDataStore<
      * @readonly
      * @static
      * @type {AppDataStoreOptions<Presentation, any>}
-     * @memberof YouTubeChannelsPresentationDataStore
+     * @memberof YouTubePresentationDataStore
      */
     get options(): AppDataStoreOptions<Presentation, any> {
         const options = new AppDataStoreOptions<Presentation, any>();
@@ -69,7 +69,7 @@ export class YouTubeChannelsPresentationDataStore extends AppDataStore<
             switch (method) {
                 default:
                 case 'get':
-                    return YouTubeChannelsPresentationDataStore.getPresentation(data);
+                    return YouTubePresentationDataStore.getPresentation(data);
             }
         };
         return options;

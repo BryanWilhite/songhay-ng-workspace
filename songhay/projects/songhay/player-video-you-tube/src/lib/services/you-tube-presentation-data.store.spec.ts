@@ -5,42 +5,42 @@ import {
     TestRequest
 } from '@angular/common/http/testing';
 
-import { YouTubeChannelsPresentationDataStore } from './you-tube-channels-presentation-data.store';
+import { YouTubePresentationDataStore } from './you-tube-presentation-data.store';
 
 import * as presentation from '../mocks/data/video-yt-bowie0-presentation.json';
 
 const segment = presentation['default'];
 
-describe(`${YouTubeChannelsPresentationDataStore.name} observable data service`, () => {
+describe(`${YouTubePresentationDataStore.name} observable data service`, () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule],
-            providers: [YouTubeChannelsPresentationDataStore]
+            providers: [YouTubePresentationDataStore]
         });
     });
 
     it('should instantiate', inject(
-        [YouTubeChannelsPresentationDataStore],
-        (service: YouTubeChannelsPresentationDataStore) => {
+        [YouTubePresentationDataStore],
+        (service: YouTubePresentationDataStore) => {
             expect(service).toBeTruthy();
         }
     ));
 
     const id = 'bowie0';
     const endpointMethod = 'get';
-    const endpoint = YouTubeChannelsPresentationDataStore.getUri(
+    const endpoint = YouTubePresentationDataStore.getUri(
         endpointMethod,
         '{id}'
     );
     describe(`endpoint: ${endpoint}`, () => {
         it(`should ${endpointMethod} \`${id}\` once`, async(
             inject(
-                [YouTubeChannelsPresentationDataStore, HttpTestingController],
+                [YouTubePresentationDataStore, HttpTestingController],
                 (
-                    service: YouTubeChannelsPresentationDataStore,
+                    service: YouTubePresentationDataStore,
                     controller: HttpTestingController
                 ) => {
-                    const uri = YouTubeChannelsPresentationDataStore.getUri(
+                    const uri = YouTubePresentationDataStore.getUri(
                         endpointMethod,
                         id
                     );
@@ -58,12 +58,12 @@ describe(`${YouTubeChannelsPresentationDataStore.name} observable data service`,
         const methodName = 'getPresentation';
         it(`should call ${methodName} once and convert items to the domain`, async(
             inject(
-                [YouTubeChannelsPresentationDataStore, HttpTestingController],
+                [YouTubePresentationDataStore, HttpTestingController],
                 (
-                    service: YouTubeChannelsPresentationDataStore,
+                    service: YouTubePresentationDataStore,
                     controller: HttpTestingController
                 ) => {
-                    const uri = YouTubeChannelsPresentationDataStore.getUri(
+                    const uri = YouTubePresentationDataStore.getUri(
                         endpointMethod,
                         id
                     );
@@ -75,7 +75,7 @@ describe(`${YouTubeChannelsPresentationDataStore.name} observable data service`,
 
                     const control: TestRequest = controller.expectOne(uri);
                     const spy = spyOn(
-                        YouTubeChannelsPresentationDataStore,
+                        YouTubePresentationDataStore,
                         methodName
                     ).and.callThrough();
 

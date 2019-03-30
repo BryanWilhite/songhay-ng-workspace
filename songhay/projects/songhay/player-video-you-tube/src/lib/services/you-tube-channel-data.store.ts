@@ -54,6 +54,26 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
     }
 
     /**
+     * gets the @type {GenericWebPresentation} URI
+     * based on the specified @type {SendMethods}
+     *
+     * @static
+     * @param {SendMethods} method
+     * @param {string} [id]
+     * @returns {string}
+     * @memberof YouTubeChannelDataStore
+     */
+    static getPresentationUri(method: SendMethods, id?: string): string {
+        switch (method) {
+            default:
+            case 'get':
+                return `${YouTubeScalars.rxYouTubeApiRootUri}${
+                    YouTubeScalars.rxYouTubeApiVideosPath
+                }${id}`;
+        }
+    }
+
+    /**
      * returns @type {AppDataStoreOptions<YouTubeItem[], any>}
      * for this store
      *

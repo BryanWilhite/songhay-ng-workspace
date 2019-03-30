@@ -9,7 +9,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { YouTubeChannelDataStore } from '../../services/you-tube-channel-data.store';
-import { YouTubeChannelsPresentationDataStore } from '../../services/you-tube-channels-presentation-data.store';
+import { YouTubePresentationDataStore } from '../../services/you-tube-presentation-data.store';
 import { YouTubePresentationComponent } from './you-tube-presentation.component';
 
 describe(YouTubePresentationComponent.name, () => {
@@ -22,7 +22,7 @@ describe(YouTubePresentationComponent.name, () => {
             declarations: [YouTubePresentationComponent],
             providers: [
                 YouTubeChannelDataStore,
-                YouTubeChannelsPresentationDataStore
+                YouTubePresentationDataStore
             ],
             schemas: [NO_ERRORS_SCHEMA]
         }).compileComponents();
