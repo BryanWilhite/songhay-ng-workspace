@@ -10,7 +10,6 @@ import {
 import { Location } from '@angular/common';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { GenericWebIndex } from '../../models/generic-web-index';
 import { GenericWebIndexUtility } from '../../utilities/generic-web-index.utility';
 import { YouTubeChannelsIndexDataStore } from '../../services/you-tube-channels-index-data.store';
 
