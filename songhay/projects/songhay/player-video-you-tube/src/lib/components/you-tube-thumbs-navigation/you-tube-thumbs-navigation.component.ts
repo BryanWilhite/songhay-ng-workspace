@@ -45,6 +45,11 @@ export class YouTubeThumbsNavigationComponent implements OnInit, OnDestroy {
             this.route.params,
             this.youTubeChannelsIndexDataStore.serviceData
         ).subscribe(data => {
+            console.log({
+                component: YouTubeThumbsNavigationComponent.name,
+                zip: data
+            });
+
             const params = data[0];
             const index = data[1];
 

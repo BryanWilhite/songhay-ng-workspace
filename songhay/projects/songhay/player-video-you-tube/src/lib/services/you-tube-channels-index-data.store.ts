@@ -1,3 +1,4 @@
+import { Segment } from 'songhay/core/models/segment';
 import { ObjectUtility } from 'songhay/core/utilities/object.utility';
 import { Injectable } from '@angular/core';
 import { AppDataStore, SendMethods, AppDataStoreOptions } from '@songhay/core';
@@ -19,7 +20,24 @@ export class YouTubeChannelsIndexDataStore extends AppDataStore<
      * from JSON of the shape {} }
      */
     static getGenericWebIndex(json: {}): GenericWebIndex {
-        const data = ObjectUtility.lowerCasePropertyChar(json);
+        const segment = ObjectUtility.lowerCasePropertyChar(json) as Segment;
+        if (!segment) {
+            throw new Error('The expected GenericWebIndex Segment is not here.');
+        }
+
+        const objects = json['documents'] as {}[];
+        if (!objects) {
+            throw new Error('The expected GenericWebIndex Document objects are not here.');
+        }
+
+        const documents = objects.map(o =>
+            ObjectUtility.lowerCasePropertyChar(o)
+        ) as Document[];
+        if (!documents) {
+            throw new Error('The expected GenericWebIndex documents are not here.');
+        }
+
+        const data = { ...segment, ...{ documents } } as unknown;
         const index = data as GenericWebIndex;
         if (!index) {
             throw new Error('The expected GenericWebIndex is not here.');
@@ -50,7 +68,9 @@ export class YouTubeChannelsIndexDataStore extends AppDataStore<
             switch (method) {
                 default:
                 case 'get':
-                    return YouTubeChannelsIndexDataStore.getGenericWebIndex(data);
+                    return YouTubeChannelsIndexDataStore.getGenericWebIndex(
+                        data
+                    );
             }
         };
         return options;
