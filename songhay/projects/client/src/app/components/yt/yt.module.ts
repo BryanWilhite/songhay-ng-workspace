@@ -5,16 +5,20 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 import {
-    YouTubeChannelDataStore,
     MaterialModule,
-    YouTubeThumbsComponent
+    YouTubeModule,
+    YouTubeRoutePaths
 } from '@songhay/player-video-you-tube';
 
 import { IndexComponent } from './index.component';
 import { ThumbsComponent } from './thumbs/thumbs.component';
 
 const routes: Routes = [
-    { path: '', component: IndexComponent },
+    { path: 'index', component: IndexComponent },
+    {
+        path: `lib/${YouTubeRoutePaths.uploads}`,
+        loadChildren: './module/you-tube-lib.module#YouTubeLibModule'
+    },
     { path: 'thumbs', component: ThumbsComponent }
 ];
 
@@ -23,9 +27,9 @@ const routes: Routes = [
         CommonModule,
         HttpClientModule,
         MaterialModule,
+        YouTubeModule,
         RouterModule.forChild(routes)
     ],
-    providers: [YouTubeChannelDataStore],
-    declarations: [YouTubeThumbsComponent, IndexComponent, ThumbsComponent]
+    declarations: [IndexComponent, ThumbsComponent]
 })
 export class YtModule {}
