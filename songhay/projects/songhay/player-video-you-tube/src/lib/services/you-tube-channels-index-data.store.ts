@@ -1,7 +1,10 @@
 import { Segment } from 'songhay/core/models/segment';
+import { Document } from 'songhay/core/models/document';
 import { ObjectUtility } from 'songhay/core/utilities/object.utility';
+
 import { Injectable } from '@angular/core';
 import { AppDataStore, SendMethods, AppDataStoreOptions } from '@songhay/core';
+
 import { GenericWebIndex } from '../models/generic-web-index';
 import { YouTubeScalars } from '../models/you-tube-scalars';
 
@@ -25,7 +28,7 @@ export class YouTubeChannelsIndexDataStore extends AppDataStore<
             throw new Error('The expected GenericWebIndex Segment is not here.');
         }
 
-        const objects = json['documents'] as {}[];
+        const objects = json['Documents'] as {}[];
         if (!objects) {
             throw new Error('The expected GenericWebIndex Document objects are not here.');
         }
@@ -42,6 +45,7 @@ export class YouTubeChannelsIndexDataStore extends AppDataStore<
         if (!index) {
             throw new Error('The expected GenericWebIndex is not here.');
         }
+
         return index;
     }
 
