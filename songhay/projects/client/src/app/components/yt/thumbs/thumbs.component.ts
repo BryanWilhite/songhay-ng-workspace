@@ -14,16 +14,13 @@ import {
 export class ThumbsComponent implements OnInit, OnDestroy {
     youTubeItems: YouTubeItem[];
 
-    private subscriptions: Subscription[];
+    private subscriptions: Subscription[] = [];
 
     constructor(public youTubeChannelDataStore: YouTubeChannelDataStore) {}
 
     ngOnInit() {
-        const suffix = 'songhay-top-ten';
-        const uri = YouTubeChannelDataStore.getUri(
-            'get',
-            `youtube-index-${suffix}`
-        );
+        const id = 'youtube-index-songhay-top-ten';
+        const uri = YouTubeChannelDataStore.getUri('get', id);
         const sub = this.youTubeChannelDataStore.serviceData.subscribe(data => {
             this.youTubeItems = data;
         });
