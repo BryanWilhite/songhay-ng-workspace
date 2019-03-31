@@ -8,7 +8,7 @@ import {
     OnDestroy
 } from '@angular/core';
 import { Location } from '@angular/common';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { GenericWebIndexUtility } from '../../utilities/generic-web-index.utility';
 import { YouTubeChannelsIndexDataStore } from '../../services/you-tube-channels-index-data.store';
