@@ -78,18 +78,6 @@
 					<dl class="tsd-comment-tags">
 						<dt>export</dt>
 						<dd></dd>
-						<dt>class</dt>
-						<dd><p>AppTabularDataStore</p>
-						</dd>
-						<dt>extends</dt>
-						<dd><p>{AppDataStore&lt;TDomain, TError&gt;}</p>
-						</dd>
-						<dt>template</dt>
-						<dd><p>TDomain</p>
-						</dd>
-						<dt>template</dt>
-						<dd><p>TError</p>
-						</dd>
 					</dl>
 				</div>
 			</section>
@@ -145,12 +133,12 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_lib_services_app_tabular_data_store_.apptabulardatastore.html#subscriptions" class="tsd-kind-icon">subscriptions</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_lib_services_app_tabular_data_store_.apptabulardatastore.html#tabularclient" class="tsd-kind-icon">tabular<wbr>Client</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_lib_services_app_tabular_data_store_.apptabulardatastore.html#tabulardomainsubject" class="tsd-kind-icon">tabular<wbr>Domain<wbr>Subject</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_lib_services_app_tabular_data_store_.apptabulardatastore.html#tabularoptions" class="tsd-kind-icon">tabular<wbr>Options</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_lib_services_app_tabular_data_store_.apptabulardatastore.html#options" class="tsd-kind-icon">options</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_lib_services_app_tabular_data_store_.apptabulardatastore.html#rows-1" class="tsd-kind-icon">rows</a></li>
 							</ul>
 						</section>
@@ -179,33 +167,25 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>App<wbr>Tabular<wbr>Data<wbr>Store<span class="tsd-signature-symbol">(</span>tabularClient<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HttpClient</span>, tabularOptions<span class="tsd-signature-symbol">?: </span><a href="_lib_services_app_data_store_options_.appdatastoreoptions.html" class="tsd-signature-type">AppDataStoreOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TDomain</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TError</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lib_services_app_tabular_data_store_.apptabulardatastore.html" class="tsd-signature-type">AppTabularDataStore</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>App<wbr>Tabular<wbr>Data<wbr>Store<span class="tsd-signature-symbol">(</span>tabularClient<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HttpClient</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lib_services_app_tabular_data_store_.apptabulardatastore.html" class="tsd-signature-type">AppTabularDataStore</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_lib_services_app_data_store_.appdatastore.html">AppDataStore</a>.<a href="_lib_services_app_data_store_.appdatastore.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L39">lib/services/app-tabular-data.store.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L30">lib/services/app-tabular-data.store.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Creates an instance of AppDataStore.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>AppDataStore</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>tabularClient: <span class="tsd-signature-type">HttpClient</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> tabularOptions: <a href="_lib_services_app_data_store_options_.appdatastoreoptions.html" class="tsd-signature-type">AppDataStoreOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TDomain</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TError</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_lib_services_app_tabular_data_store_.apptabulardatastore.html" class="tsd-signature-type">AppTabularDataStore</a></h4>
@@ -221,7 +201,7 @@
 					<div class="tsd-signature tsd-kind-icon">data<wbr>Store<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L39">lib/services/app-tabular-data.store.ts:39</a></li>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L30">lib/services/app-tabular-data.store.ts:30</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -240,21 +220,13 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_lib_services_app_data_store_.appdatastore.html">AppDataStore</a>.<a href="_lib_services_app_data_store_.appdatastore.html#isbusy">isBusy</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L29">lib/services/app-data.store.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L22">lib/services/app-data.store.ts:22</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Returns true when the API call is busy.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>type</dt>
-							<dd><p>{boolean}</p>
-							</dd>
-							<dt>memberof</dt>
-							<dd><p>AppDataService</p>
-							</dd>
-						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -264,21 +236,13 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_lib_services_app_data_store_.appdatastore.html">AppDataStore</a>.<a href="_lib_services_app_data_store_.appdatastore.html#iserror">isError</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L37">lib/services/app-data.store.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L27">lib/services/app-data.store.ts:27</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Returns true when the last API promise is rejected.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>type</dt>
-							<dd><p>{boolean}</p>
-							</dd>
-							<dt>memberof</dt>
-							<dd><p>BlogEntriesService</p>
-							</dd>
-						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -288,7 +252,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_lib_services_app_data_store_.appdatastore.html">AppDataStore</a>.<a href="_lib_services_app_data_store_.appdatastore.html#isloaded">isLoaded</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L46">lib/services/app-data.store.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L33">lib/services/app-data.store.ts:33</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -296,14 +260,6 @@
 							<p>Returns true when the last API call loaded data
 							without any errors.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>type</dt>
-							<dd><p>{boolean}</p>
-							</dd>
-							<dt>memberof</dt>
-							<dd><p>AppDataService</p>
-							</dd>
-						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -313,21 +269,13 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_lib_services_app_data_store_.appdatastore.html">AppDataStore</a>.<a href="_lib_services_app_data_store_.appdatastore.html#servicedata">serviceData</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L54">lib/services/app-data.store.ts:54</a></li>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L38">lib/services/app-data.store.ts:38</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Observes the service data.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>type</dt>
-							<dd><p>{Observable<TDomain>}</p>
-							</dd>
-							<dt>memberof</dt>
-							<dd><p>AppDataStore</p>
-							</dd>
-						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -337,21 +285,13 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_lib_services_app_data_store_.appdatastore.html">AppDataStore</a>.<a href="_lib_services_app_data_store_.appdatastore.html#serviceerror">serviceError</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L62">lib/services/app-data.store.ts:62</a></li>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L43">lib/services/app-data.store.ts:43</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Observes any service errors.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>type</dt>
-							<dd><p>{Observable<TError>}</p>
-							</dd>
-							<dt>memberof</dt>
-							<dd><p>AppDataStore</p>
-							</dd>
-						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
@@ -361,7 +301,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_lib_services_app_data_store_.appdatastore.html">AppDataStore</a>.<a href="_lib_services_app_data_store_.appdatastore.html#subscriptions">subscriptions</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L64">lib/services/app-data.store.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L45">lib/services/app-data.store.ts:45</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -371,7 +311,7 @@
 					<div class="tsd-signature tsd-kind-icon">tabular<wbr>Client<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HttpClient</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L48">lib/services/app-tabular-data.store.ts:48</a></li>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L35">lib/services/app-tabular-data.store.ts:35</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -381,23 +321,37 @@
 					<div class="tsd-signature tsd-kind-icon">tabular<wbr>Domain<wbr>Subject<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">BehaviorSubject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TDomain</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L38">lib/services/app-tabular-data.store.ts:38</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="tabularoptions" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> tabular<wbr>Options</h3>
-					<div class="tsd-signature tsd-kind-icon">tabular<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="_lib_services_app_data_store_options_.appdatastoreoptions.html" class="tsd-signature-type">AppDataStoreOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TDomain</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TError</span><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L49">lib/services/app-tabular-data.store.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L29">lib/services/app-tabular-data.store.ts:29</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="options" class="tsd-anchor"></a>
+					<h3>options</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> options<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lib_services_app_data_store_options_.appdatastoreoptions.html" class="tsd-signature-type">AppDataStoreOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TDomain</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TError</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lib_services_app_data_store_.appdatastore.html">AppDataStore</a>.<a href="_lib_services_app_data_store_.appdatastore.html#options">options</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L187">lib/services/app-data.store.ts:187</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>returns domain-specific options
+									to be overridden in a subclass</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="_lib_services_app_data_store_options_.appdatastoreoptions.html" class="tsd-signature-type">AppDataStoreOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TDomain</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TError</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="rows-1" class="tsd-anchor"></a>
 					<h3>rows</h3>
@@ -408,7 +362,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L34">lib/services/app-tabular-data.store.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L25">lib/services/app-tabular-data.store.ts:25</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -416,16 +370,6 @@
 									<p>gets the tabular data
 									of the internal data store</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>readonly</dt>
-									<dd></dd>
-									<dt>type</dt>
-									<dd><p>{Observable<TDomain>}</p>
-									</dd>
-									<dt>memberof</dt>
-									<dd><p>AppTabularDataStore</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TDomain</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -444,7 +388,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L126">lib/services/app-tabular-data.store.ts:126</a></li>
+									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L102">lib/services/app-tabular-data.store.ts:102</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -470,7 +414,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L135">lib/services/app-tabular-data.store.ts:135</a></li>
+									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L111">lib/services/app-tabular-data.store.ts:111</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -497,7 +441,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_lib_services_app_data_store_.appdatastore.html">AppDataStore</a>.<a href="_lib_services_app_data_store_.appdatastore.html#indicateerror">indicateError</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L288">lib/services/app-data.store.ts:288</a></li>
+									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L191">lib/services/app-data.store.ts:191</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -524,18 +468,13 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_lib_services_app_data_store_.appdatastore.html">AppDataStore</a>.<a href="_lib_services_app_data_store_.appdatastore.html#initializeloadstate">initializeLoadState</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L106">lib/services/app-data.store.ts:106</a></li>
+									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L77">lib/services/app-data.store.ts:77</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Initializes App data-loading state.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>AppDataService</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -552,18 +491,13 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_lib_services_app_data_store_.appdatastore.html">AppDataStore</a>.<a href="_lib_services_app_data_store_.appdatastore.html#load">load</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L134">lib/services/app-data.store.ts:134</a></li>
+									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L86">lib/services/app-data.store.ts:86</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Load domain data from the specified URI.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>AppDataStore</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -589,18 +523,13 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_lib_services_app_data_store_.appdatastore.html">AppDataStore</a>.<a href="_lib_services_app_data_store_.appdatastore.html#loadasync">loadAsync</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L160">lib/services/app-data.store.ts:160</a></li>
+									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L93">lib/services/app-data.store.ts:93</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Load domain data from the specified URI.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>AppDataStore</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -625,7 +554,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L64">lib/services/app-tabular-data.store.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L45">lib/services/app-tabular-data.store.ts:45</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -634,9 +563,6 @@
 									of the internal data store</p>
 								</div>
 								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>AppTabularDataStore</p>
-									</dd>
 									<dt>tutorial</dt>
 									<dd><p><a href="https://coryrylan.com/blog/angular-observable-data-services">https://coryrylan.com/blog/angular-observable-data-services</a></p>
 									</dd>
@@ -666,7 +592,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_lib_services_app_data_store_.appdatastore.html">AppDataStore</a>.<a href="_lib_services_app_data_store_.appdatastore.html#ngondestroy">ngOnDestroy</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L93">lib/services/app-data.store.ts:93</a></li>
+									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L66">lib/services/app-data.store.ts:66</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -675,11 +601,6 @@
 										when a directive, pipe,
 									or service is destroyed.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>AppDataStore</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -696,18 +617,13 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_lib_services_app_data_store_.appdatastore.html">AppDataStore</a>.<a href="_lib_services_app_data_store_.appdatastore.html#send">send</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L186">lib/services/app-data.store.ts:186</a></li>
+									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L100">lib/services/app-data.store.ts:100</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Sends domain data to the specified URI.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>AppDataStore</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -739,18 +655,13 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_lib_services_app_data_store_.appdatastore.html">AppDataStore</a>.<a href="_lib_services_app_data_store_.appdatastore.html#sendasync">sendAsync</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L255">lib/services/app-data.store.ts:255</a></li>
+									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-data.store.ts#L150">lib/services/app-data.store.ts:150</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Sends domain data to the specified URI.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>AppDataStore</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -781,7 +692,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L81">lib/services/app-tabular-data.store.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/core/src/lib/services/app-tabular-data.store.ts#L57">lib/services/app-tabular-data.store.ts:57</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -790,11 +701,6 @@
 										with the specified strategy @param {onNext}
 									for the rows of the internal data store</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>AppTabularDataStore</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -922,8 +828,8 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_lib_services_app_tabular_data_store_.apptabulardatastore.html#tabulardomainsubject" class="tsd-kind-icon">tabular<wbr>Domain<wbr>Subject</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="_lib_services_app_tabular_data_store_.apptabulardatastore.html#tabularoptions" class="tsd-kind-icon">tabular<wbr>Options</a>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lib_services_app_tabular_data_store_.apptabulardatastore.html#options" class="tsd-kind-icon">options</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="_lib_services_app_tabular_data_store_.apptabulardatastore.html#rows-1" class="tsd-kind-icon">rows</a>

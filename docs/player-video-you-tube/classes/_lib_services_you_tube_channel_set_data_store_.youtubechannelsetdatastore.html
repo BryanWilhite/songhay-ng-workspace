@@ -77,12 +77,6 @@
 					<dl class="tsd-comment-tags">
 						<dt>export</dt>
 						<dd></dd>
-						<dt>class</dt>
-						<dd><p>YouTubeChannelSetDataStore</p>
-						</dd>
-						<dt>extends</dt>
-						<dd><p>{AppDataStore&lt;Map&lt;string, YouTubeItem[]&gt;, any&gt;}</p>
-						</dd>
 					</dl>
 				</div>
 			</section>
@@ -127,6 +121,12 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite"><a href="_lib_services_you_tube_channel_set_data_store_.youtubechannelsetdatastore.html#options" class="tsd-kind-icon">options</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_lib_services_you_tube_channel_set_data_store_.youtubechannelsetdatastore.html#indicateerror" class="tsd-kind-icon">indicate<wbr>Error</a></li>
@@ -137,7 +137,6 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lib_services_you_tube_channel_set_data_store_.youtubechannelsetdatastore.html#send" class="tsd-kind-icon">send</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lib_services_you_tube_channel_set_data_store_.youtubechannelsetdatastore.html#sendasync" class="tsd-kind-icon">send<wbr>Async</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_lib_services_you_tube_channel_set_data_store_.youtubechannelsetdatastore.html#getitemsmap" class="tsd-kind-icon">get<wbr>Items<wbr>Map</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_lib_services_you_tube_channel_set_data_store_.youtubechannelsetdatastore.html#getoptions" class="tsd-kind-icon">get<wbr>Options</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_lib_services_you_tube_channel_set_data_store_.youtubechannelsetdatastore.html#geturi" class="tsd-kind-icon">get<wbr>Uri</a></li>
 							</ul>
 						</section>
@@ -150,33 +149,25 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>You<wbr>Tube<wbr>Channel<wbr>Set<wbr>Data<wbr>Store<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HttpClient</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AppDataStoreOptions</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_lib_models_you_tube_item_.youtubeitem.html" class="tsd-signature-type">YouTubeItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lib_services_you_tube_channel_set_data_store_.youtubechannelsetdatastore.html" class="tsd-signature-type">YouTubeChannelSetDataStore</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>You<wbr>Tube<wbr>Channel<wbr>Set<wbr>Data<wbr>Store<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HttpClient</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lib_services_you_tube_channel_set_data_store_.youtubechannelsetdatastore.html" class="tsd-signature-type">YouTubeChannelSetDataStore</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from AppDataStore.__constructor</p>
 								<ul>
-									<li>Defined in E:/~sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:58</li>
+									<li>Defined in E:/~shares/sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:38</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Creates an instance of AppDataStore.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>AppDataStore</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>client: <span class="tsd-signature-type">HttpClient</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">AppDataStoreOptions</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_lib_models_you_tube_item_.youtubeitem.html" class="tsd-signature-type">YouTubeItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_lib_services_you_tube_channel_set_data_store_.youtubechannelsetdatastore.html" class="tsd-signature-type">YouTubeChannelSetDataStore</a></h4>
@@ -193,21 +184,13 @@
 					<aside class="tsd-sources">
 						<p>Inherited from AppDataStore.isBusy</p>
 						<ul>
-							<li>Defined in E:/~sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:26</li>
+							<li>Defined in E:/~shares/sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:18</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Returns true when the API call is busy.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>type</dt>
-							<dd><p>{boolean}</p>
-							</dd>
-							<dt>memberof</dt>
-							<dd><p>AppDataService</p>
-							</dd>
-						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -217,21 +200,13 @@
 					<aside class="tsd-sources">
 						<p>Inherited from AppDataStore.isError</p>
 						<ul>
-							<li>Defined in E:/~sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:33</li>
+							<li>Defined in E:/~shares/sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:22</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Returns true when the last API promise is rejected.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>type</dt>
-							<dd><p>{boolean}</p>
-							</dd>
-							<dt>memberof</dt>
-							<dd><p>BlogEntriesService</p>
-							</dd>
-						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -241,7 +216,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from AppDataStore.isLoaded</p>
 						<ul>
-							<li>Defined in E:/~sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:41</li>
+							<li>Defined in E:/~shares/sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:27</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -249,14 +224,6 @@
 							<p>Returns true when the last API call loaded data
 							without any errors.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>type</dt>
-							<dd><p>{boolean}</p>
-							</dd>
-							<dt>memberof</dt>
-							<dd><p>AppDataService</p>
-							</dd>
-						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -266,21 +233,13 @@
 					<aside class="tsd-sources">
 						<p>Inherited from AppDataStore.serviceData</p>
 						<ul>
-							<li>Defined in E:/~sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:48</li>
+							<li>Defined in E:/~shares/sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:31</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Observes the service data.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>type</dt>
-							<dd><p>{Observable<TDomain>}</p>
-							</dd>
-							<dt>memberof</dt>
-							<dd><p>AppDataStore</p>
-							</dd>
-						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -290,21 +249,13 @@
 					<aside class="tsd-sources">
 						<p>Inherited from AppDataStore.serviceError</p>
 						<ul>
-							<li>Defined in E:/~sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:55</li>
+							<li>Defined in E:/~shares/sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:35</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Observes any service errors.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>type</dt>
-							<dd><p>{Observable<TError>}</p>
-							</dd>
-							<dt>memberof</dt>
-							<dd><p>AppDataStore</p>
-							</dd>
-						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
@@ -314,9 +265,36 @@
 					<aside class="tsd-sources">
 						<p>Inherited from AppDataStore.subscriptions</p>
 						<ul>
-							<li>Defined in E:/~sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:56</li>
+							<li>Defined in E:/~shares/sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:36</li>
 						</ul>
 					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
+					<a name="options" class="tsd-anchor"></a>
+					<h3>options</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> options<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AppDataStoreOptions</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_lib_models_you_tube_item_.youtubeitem.html" class="tsd-signature-type">YouTubeItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides AppDataStore.options</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/player-video-you-tube/src/lib/services/you-tube-channel-set-data.store.ts#L60">lib/services/you-tube-channel-set-data.store.ts:60</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>returns @type {AppDataStoreOptions&lt;Map&lt;string, YouTubeItem[]&gt;, any&gt;}
+									for this store</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AppDataStoreOptions</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_lib_models_you_tube_item_.youtubeitem.html" class="tsd-signature-type">YouTubeItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -332,7 +310,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from AppDataStore.indicateError</p>
 								<ul>
-									<li>Defined in E:/~sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:172</li>
+									<li>Defined in E:/~shares/sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:74</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -359,18 +337,13 @@
 							<aside class="tsd-sources">
 								<p>Inherited from AppDataStore.initializeLoadState</p>
 								<ul>
-									<li>Defined in E:/~sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:79</li>
+									<li>Defined in E:/~shares/sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:52</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Initializes App data-loading state.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>AppDataService</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -387,18 +360,13 @@
 							<aside class="tsd-sources">
 								<p>Inherited from AppDataStore.load</p>
 								<ul>
-									<li>Defined in E:/~sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:102</li>
+									<li>Defined in E:/~shares/sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:56</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Load domain data from the specified URI.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>AppDataStore</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -424,18 +392,13 @@
 							<aside class="tsd-sources">
 								<p>Inherited from AppDataStore.loadAsync</p>
 								<ul>
-									<li>Defined in E:/~sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:125</li>
+									<li>Defined in E:/~shares/sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:60</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Load domain data from the specified URI.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>AppDataStore</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -461,7 +424,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from AppDataStore.ngOnDestroy</p>
 								<ul>
-									<li>Defined in E:/~sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:73</li>
+									<li>Defined in E:/~shares/sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:48</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -470,11 +433,6 @@
 										when a directive, pipe,
 									or service is destroyed.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>AppDataStore</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -491,18 +449,13 @@
 							<aside class="tsd-sources">
 								<p>Inherited from AppDataStore.send</p>
 								<ul>
-									<li>Defined in E:/~sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:148</li>
+									<li>Defined in E:/~shares/sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:64</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Sends domain data to the specified URI.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>AppDataStore</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -534,18 +487,13 @@
 							<aside class="tsd-sources">
 								<p>Inherited from AppDataStore.sendAsync</p>
 								<ul>
-									<li>Defined in E:/~sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:171</li>
+									<li>Defined in E:/~shares/sourceRoot/songhay-ng-workspace/songhay/dist/songhay/core/lib/services/app-data.store.d.ts:68</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Sends domain data to the specified URI.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>AppDataStore</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -576,7 +524,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/player-video-you-tube/src/lib/services/you-tube-channel-set-data.store.ts#L26">lib/services/you-tube-channel-set-data.store.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/player-video-you-tube/src/lib/services/you-tube-channel-set-data.store.ts#L22">lib/services/you-tube-channel-set-data.store.ts:22</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -584,13 +532,6 @@
 									<p>gets @type {Map&lt;string, YouTubeItem[]&gt;}
 									from JSON of the shape { set: [{ items: [] }] }</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>static</dt>
-									<dd></dd>
-									<dt>memberof</dt>
-									<dd><p>YouTubeChannelSetDataStore</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -599,41 +540,6 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_lib_models_you_tube_item_.youtubeitem.html" class="tsd-signature-type">YouTubeItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="getoptions" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Options</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Options<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AppDataStoreOptions</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_lib_models_you_tube_item_.youtubeitem.html" class="tsd-signature-type">YouTubeItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/player-video-you-tube/src/lib/services/you-tube-channel-set-data.store.ts#L56">lib/services/you-tube-channel-set-data.store.ts:56</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>returns @type {AppDataStoreOptions&lt;Map&lt;string, YouTubeItem[]&gt;, any&gt;}
-									for this store</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>readonly</dt>
-									<dd></dd>
-									<dt>static</dt>
-									<dd></dd>
-									<dt>type</dt>
-									<dd><p>{AppDataStoreOptions&lt;Map&lt;string, YouTubeItem[]&gt;, any&gt;}</p>
-									</dd>
-									<dt>memberof</dt>
-									<dd><p>YouTubeChannelSetDataStore</p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AppDataStoreOptions</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_lib_models_you_tube_item_.youtubeitem.html" class="tsd-signature-type">YouTubeItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -647,20 +553,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/bd52107/songhay/projects/songhay/player-video-you-tube/src/lib/services/you-tube-channel-set-data.store.ts#L79">lib/services/you-tube-channel-set-data.store.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/BryanWilhite/songhay-ng-workspace/blob/e0dc1e4/songhay/projects/songhay/player-video-you-tube/src/lib/services/you-tube-channel-set-data.store.ts#L46">lib/services/you-tube-channel-set-data.store.ts:46</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>gets the URI based on the specified @type {SendMethods}</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>static</dt>
-									<dd></dd>
-									<dt>memberof</dt>
-									<dd><p>YouTubeChannelSetDataStore</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -719,6 +618,9 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 								<a href="_lib_services_you_tube_channel_set_data_store_.youtubechannelsetdatastore.html#subscriptions" class="tsd-kind-icon">subscriptions</a>
 							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_lib_services_you_tube_channel_set_data_store_.youtubechannelsetdatastore.html#options" class="tsd-kind-icon">options</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 								<a href="_lib_services_you_tube_channel_set_data_store_.youtubechannelsetdatastore.html#indicateerror" class="tsd-kind-icon">indicate<wbr>Error</a>
 							</li>
@@ -742,9 +644,6 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
 								<a href="_lib_services_you_tube_channel_set_data_store_.youtubechannelsetdatastore.html#getitemsmap" class="tsd-kind-icon">get<wbr>Items<wbr>Map</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="_lib_services_you_tube_channel_set_data_store_.youtubechannelsetdatastore.html#getoptions" class="tsd-kind-icon">get<wbr>Options</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
 								<a href="_lib_services_you_tube_channel_set_data_store_.youtubechannelsetdatastore.html#geturi" class="tsd-kind-icon">get<wbr>Uri</a>
