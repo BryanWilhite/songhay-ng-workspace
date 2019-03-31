@@ -8,64 +8,43 @@ import { YouTubeScalars } from '../models/you-tube-scalars';
  * YouTube Presentation data services
  *
  * @export
- * @class YouTubePresentationDataServices
  */
 @Injectable()
 export class YouTubePresentationDataServices {
     /**
      * name of method on this class for Jasmine spies
-     *
-     * @static
-     * @memberof YouTubePresentationDataServices
      */
     static loadPresentationMethodName = 'loadPresentation';
 
     /**
      * name of method on this class for Jasmine spies
-     *
-     * @static
-     * @memberof YouTubePresentationDataServices
      */
     static loadVideosMethodName = 'loadVideos';
 
     /**
      * emits event when @member loadPresentation resolves
-     *
-     * @type {EventEmitter<{}>}
-     * @memberof YouTubeDataService
      */
     @Output()
     presentationLoaded: EventEmitter<{}>;
 
     /**
      * emits event when @member loadVideos resolves
-     *
-     * @type {EventEmitter<{}>}
-     * @memberof YouTubeDataService
      */
     @Output()
     videosLoaded: EventEmitter<{}>;
 
     /**
      * YouTube presentation data service
-     *
-     * @type {AppDataService}
-     * @memberof YouTubePresentationDataServices
      */
     presentationDataService: AppDataService;
 
     /**
      * YouTube videos data service
-     *
-     * @type {AppDataService}
-     * @memberof YouTubePresentationDataServices
      */
     videosDataService: AppDataService;
 
     /**
      * Creates an instance of YouTubePresentationDataServices.
-     * @param {Http} client
-     * @memberof YouTubePresentationDataServices
      */
     constructor(client: Http) {
         this.presentationDataService = new AppDataService(client);
@@ -77,10 +56,6 @@ export class YouTubePresentationDataServices {
 
     /**
      * loads b-roll Presentation metadata
-     *
-     * @param {string} id
-     * @returns {Promise<Response>}
-     * @memberof YouTubePresentationDataServices
      */
     loadPresentation(id: string): Promise<Response> {
         const uri = `${YouTubeScalars.rxYouTubeApiRootUri}${id}`;
@@ -92,10 +67,6 @@ export class YouTubePresentationDataServices {
 
     /**
      * loads YouTube video data
-     *
-     * @param {string} id
-     * @returns {Promise<Response>}
-     * @memberof YouTubePresentationDataServices
      */
     loadVideos(id: string): Promise<Response> {
         const uri = `${YouTubeScalars.rxYouTubeApiRootUri}${

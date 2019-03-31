@@ -12,10 +12,6 @@ import { AppDataStore } from './app-data.store';
  * for the application domain
  *
  * @export
- * @class AppTabularDataStore
- * @extends {AppDataStore<TDomain, TError>}
- * @template TDomain
- * @template TError
  */
 @Injectable()
 export class AppTabularDataStore<TDomain, TError> extends AppDataStore<
@@ -25,10 +21,6 @@ export class AppTabularDataStore<TDomain, TError> extends AppDataStore<
     /**
      * gets the tabular data
      * of the internal data store
-     *
-     * @readonly
-     * @type {Observable<TDomain>}
-     * @memberof AppTabularDataStore
      */
     get rows(): Observable<TDomain[]> {
         return this.tabularDomainSubject.asObservable();
@@ -39,9 +31,6 @@ export class AppTabularDataStore<TDomain, TError> extends AppDataStore<
 
     /**
      *Creates an instance of AppDataStore.
-     * @param {HttpClient} tabularClient
-     * @param {AppDataStoreOptions<TDomain, TError>} [tabularOptions]
-     * @memberof AppDataStore
      */
     constructor(private tabularClient: HttpClient) {
         super(tabularClient);
@@ -50,10 +39,6 @@ export class AppTabularDataStore<TDomain, TError> extends AppDataStore<
     /**
      * loads tabular data into the rows
      * of the internal data store
-     *
-     * @param {string} uri
-     * @param {HttpClientOptions} [options={}]
-     * @memberof AppTabularDataStore
      *
      * @tutorial https://coryrylan.com/blog/angular-observable-data-services
      */
@@ -68,11 +53,6 @@ export class AppTabularDataStore<TDomain, TError> extends AppDataStore<
      * gets/reloads domain datum
      * with the specified strategy @param {onNext}
      * for the rows of the internal data store
-     *
-     * @param {string} uri
-     * @param {HttpClientOptions} [options={}]
-     * @param {(data: object, rows: TDomain) => void} onNext
-     * @memberof AppTabularDataStore
      */
     sendToChangeRows(
         method: SendMethods,

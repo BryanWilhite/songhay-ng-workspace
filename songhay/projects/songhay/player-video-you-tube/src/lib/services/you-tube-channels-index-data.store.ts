@@ -8,8 +8,6 @@ import { YouTubeScalars } from '../models/you-tube-scalars';
  * Stores YouTube Channel index data, curated by the Songhay studio.
  *
  * @export
- * @class YouTubeChannelsIndexDataStore
- * @extends {AppDataStore<GenericWebIndex, any>}
  */
 @Injectable()
 export class YouTubeChannelsIndexDataStore extends AppDataStore<
@@ -19,11 +17,6 @@ export class YouTubeChannelsIndexDataStore extends AppDataStore<
     /**
      * gets @type {GenericWebIndex}
      * from JSON of the shape {} }
-     *
-     * @static
-     * @param {{}} json
-     * @returns {GenericWebIndex}
-     * @memberof YouTubeChannelsIndexDataStore
      */
     static getGenericWebIndex(json: {}): GenericWebIndex {
         const data = ObjectUtility.lowerCasePropertyChar(json);
@@ -36,12 +29,6 @@ export class YouTubeChannelsIndexDataStore extends AppDataStore<
 
     /**
      * gets the URI based on the specified @type {SendMethods}
-     *
-     * @static
-     * @param {SendMethods} method
-     * @param {string} [id]
-     * @returns {string}
-     * @memberof YouTubeChannelsIndexDataStore
      */
     static getUri(method: SendMethods, id?: string): string {
         switch (method) {
@@ -56,11 +43,6 @@ export class YouTubeChannelsIndexDataStore extends AppDataStore<
     /**
      * returns @type {AppDataStoreOptions<GenericWebIndex, any>}
      * for this store
-     *
-     * @readonly
-     * @static
-     * @type {AppDataStoreOptions<GenericWebIndex, any>}
-     * @memberof YouTubeChannelsIndexDataStore
      */
     get options(): AppDataStoreOptions<GenericWebIndex, any> {
         const options = new AppDataStoreOptions<GenericWebIndex, any>();

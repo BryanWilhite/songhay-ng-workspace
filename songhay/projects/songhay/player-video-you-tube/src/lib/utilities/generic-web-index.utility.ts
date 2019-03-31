@@ -5,17 +5,11 @@ import { GenericWebIndex } from '../models/generic-web-index';
  * for YouTube API data
  *
  * @export
- * @class GenericWebIndexUtility
  */
 export class GenericWebIndexUtility {
     /**
      * gets the set display name
      * for the curated YouTube channels
-     *
-     * @static
-     * @param {GenericWebIndex} data
-     * @returns {string}
-     * @memberof GenericWebIndexUtility
      */
     static getChannelsSetDisplayName(data: GenericWebIndex): string {
         GenericWebIndexUtility.NullCheck(data);
@@ -25,12 +19,6 @@ export class GenericWebIndexUtility {
     /**
      * gets the set title
      * for the curated YouTube channels
-     *
-     * @static
-     * @param {string} channelSetId
-     * @param {GenericWebIndex} data
-     * @returns {string}
-     * @memberof GenericWebIndexUtility
      */
     static getChannelsSetTitle(channelSetId: string, data: GenericWebIndex): string {
         GenericWebIndexUtility.NullCheck(data);

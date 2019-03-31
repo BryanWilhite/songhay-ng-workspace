@@ -13,51 +13,32 @@ import { SendMethods } from '../models/send-methods.type';
  * with optional support for Promises.
  *
  * @export
- * @class AppDataStore
- * @implements {OnDestroy}
- * @template TDomain
- * @template TError
  */
 @Injectable()
 export class AppDataStore<TDomain, TError> implements OnDestroy {
     /**
      * Returns true when the API call is busy.
-     *
-     * @type {boolean}
-     * @memberof AppDataService
      */
     isBusy: boolean;
 
     /**
      * Returns true when the last API promise is rejected.
-     *
-     * @type {boolean}
-     * @memberof BlogEntriesService
      */
     isError: boolean;
 
     /**
      * Returns true when the last API call loaded data
      * without any errors.
-     *
-     * @type {boolean}
-     * @memberof AppDataService
      */
     isLoaded: boolean;
 
     /**
      * Observes the service data.
-     *
-     * @type {Observable<TDomain>}
-     * @memberof AppDataStore
      */
     serviceData: Observable<TDomain>;
 
     /**
      * Observes any service errors.
-     *
-     * @type {Observable<TError>}
-     * @memberof AppDataStore
      */
     serviceError: Observable<TError>;
 
@@ -68,9 +49,6 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
 
     /**
      *Creates an instance of AppDataStore.
-     * @param {HttpClient} client
-     * @param {AppDataStoreOptions<TDomain, TError>} [options]
-     * @memberof AppDataStore
      */
     constructor(private client: HttpClient) {
         this.isError = false;
@@ -84,8 +62,6 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
      * A lifecycle hook that is called
      * when a directive, pipe,
      * or service is destroyed.
-     *
-     * @memberof AppDataStore
      */
     ngOnDestroy(): void {
         this.subscriptions.forEach(i => {
@@ -97,8 +73,6 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
 
     /**
      * Initializes App data-loading state.
-     *
-     * @memberof AppDataService
      */
     initializeLoadState(): void {
         this.isError = false;
@@ -108,25 +82,6 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
 
     /**
      * Load domain data from the specified URI.
-     *
-     * @param {string} uri
-     * @param {({
-     *             headers?:
-     *                 | HttpHeaders
-     *                 | {
-     *                       [header: string]: string | string[];
-     *                   };
-     *             observe?: 'body';
-     *             params?:
-     *                 | HttpParams
-     *                 | {
-     *                       [param: string]: string | string[];
-     *                   };
-     *             reportProgress?: boolean;
-     *             responseType?: 'json';
-     *             withCredentials?: boolean;
-     *         })} [options={}]
-     * @memberof AppDataStore
      */
     load(uri: string, options: HttpClientOptions = {}): void {
         this.send('get', uri, null, options);
@@ -134,25 +89,6 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
 
     /**
      * Load domain data from the specified URI.
-     *
-     * @param {string} uri
-     * @param {({
-     *             headers?:
-     *                 | HttpHeaders
-     *                 | {
-     *                       [header: string]: string | string[];
-     *                   };
-     *             observe?: 'body';
-     *             params?:
-     *                 | HttpParams
-     *                 | {
-     *                       [param: string]: string | string[];
-     *                   };
-     *             reportProgress?: boolean;
-     *             responseType?: 'json';
-     *             withCredentials?: boolean;
-     *         })} [options={}]
-     * @memberof AppDataStore
      */
     loadAsync(uri: string, options: HttpClientOptions = {}): Promise<object> {
         return this.sendAsync('get', uri, null, options);
@@ -160,25 +96,6 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
 
     /**
      * Sends domain data to the specified URI.
-     *
-     * @param {string} uri
-     * @param {({
-     *             headers?:
-     *                 | HttpHeaders
-     *                 | {
-     *                       [header: string]: string | string[];
-     *                   };
-     *             observe?: 'body';
-     *             params?:
-     *                 | HttpParams
-     *                 | {
-     *                       [param: string]: string | string[];
-     *                   };
-     *             reportProgress?: boolean;
-     *             responseType?: 'json';
-     *             withCredentials?: boolean;
-     *         })} [options={}]
-     * @memberof AppDataStore
      */
     send(
         method: SendMethods,
@@ -229,25 +146,6 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
 
     /**
      * Sends domain data to the specified URI.
-     *
-     * @param {string} uri
-     * @param {({
-     *             headers?:
-     *                 | HttpHeaders
-     *                 | {
-     *                       [header: string]: string | string[];
-     *                   };
-     *             observe?: 'body';
-     *             params?:
-     *                 | HttpParams
-     *                 | {
-     *                       [param: string]: string | string[];
-     *                   };
-     *             reportProgress?: boolean;
-     *             responseType?: 'json';
-     *             withCredentials?: boolean;
-     *         })} [options={}]
-     * @memberof AppDataStore
      */
     sendAsync(
         method: SendMethods,
@@ -285,11 +183,6 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
     /**
      * returns domain-specific options
      * to be overridden in a subclass
-     *
-     * @readonly
-     * @protected
-     * @type {AppDataStoreOptions<TDomain, TError>}
-     * @memberof AppDataStore
      */
     get options(): AppDataStoreOptions<TDomain, TError> {
         return null;

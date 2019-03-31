@@ -8,19 +8,12 @@ import { YouTubeScalars } from '../models/you-tube-scalars';
  * Stores YouTube Channel item data, curated by the Songhay studio.
  *
  * @export
- * @class YouTubeChannelDataStore
- * @extends {AppDataStore<YouTubeItem[], any>}
  */
 @Injectable()
 export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
     /**
      * gets @type {YouTubeItem[]}
      * from JSON of the shape { items: [] } }
-     *
-     * @static
-     * @param {{ items: {} }} json
-     * @returns {YouTubeItem[]}
-     * @memberof YouTubeChannelDataStore
      */
     static getItems(json: {}): YouTubeItem[] {
         const data = json as { items: {} };
@@ -36,12 +29,6 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
 
     /**
      * gets the URI based on the specified @type {SendMethods}
-     *
-     * @static
-     * @param {SendMethods} method
-     * @param {string} [id]
-     * @returns {string}
-     * @memberof YouTubeChannelDataStore
      */
     static getUri(method: SendMethods, id?: string): string {
         switch (method) {
@@ -56,12 +43,6 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
     /**
      * gets the @type {GenericWebPresentation} URI
      * based on the specified @type {SendMethods}
-     *
-     * @static
-     * @param {SendMethods} method
-     * @param {string} [id]
-     * @returns {string}
-     * @memberof YouTubeChannelDataStore
      */
     static getPresentationUri(method: SendMethods, id?: string): string {
         switch (method) {
@@ -76,11 +57,6 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
     /**
      * returns @type {AppDataStoreOptions<YouTubeItem[], any>}
      * for this store
-     *
-     * @readonly
-     * @static
-     * @type {AppDataStoreOptions<YouTubeItem[], any>}
-     * @memberof YouTubeChannelDataStore
      */
     get options(): AppDataStoreOptions<YouTubeItem[], any> {
         const options = new AppDataStoreOptions<YouTubeItem[], any>();

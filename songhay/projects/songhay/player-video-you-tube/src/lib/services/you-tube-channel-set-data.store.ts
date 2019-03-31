@@ -8,8 +8,6 @@ import { YouTubeScalars } from '../models/you-tube-scalars';
  * Stores map of YouTube items for displaying sets of thumbnails by channel.
  *
  * @export
- * @class YouTubeChannelSetDataStore
- * @extends {AppDataStore<Map<string, YouTubeItem[]>, any>}
  */
 @Injectable()
 export class YouTubeChannelSetDataStore extends AppDataStore<
@@ -20,10 +18,6 @@ export class YouTubeChannelSetDataStore extends AppDataStore<
      * gets @type {Map<string, YouTubeItem[]>}
      * from JSON of the shape { set: [{ items: [] }] }
      *
-     * @static
-     * @param {{}} json
-     * @returns {Map<string, YouTubeItem[]>}
-     * @memberof YouTubeChannelSetDataStore
      */
     static getItemsMap(json: {}): Map<string, YouTubeItem[]> {
         const data = json as { set: [] };
@@ -48,13 +42,6 @@ export class YouTubeChannelSetDataStore extends AppDataStore<
 
     /**
      * gets the URI based on the specified @type {SendMethods}
-     *
-     * @static
-     * @param {SendMethods} method
-     * @param {string} [suffix]
-     * @param {string} [id]
-     * @returns {string}
-     * @memberof YouTubeChannelSetDataStore
      */
     static getUri(method: SendMethods, suffix?: string, id?: string): string {
         switch (method) {
@@ -69,11 +56,6 @@ export class YouTubeChannelSetDataStore extends AppDataStore<
     /**
      * returns @type {AppDataStoreOptions<Map<string, YouTubeItem[]>, any>}
      * for this store
-     *
-     * @readonly
-     * @static
-     * @type {AppDataStoreOptions<Map<string, YouTubeItem[]>, any>}
-     * @memberof YouTubeChannelSetDataStore
      */
     get options(): AppDataStoreOptions<Map<string, YouTubeItem[]>, any> {
         const options: AppDataStoreOptions<Map<string, YouTubeItem[]>, any> = {

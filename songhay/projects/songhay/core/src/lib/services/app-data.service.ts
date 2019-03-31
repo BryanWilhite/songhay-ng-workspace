@@ -6,40 +6,28 @@ import { Http, Response, RequestOptionsArgs } from '@angular/http';
  * default data service for this App
  *
  * @export
- * @class AppDataService
  * @deprecated see https://github.com/BryanWilhite/songhay-ng-workspace/issues/8#issuecomment-472557958
  */
 @Injectable()
 export class AppDataService {
     /**
      * Returns true when the last API promise is rejected.
-     *
-     * @type {boolean}
-     * @memberof BlogEntriesService
      */
     isError: boolean;
 
     /**
      * Returns true when the last API call loaded data
      * without any errors.
-     *
-     * @type {boolean}
-     * @memberof AppDataService
      */
     isLoaded: boolean;
 
     /**
      * Returns true when the API call is promising.
-     *
-     * @type {boolean}
-     * @memberof AppDataService
      */
     isLoading: boolean;
 
     /**
      *Creates an instance of @type {AppDataService}.
-     * @param {Http} client
-     * @memberof AppDataService
      */
     constructor(private client: Http) {
         this.isError = false;
@@ -50,11 +38,6 @@ export class AppDataService {
     /**
      * gets the executor
      * for the constructor of @type {Promise}
-     *
-     * @param {string} uri
-     * @param {(response: Response, reject?: any) => void} [executorAction]
-     * @returns
-     * @memberof AppDataService
      */
     getExecutor(
         uri: string,
@@ -106,8 +89,6 @@ export class AppDataService {
 
     /**
      * initializes App data-loading state
-     *
-     * @memberof AppDataService
      */
     initializeLoadState(): void {
         this.isError = false;
@@ -117,13 +98,6 @@ export class AppDataService {
 
     /**
      * loads JSON from the specified URI
-     *
-     * @template TFromJson
-     * @param {string} uri
-     * @param {(json: TFromJson) => void} responseAction
-     * @param {RequestOptionsArgs} [requestArgs]
-     * @returns {Promise<Response>}
-     * @memberof AppDataService
      */
     loadJson<TFromJson>(
         uri: string,
