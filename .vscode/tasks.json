@@ -59,6 +59,24 @@
         {
             "type": "npm",
             "script": "version:major",
+            "path": "songhay/projects/songhay/index/",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "version:minor",
+            "path": "songhay/projects/songhay/index/",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "version:patch",
+            "path": "songhay/projects/songhay/index/",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "version:major",
             "path": "songhay/projects/songhay/player-video-you-tube/",
             "problemMatcher": []
         },
@@ -88,6 +106,26 @@
                 "--out",
                 "./docs/core",
                 "./songhay/projects/songhay/core/src"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "typedoc for @songhay/index: generate docs",
+            "type": "shell",
+            "command": "typedoc",
+            "args": [
+                "--exclude",
+                "'**/*.spec.ts'",
+                "--mode",
+                "modules",
+                "--tsconfig",
+                "./songhay/tsconfig.json",
+                "--out",
+                "./docs/index",
+                "./songhay/projects/songhay/index/src"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"

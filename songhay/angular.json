@@ -203,6 +203,41 @@
           }
         }
       }
+    },
+    "@songhay/index": {
+      "root": "projects/songhay/index",
+      "sourceRoot": "projects/songhay/index/src",
+      "projectType": "library",
+      "prefix": "rx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/songhay/index/tsconfig.lib.json",
+            "project": "projects/songhay/index/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/songhay/index/src/test.ts",
+            "tsConfig": "projects/songhay/index/tsconfig.spec.json",
+            "karmaConfig": "projects/songhay/index/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/songhay/index/tsconfig.lib.json",
+              "projects/songhay/index/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "client"

@@ -30,6 +30,12 @@
       ],
       "@songhay/player-video-you-tube/*": [
         "dist/songhay/player-video-you-tube/*"
+      ],
+      "@songhay/index": [
+        "dist/songhay/index"
+      ],
+      "@songhay/index/*": [
+        "dist/songhay/index/*"
       ]
     }
   }
