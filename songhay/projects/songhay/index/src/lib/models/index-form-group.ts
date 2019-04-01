@@ -1,4 +1,4 @@
-import { IndexGroupingOption } from './songhay-index-grouping-option';
+import { IndexGroupingOption } from './index-grouping-option';
 
 export interface IIndexFormGroup {
     indexGroupingSelection: IndexGroupingOption;

@@ -5,9 +5,9 @@
 export * from './lib/index.module';
 
 /* models */
-export * from './lib/models/songhay-index-form-group';
-export * from './lib/models/songhay-index-group';
-export * from './lib/models/songhay-index-grouping-option';
-export * from './lib/models/songhay-index-styles';
+export * from './lib/models/index-form-group';
+export * from './lib/models/index-group';
+export * from './lib/models/index-grouping-option';
+export * from './lib/models/index-styles';
 
 /* services */
