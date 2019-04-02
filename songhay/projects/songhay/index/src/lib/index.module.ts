@@ -4,15 +4,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from './material.module';
 import { RoutingModule } from './routing.module';
 
 import { IndexContainerComponent } from './components/index-container.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { IndexEntriesStore } from './services/index-entries.store';
 import { IndexOptions } from './models/index-options';
 
+/**
+ * Index App Module
+ *
+ * @export
+ */
 @NgModule({
     imports: [
         BrowserModule,
@@ -28,7 +33,12 @@ import { IndexOptions } from './models/index-options';
     exports: [IndexContainerComponent, IndexEntriesStore]
 })
 export class IndexModule {
-    static forOptions(options: IndexOptions): ModuleWithProviders<IndexModule> {
+    /**
+     * injects providers into this root-level module
+     *
+     * @see https://angularfirst.com/the-ngmodule-forroot-convention/
+     */
+    static forRoot(options: IndexOptions): ModuleWithProviders<IndexModule> {
         return { ngModule: IndexModule, providers: [provideOptions(options)] };
     }
 }
