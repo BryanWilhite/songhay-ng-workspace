@@ -15,7 +15,7 @@ export class IndexContainerComponent implements OnInit {
   viewStyle: IndexStyles;
 
     constructor(
-        public indexService: IndexEntriesStore,
+        public indexEntriesStore: IndexEntriesStore,
         private indexOptions: IndexOptions,
         private route: ActivatedRoute
     ) {}
@@ -25,6 +25,6 @@ export class IndexContainerComponent implements OnInit {
           this.viewStyle = params['style'] as any;
       });
 
-      this.indexService.load(this.indexOptions.indexStoreUri);
+      this.indexEntriesStore.load(this.indexOptions.indexStoreUri);
   }
 }

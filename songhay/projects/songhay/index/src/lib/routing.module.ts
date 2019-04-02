@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AppIndexComponent } from './components/app-index/app-index.component';
+import { IndexContainerComponent } from './components/index-container.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/index/list', pathMatch: 'full' },
-    { path: 'index/:style', component: AppIndexComponent }
+    { path: 'index/:style', component: IndexContainerComponent }
 ];
 
 @NgModule({

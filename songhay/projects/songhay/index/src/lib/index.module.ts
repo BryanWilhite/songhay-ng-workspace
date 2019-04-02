@@ -9,9 +9,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { RoutingModule } from './routing.module';
 
-import { IndexContainerComponent } from './components/index-container.component';
-import { IndexEntriesStore } from './services/index-entries.store';
 import { IndexOptions } from './models/index-options';
+
+import { IndexEntriesStore } from './services/index-entries.store';
+
+import { IndexContainerComponent } from './components/index-container.component';
+import { IndexGroupsComponent } from './components/index-groups/index-groups.component';
+import { IndexListComponent } from './components/index-list/index-list.component';
+import { ErrorComponent } from './components/error/error.component';
 
 /**
  * Index App Module
@@ -28,9 +33,14 @@ import { IndexOptions } from './models/index-options';
         ReactiveFormsModule,
         RoutingModule
     ],
-    declarations: [IndexContainerComponent],
+    declarations: [
+        IndexContainerComponent,
+        IndexGroupsComponent,
+        IndexListComponent,
+        ErrorComponent
+    ],
     providers: [IndexEntriesStore],
-    exports: [IndexContainerComponent, IndexEntriesStore]
+    exports: [IndexContainerComponent]
 })
 export class IndexModule {
     /**
