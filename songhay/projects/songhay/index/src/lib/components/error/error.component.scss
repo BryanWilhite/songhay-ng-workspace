@@ -1,0 +1,11 @@
+
+@import '../../assets/scss/normalize-component';
+
+.mat-card.error {
+    margin: 1rem auto;
+    width: 70%;
+}
+
+.error .mat-card-title {
+    font-size: 1.8rem;
+}

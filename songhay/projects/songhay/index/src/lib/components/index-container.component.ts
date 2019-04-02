@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { MatIconRegistry } from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
 import { IndexOptions } from '../models/index-options';
@@ -10,21 +14,41 @@ import { IndexEntriesStore } from '../services/index-entries.store';
     templateUrl: './index-container.component.html',
     styleUrls: ['./index-container.component.scss']
 })
-export class IndexContainerComponent implements OnInit {
+export class IndexContainerComponent implements OnInit, OnDestroy {
+    viewStyle: IndexStyles;
 
-  viewStyle: IndexStyles;
+    private subscriptions: Subscription[] = [];
 
     constructor(
         public indexEntriesStore: IndexEntriesStore,
+        public iconRegistry: MatIconRegistry,
+        private route: ActivatedRoute,
         private indexOptions: IndexOptions,
-        private route: ActivatedRoute
-    ) {}
+        private sanitizer: DomSanitizer
+    ) {
+        iconRegistry.addSvgIconSetInNamespace(
+            'rx',
+            this.sanitizer.bypassSecurityTrustResourceUrl(
+                'assets/svg/sprites.svg'
+            )
+        );
+    }
 
     ngOnInit(): void {
-      this.route.params.subscribe(params => {
-          this.viewStyle = params['style'] as any;
-      });
+        const sub1 = this.route.params.subscribe(params => {
+            this.viewStyle = params['style'] as any;
+        });
 
-      this.indexEntriesStore.load(this.indexOptions.indexStoreUri);
-  }
+        this.indexEntriesStore.load(
+            this.indexOptions.indexStoreUri
+        );
+
+        [sub1].forEach(sub => this.subscriptions.push(sub));
+    }
+
+    ngOnDestroy(): void {
+        for (const sub of this.subscriptions) {
+            sub.unsubscribe();
+        }
+    }
 }

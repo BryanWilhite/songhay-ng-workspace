@@ -17,3 +17,4 @@ export * from './lib/services/index-entries.store';
 export * from './lib/components/index-container.component';
 export * from './lib/components/index-groups/index-groups.component';
 export * from './lib/components/index-list/index-list.component';
+export * from './lib/components/error/error.component';
