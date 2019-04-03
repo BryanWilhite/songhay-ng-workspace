@@ -21,6 +21,7 @@ import { DisplayItemModel } from 'songhay/core/models/display-item.model';
 import { IndexFormGroup } from '../../models/index-form-group';
 import { IndexGroupingOption } from '../../models/index-grouping-option';
 import { IndexGroup } from '../../models/index-group';
+import { IndexOptions } from '../../models/index-options';
 
 import { IndexEntriesStore } from '../../services/index-entries.store';
 
@@ -39,6 +40,7 @@ export class IndexGroupsComponent implements OnInit {
 
     constructor(
         public indexEntriesStore: IndexEntriesStore,
+        public indexOptions: IndexOptions,
         private sanitizer: DomSanitizer
     ) {}
 
