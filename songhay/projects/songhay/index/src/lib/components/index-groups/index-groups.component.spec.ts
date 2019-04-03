@@ -1,3 +1,4 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IndexGroupsComponent } from './index-groups.component';
@@ -8,7 +9,8 @@ describe('IndexGroupsComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [IndexGroupsComponent]
+            declarations: [IndexGroupsComponent],
+            schemas: [NO_ERRORS_SCHEMA]
         }).compileComponents();
     }));
 

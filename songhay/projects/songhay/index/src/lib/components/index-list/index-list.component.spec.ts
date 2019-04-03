@@ -1,3 +1,4 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IndexListComponent } from './index-list.component';
@@ -8,7 +9,8 @@ describe('IndexListComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [IndexListComponent]
+            declarations: [IndexListComponent],
+            schemas: [NO_ERRORS_SCHEMA]
         }).compileComponents();
     }));
 
