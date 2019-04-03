@@ -1,3 +1,36 @@
-<p>
-  index-list works!
-</p>
+<form [formGroup]="indexFormGroup" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+  <div class="cell nav" fxFlex="20">
+      <a class="index" [routerLink]="['/index/list']" title="set list view"><mat-icon color="accent" svgIcon="rx:mdi_eye_24px"></mat-icon><span fxHide.lt-md>set list view</span></a>
+  </div>
+  <div class="cell grouping" fxFlex="50">
+      <mat-form-field>
+          <mat-select formControlName="indexGroupingSelection" [value]="indexGroupingOptions" placeholder="select grouping">
+              <mat-option *ngFor="let option of indexGroupingOptions" [value]="option">
+                  {{ option.displayName }}
+              </mat-option>
+          </mat-select>
+      </mat-form-field>
+  </div>
+  <div class="cell filter" fxFlex="30">
+      <mat-form-field>
+          <input formControlName="indexFilter" matInput placeholder="filter index" />
+      </mat-form-field>
+  </div>
+</form>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let i of indexGroups$ | async; first as isFirst" [expanded]="isFirst">
+      <mat-expansion-panel-header>
+          <mat-panel-title>
+              <h2 [innerHTML]="i.groupDisplayName"></h2>
+          </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div fxLayout="row wrap">
+          <mat-card *ngFor="let j of i.group">
+              <mat-card-content>
+                  <a [routerLink]="['/blog/entry', j.slug]" class="index" [innerHTML]="j.title"></a>
+              </mat-card-content>
+              <mat-card-footer>{{ j.inceptDate | date:'yyyy-MM-dd' }}</mat-card-footer>
+          </mat-card>
+      </div>
+  </mat-expansion-panel>
+</mat-accordion>

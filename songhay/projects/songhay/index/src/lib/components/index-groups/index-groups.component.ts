@@ -13,7 +13,7 @@ import {
     switchMap
 } from 'rxjs/operators';
 
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 import { DisplayItemModel } from 'songhay/core/models/display-item.model';
@@ -25,6 +25,7 @@ import { IndexGroup } from '../../models/index-group';
 import { IndexEntriesStore } from '../../services/index-entries.store';
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: 'rx-index-groups',
     templateUrl: './index-groups.component.html',
     styleUrls: ['./index-groups.component.scss']

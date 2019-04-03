@@ -19,4 +19,10 @@ export class IndexOptions {
      * location of the Index data
      */
     indexStoreUri: string;
+
+    /**
+     * `routerLink` of the Index
+     * @remarks `['/blog/entry', j.slug]`
+     */
+    indexRouterLink: string[];
 }
