@@ -17,6 +17,7 @@ export class IndexOptions {
 
     /**
      * location of the Index data
+     * @remarks `./assets/data/app.json`
      */
     indexStoreUri: string;
 
