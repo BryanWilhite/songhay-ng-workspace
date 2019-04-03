@@ -1,5 +1,7 @@
-import * as _ from 'lodash';
-import { Observable, of } from 'rxjs';
+import * as lodash_ from 'lodash';
+const _ = lodash_;
+
+import { Observable } from 'rxjs';
 
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -62,27 +64,18 @@ export class IndexGroupsComponent implements OnInit {
         ) => {
             return _(entries)
                 .chain()
-                .groupBy((i: DisplayItemModel) =>
-                    _.toString(
-                        i.itemCategoryObject[
-                            indexGroupingOption.groupByPropertyName
-                        ]
-                    )
-                )
-                .map((i: DisplayItemModel[]) => {
-                    if (!i || !i.length) {
+                .groupBy((i: DisplayItemModel) => i.itemCategory)
+                .map((items: DisplayItemModel[]) => {
+                    if (!items || !items.length) {
                         console.log(
                             'The expected group of Blog entries are not here.'
                         );
                         return;
                     }
-                    const firstEntry = i[0];
-                    const groupDisplayName =
-                        firstEntry.itemCategoryObject[
-                            indexGroupingOption.groupByPropertyName
-                        ];
+                    const firstEntry = items[0];
+                    const groupDisplayName = firstEntry.itemCategory;
                     const indexGroup: IndexGroup = {
-                        group: i,
+                        group: items,
                         groupDisplayName: this.sanitizer.bypassSecurityTrustHtml(
                             groupDisplayName
                         ),
@@ -101,10 +94,20 @@ export class IndexGroupsComponent implements OnInit {
             debounceTime(300),
             distinctUntilChanged(),
             startWith(this.indexFormGroup.value as IndexFormGroup),
-            switchMap((i: IndexFormGroup) =>
-                of(this.indexEntriesStore.load).pipe(
-                    map(j => IndexEntriesStore.filterEntries(j, i.indexFilter)),
-                    map(j => chainIntoGroups(j, i.indexGroupingSelection))
+            switchMap((indexFormGroup: IndexFormGroup) =>
+                this.indexEntriesStore.serviceData.pipe(
+                    map(items =>
+                        IndexEntriesStore.filterEntries(
+                            items,
+                            indexFormGroup.indexFilter
+                        )
+                    ),
+                    map(items =>
+                        chainIntoGroups(
+                            items,
+                            indexFormGroup.indexGroupingSelection
+                        )
+                    )
                 )
             )
         );
