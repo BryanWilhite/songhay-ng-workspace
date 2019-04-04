@@ -9,7 +9,7 @@ import { AppTabularDataStore } from './app-tabular-data.store';
 const LIVE_API_BASE_URI = 'http://jsonplaceholder.typicode.com';
 
 class MockDomainStore extends AppTabularDataStore<object, any> {
-    protected get options(): AppDataStoreOptions<object, any> {
+    get options(): AppDataStoreOptions<object, any> {
         return {
             initialValue: () => ({ greeting: 'Hello world!' })
         };
