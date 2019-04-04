@@ -1,8 +1,8 @@
 import * as lodash_ from 'lodash';
 const _ = lodash_;
 
-import { AppDataStoreOptions } from '@songhay/core';
 import { DisplayItemModel } from 'songhay/core/models/display-item.model';
+import { AppDataStoreOptions } from '@songhay/core';
 
 import { BlogEntry } from '../models/mock.models';
 import { IndexEntriesStore } from '../../services/index-entries.store';
