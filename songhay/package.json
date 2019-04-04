@@ -48,7 +48,7 @@
         "ngx-pagination": "^3.2.1",
         "normalize.css": "^8.0.1",
         "rxjs": "~6.3.3",
-        "songhay": "0.0.4",
+        "songhay": "0.0.6",
         "tslib": "^1.9.0",
         "web-animations-js": "^2.3.1",
         "zone.js": "~0.8.26"
