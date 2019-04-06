@@ -7,13 +7,13 @@ const routes: Routes = [
     { path: 'yt', loadChildren: './components/yt/yt.module#YtModule' },
     {
         path: `${YouTubeRoutePaths.root}${YouTubeRoutePaths.uploads}`,
-        loadChildren:
-            './components/yt/module/you-tube-lib.module#YouTubeLibModule'
-    }
+        loadChildren: './components/yt/module/you-tube-lib.module#YouTubeLibModule'
+    },
+    { path: 'index-app', loadChildren: './components/index-app/module/index-lib.module#IndexLibModule' }
 ];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

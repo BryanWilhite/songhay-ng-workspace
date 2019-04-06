@@ -8,6 +8,7 @@ export * from './lib/index.module';
 export * from './lib/models/index-form-group';
 export * from './lib/models/index-group';
 export * from './lib/models/index-grouping-option';
+export * from './lib/models/index-options';
 export * from './lib/models/index-styles';
 
 /* services */

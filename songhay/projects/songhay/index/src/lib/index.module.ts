@@ -47,11 +47,11 @@ export class IndexModule {
      *
      * @see https://angularfirst.com/the-ngmodule-forroot-convention/
      */
-    static forRoot(options: IndexOptions, dataStore?: IndexEntriesStore): ModuleWithProviders<IndexModule> {
-        return !dataStore ?
+    static forRoot<TStore extends IndexEntriesStore>(options: IndexOptions, dataStoreType?: TStore): ModuleWithProviders<IndexModule> {
+        return !dataStoreType ?
             { ngModule: IndexModule, providers: [provideOptions(options), IndexEntriesStore] }
             :
-            { ngModule: IndexModule, providers: [provideOptions(options), provideEntriesStore(dataStore)] };
+            { ngModule: IndexModule, providers: [provideOptions(options), provideEntriesStore(dataStoreType)] };
     }
 }
 
@@ -61,8 +61,8 @@ export class IndexModule {
  *
  * @export
  */
-export function provideEntriesStore(dataStore: IndexEntriesStore): {}[] {
-    return [{ provide: IndexEntriesStore, useValue: dataStore }];
+export function provideEntriesStore<TStore extends IndexEntriesStore>(dataStoreType: TStore): {}[] {
+    return [{ provide: IndexEntriesStore, useClass: dataStoreType }];
 }
 
 /**
