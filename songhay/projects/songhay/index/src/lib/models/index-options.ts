@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 
+import { DisplayItemModel } from 'songhay/core/models/display-item.model';
+import { AppDataStoreOptions } from '@songhay/core';
+
 import { IndexStyles } from './index-styles';
 
 /**
@@ -10,6 +13,11 @@ import { IndexStyles } from './index-styles';
  */
 @Injectable()
 export class IndexOptions {
+    /**
+     * options for the underlying @type {AppDataStore}
+     */
+    appDataStoreOptions: AppDataStoreOptions<DisplayItemModel[], any>;
+
     /**
      * default @type {IndexStyles}
      */

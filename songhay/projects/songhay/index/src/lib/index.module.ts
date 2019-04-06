@@ -33,6 +33,7 @@ import { ErrorComponent } from './components/error/error.component';
         ReactiveFormsModule,
         RoutingModule
     ],
+    providers: [IndexEntriesStore],
     declarations: [
         IndexContainerComponent,
         IndexGroupsComponent,
@@ -47,22 +48,9 @@ export class IndexModule {
      *
      * @see https://angularfirst.com/the-ngmodule-forroot-convention/
      */
-    static forRoot<TStore extends IndexEntriesStore>(options: IndexOptions, dataStoreType?: TStore): ModuleWithProviders<IndexModule> {
-        return !dataStoreType ?
-            { ngModule: IndexModule, providers: [provideOptions(options), IndexEntriesStore] }
-            :
-            { ngModule: IndexModule, providers: [provideOptions(options), provideEntriesStore(dataStoreType)] };
+    static forRoot(options: IndexOptions): ModuleWithProviders<IndexModule> {
+        return { ngModule: IndexModule, providers: [provideOptions(options)] };
     }
-}
-
-
-/**
- * provider function
- *
- * @export
- */
-export function provideEntriesStore<TStore extends IndexEntriesStore>(dataStoreType: TStore): {}[] {
-    return [{ provide: IndexEntriesStore, useClass: dataStoreType }];
 }
 
 /**

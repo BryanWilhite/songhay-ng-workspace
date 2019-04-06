@@ -5,6 +5,11 @@ import { IndexModule, IndexOptions, IndexStyles } from '@songhay/index';
 import { MockDomainStore } from 'projects/songhay/index/src/lib/mocks/services/mock-domain.store';
 
 const options: IndexOptions = {
+    appDataStoreOptions: {
+        domainConverter: null,
+        errorConverter: null,
+        initialValue: null
+    },
     defaultDisplayStyle: IndexStyles.List,
     indexRouterLink: [],
     indexStoreUri: ''
