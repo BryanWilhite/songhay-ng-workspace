@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 import { AppDataStore, AppDataStoreOptions, SendMethods } from '@songhay/core';
-import { YouTubeScalars } from '../models/you-tube-scalars';
-import { YouTubePresentation } from '../models/you-tube-presentation';
+
 import { Presentation } from 'songhay/core/models/presentation';
+import { YouTubeScalars } from '../models/you-tube-scalars';
 
 /**
  * Stores YouTube Channel index data, curated by the Songhay studio.
@@ -11,8 +13,8 @@ import { Presentation } from 'songhay/core/models/presentation';
  */
 @Injectable()
 export class YouTubePresentationDataStore extends AppDataStore<
-    Presentation,
-    any
+Presentation,
+any
 > {
     /**
      * gets @type {Presentation}
@@ -41,11 +43,9 @@ export class YouTubePresentationDataStore extends AppDataStore<
         }
     }
 
-    /**
-     * returns @type {AppDataStoreOptions<Presentation, any>}
-     * for this store
-     */
-    get options(): AppDataStoreOptions<Presentation, any> {
+    constructor(client: HttpClient) {
+        super(client);
+
         const options = new AppDataStoreOptions<Presentation, any>();
         options.domainConverter = (method, data) => {
             switch (method) {
@@ -54,6 +54,7 @@ export class YouTubePresentationDataStore extends AppDataStore<
                     return YouTubePresentationDataStore.getPresentation(data);
             }
         };
-        return options;
+
+        this.options = options;
     }
 }

@@ -1,8 +1,10 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 import { Segment } from 'songhay/core/models/segment';
 import { Document } from 'songhay/core/models/document';
 import { ObjectUtility } from 'songhay/core/utilities/object.utility';
 
-import { Injectable } from '@angular/core';
 import { AppDataStore, SendMethods, AppDataStoreOptions } from '@songhay/core';
 
 import { GenericWebIndex } from '../models/generic-web-index';
@@ -62,11 +64,9 @@ export class YouTubeChannelsIndexDataStore extends AppDataStore<
         }
     }
 
-    /**
-     * returns @type {AppDataStoreOptions<GenericWebIndex, any>}
-     * for this store
-     */
-    get options(): AppDataStoreOptions<GenericWebIndex, any> {
+    constructor(client: HttpClient) {
+        super(client);
+
         const options = new AppDataStoreOptions<GenericWebIndex, any>();
         options.domainConverter = (method, data) => {
             switch (method) {
@@ -77,6 +77,7 @@ export class YouTubeChannelsIndexDataStore extends AppDataStore<
                     );
             }
         };
-        return options;
+
+        this.options = options;
     }
 }

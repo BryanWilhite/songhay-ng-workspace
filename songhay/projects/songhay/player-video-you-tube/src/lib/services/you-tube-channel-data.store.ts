@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 import { AppDataStore, AppDataStoreOptions, SendMethods } from '@songhay/core';
 
 import { YouTubeItem } from '../models/you-tube-item';
@@ -36,7 +38,7 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
             case 'get':
                 return `${YouTubeScalars.rxYouTubeApiRootUri}${
                     YouTubeScalars.rxYouTubeApiPlaylistPath
-                }${id}`;
+                    }${id}`;
         }
     }
 
@@ -50,15 +52,16 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
             case 'get':
                 return `${YouTubeScalars.rxYouTubeApiRootUri}${
                     YouTubeScalars.rxYouTubeApiVideosPath
-                }${id}`;
+                    }${id}`;
         }
     }
 
     /**
-     * returns @type {AppDataStoreOptions<YouTubeItem[], any>}
-     * for this store
+     * Creates an instance of @type {YouTubeChannelDataStore}.
      */
-    get options(): AppDataStoreOptions<YouTubeItem[], any> {
+    constructor(client: HttpClient) {
+        super(client);
+
         const options = new AppDataStoreOptions<YouTubeItem[], any>();
         options.domainConverter = (method, data) => {
             switch (method) {
@@ -67,6 +70,6 @@ export class YouTubeChannelDataStore extends AppDataStore<YouTubeItem[], any> {
                     return YouTubeChannelDataStore.getItems(data);
             }
         };
-        return options;
+        this.options = options;
     }
 }
