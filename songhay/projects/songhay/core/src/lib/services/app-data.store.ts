@@ -33,6 +33,11 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
     isLoaded: boolean;
 
     /**
+     * Returns the store options.
+     */
+    options: AppDataStoreOptions<TDomain, TError>;
+
+    /**
      * Observes the service data.
      */
     serviceData: Observable<TDomain>;
@@ -181,13 +186,9 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
     }
 
     /**
-     * returns domain-specific options
-     * to be overridden in a subclass
+     * indicate the error state
+     *
      */
-    get options(): AppDataStoreOptions<TDomain, TError> {
-        return null;
-    }
-
     protected indicateError(uri: string, error: any): void {
         this.isError = true;
         this.serviceErrorSubject.next(error);

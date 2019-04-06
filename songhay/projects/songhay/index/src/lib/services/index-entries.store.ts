@@ -1,4 +1,4 @@
-import { Injectable, Injector } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { DisplayItemModel } from 'songhay/core/models/display-item.model';
@@ -13,8 +13,6 @@ import { IndexOptions } from '../models/index-options';
  */
 @Injectable()
 export class IndexEntriesStore extends AppDataStore<DisplayItemModel[], any> {
-    private indexOptions: IndexOptions;
-
     /**
      * filters @type {DisplayItemModel} entries
      *
@@ -37,22 +35,18 @@ export class IndexEntriesStore extends AppDataStore<DisplayItemModel[], any> {
     }
 
     /**
-     * Creates an instance of @type {IndexEntriesStore}.
+     * Creates an instance of IndexEntriesStore.
      */
-    constructor(private injector: Injector) {
-        super(injector.get(HttpClient));
+    constructor(client: HttpClient, private indexOptions: IndexOptions) {
+        super(client);
 
-        this.indexOptions = injector.get(IndexOptions);
-    }
-
-    /**
-     * The expected @type {AppDataStoreOptions<DisplayItemModel[], any>}
-     * for this Index Store.
-     */
-    get options(): AppDataStoreOptions<DisplayItemModel[], any> {
-        if (!this.indexOptions.appDataStoreOptions) {
-            throw Error('The expected AppDataStoreOptions for this Index Store is not here.');
+        if (!this.indexOptions) {
+            throw Error('The expected IndexOptions are not here.');
         }
-        return this.indexOptions.appDataStoreOptions;
+        if (!this.indexOptions.appDataStoreOptions) {
+            throw Error('The expected AppDataStoreOptions for this Index Store are not here.');
+        }
+
+        this.options = this.indexOptions.appDataStoreOptions;
     }
 }

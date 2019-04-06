@@ -7,19 +7,18 @@ import {
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { IndexOptions } from '../../models/index-options';
-import { IndexStyles } from '../../models/index-styles';
+
+import { MockDomainConverterUtility } from '../../mocks/services/mock-domain-converter.utility';
 import { IndexEntriesStore } from '../../services/index-entries.store';
+
 import { IndexListComponent } from './index-list.component';
+
+const options: IndexOptions = new IndexOptions();
+options.appDataStoreOptions = MockDomainConverterUtility.getAppDataStoreOptions();
 
 describe(IndexListComponent.name, () => {
     let component: IndexListComponent;
     let fixture: ComponentFixture<IndexListComponent>;
-
-    const options: IndexOptions = {
-        defaultDisplayStyle: IndexStyles.Groups,
-        indexRouterLink: [],
-        indexStoreUri: ''
-    };
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({

@@ -6,24 +6,22 @@ import {
 } from '@angular/common/http/testing';
 
 import { IndexOptions } from '../models/index-options';
-import { IndexStyles } from '../models/index-styles';
 import { IndexEntriesStore } from './index-entries.store';
 
 import * as app from '../mocks/data/app-songhay-blog-q2-2018.json';
 import { MockDomainConverterUtility } from '../mocks/services/mock-domain-converter.utility';
 
-const options: IndexOptions = {
-    appDataStoreOptions: MockDomainConverterUtility.getAppDataStoreOptions(),
-    defaultDisplayStyle: IndexStyles.List,
-    indexRouterLink: [],
-    indexStoreUri: ''
-};
+const options: IndexOptions = new IndexOptions();
+options.appDataStoreOptions = MockDomainConverterUtility.getAppDataStoreOptions();
 
 describe(IndexEntriesStore.name, () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule],
-            providers: [{ provide: IndexOptions, useValue: options }, IndexEntriesStore]
+            providers: [
+                IndexEntriesStore,
+                { provide: IndexOptions, useValue: options }
+            ]
         });
     });
 
@@ -36,7 +34,7 @@ describe(IndexEntriesStore.name, () => {
 
     const endpoint = 'assets/data/app.json';
     const endpointMethod = 'get';
-    const propertyName = 'options';
+    const propertyName = 'domainConverter';
     describe(`endpoint: ${endpoint}`, () => {
         it(`should ${endpointMethod} once`, async(
             inject(
@@ -71,11 +69,7 @@ describe(IndexEntriesStore.name, () => {
                     service.load(endpoint);
 
                     const control: TestRequest = controller.expectOne(endpoint);
-                    const spy = spyOnProperty(
-                        IndexEntriesStore.prototype,
-                        propertyName,
-                        'get'
-                    ).and.callThrough();
+                    const spy = spyOn(service.options, propertyName).and.callThrough();
                     expect(control.request.method).toBe(
                         endpointMethod.toUpperCase()
                     );
