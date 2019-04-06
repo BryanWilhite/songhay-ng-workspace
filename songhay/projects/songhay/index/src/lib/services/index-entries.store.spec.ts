@@ -5,35 +5,44 @@ import {
     TestRequest
 } from '@angular/common/http/testing';
 
-import { MockDomainStore } from '../mocks/services/mock-domain.store';
+import { IndexOptions } from '../models/index-options';
+import { IndexStyles } from '../models/index-styles';
 import { IndexEntriesStore } from './index-entries.store';
 
 import * as app from '../mocks/data/app-songhay-blog-q2-2018.json';
+import { MockDomainConverterUtility } from '../mocks/services/mock-domain-converter.utility';
+
+const options: IndexOptions = {
+    appDataStoreOptions: MockDomainConverterUtility.getAppDataStoreOptions(),
+    defaultDisplayStyle: IndexStyles.List,
+    indexRouterLink: [],
+    indexStoreUri: ''
+};
 
 describe(IndexEntriesStore.name, () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule],
-            providers: [MockDomainStore]
+            providers: [{ provide: IndexOptions, useValue: options }, IndexEntriesStore]
         });
     });
 
     it('should instantiate', inject(
-        [MockDomainStore],
-        (service: MockDomainStore) => {
+        [IndexEntriesStore],
+        (service: IndexEntriesStore) => {
             expect(service).toBeTruthy();
         }
     ));
 
     const endpoint = 'assets/data/app.json';
     const endpointMethod = 'get';
-    const methodName = 'getEntries';
+    const propertyName = 'options';
     describe(`endpoint: ${endpoint}`, () => {
         it(`should ${endpointMethod} once`, async(
             inject(
-                [MockDomainStore, HttpTestingController],
+                [IndexEntriesStore, HttpTestingController],
                 (
-                    service: MockDomainStore,
+                    service: IndexEntriesStore,
                     controller: HttpTestingController
                 ) => {
                     service.serviceData.subscribe();
@@ -49,11 +58,11 @@ describe(IndexEntriesStore.name, () => {
             )
         ));
 
-        it(`should call ${methodName} once and convert items to the domain`, async(
+        it(`should call ${propertyName} once and convert items to the domain`, async(
             inject(
-                [MockDomainStore, HttpTestingController],
+                [IndexEntriesStore, HttpTestingController],
                 (
-                    service: MockDomainStore,
+                    service: IndexEntriesStore,
                     controller: HttpTestingController
                 ) => {
                     service.serviceData.subscribe(data =>
@@ -62,9 +71,10 @@ describe(IndexEntriesStore.name, () => {
                     service.load(endpoint);
 
                     const control: TestRequest = controller.expectOne(endpoint);
-                    const spy = spyOn(
-                        MockDomainStore,
-                        methodName
+                    const spy = spyOnProperty(
+                        IndexEntriesStore.prototype,
+                        propertyName,
+                        'get'
                     ).and.callThrough();
                     expect(control.request.method).toBe(
                         endpointMethod.toUpperCase()

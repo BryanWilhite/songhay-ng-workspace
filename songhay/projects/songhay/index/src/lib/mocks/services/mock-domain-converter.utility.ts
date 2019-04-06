@@ -5,14 +5,24 @@ import { DisplayItemModel } from 'songhay/core/models/display-item.model';
 import { AppDataStoreOptions } from '@songhay/core';
 
 import { BlogEntry } from '../models/mock.models';
-import { IndexEntriesStore } from '../../services/index-entries.store';
 
-export class MockDomainStore extends IndexEntriesStore {
+export class MockDomainConverterUtility {
     /**
-     * gets @type {DisplayItemModel[]}
-     * from JSON of the @type {BlogEntry[]}
+     * returns @type {AppDataStoreOptions<DisplayItemModel[], any>}
      */
-    static getEntries(data: BlogEntry[]): DisplayItemModel[] {
+    static getAppDataStoreOptions(): AppDataStoreOptions<DisplayItemModel[], any> {
+        const options = new AppDataStoreOptions<DisplayItemModel[], any>();
+        options.domainConverter = (method, data) => {
+            switch (method) {
+                default:
+                case 'get':
+                    return MockDomainConverterUtility.getEntries(data as BlogEntry[]);
+            }
+        };
+        return options;
+    }
+
+    private static getEntries(data: BlogEntry[]): DisplayItemModel[] {
         if (!data) {
             throw Error('The expected BlogEntry[] data shape is not here.');
         }
@@ -24,7 +34,7 @@ export class MockDomainStore extends IndexEntriesStore {
                 itemCategory: null,
                 itemName: null,
                 resourceIndicator: null,
-                sortOrdinal: MockDomainStore.getSortOrdinal(item),
+                sortOrdinal: MockDomainConverterUtility.getSortOrdinal(item),
                 tag: item.tag
             };
             return entry;
@@ -53,7 +63,7 @@ export class MockDomainStore extends IndexEntriesStore {
     }
 
     private static getSortOrdinal(blogEntry: BlogEntry): string {
-        blogEntry.itemCategoryObject = MockDomainStore.getItemCategoryProperties(
+        blogEntry.itemCategoryObject = MockDomainConverterUtility.getItemCategoryProperties(
             blogEntry
         );
 
@@ -76,21 +86,5 @@ export class MockDomainStore extends IndexEntriesStore {
             '-' +
             blogEntry.slug
         );
-    }
-
-    /**
-     * returns @type {AppDataStoreOptions<DisplayItemModel[], any>}
-     * for this store
-     */
-    get options(): AppDataStoreOptions<DisplayItemModel[], any> {
-        const options = new AppDataStoreOptions<DisplayItemModel[], any>();
-        options.domainConverter = (method, data) => {
-            switch (method) {
-                default:
-                case 'get':
-                    return MockDomainStore.getEntries(data as BlogEntry[]);
-            }
-        };
-        return options;
     }
 }

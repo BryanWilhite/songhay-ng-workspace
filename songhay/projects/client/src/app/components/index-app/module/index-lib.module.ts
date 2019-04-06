@@ -2,14 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { IndexModule, IndexOptions, IndexStyles } from '@songhay/index';
-import { MockDomainStore } from 'projects/songhay/index/src/lib/mocks/services/mock-domain.store';
+
+import { MockDomainConverterUtility } from 'projects/songhay/index/src/lib/mocks/services/mock-domain-converter.utility';
 
 const options: IndexOptions = {
-    appDataStoreOptions: {
-        domainConverter: null,
-        errorConverter: null,
-        initialValue: null
-    },
+    appDataStoreOptions: MockDomainConverterUtility.getAppDataStoreOptions(),
     defaultDisplayStyle: IndexStyles.List,
     indexRouterLink: [],
     indexStoreUri: ''
