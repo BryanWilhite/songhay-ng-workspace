@@ -39,7 +39,6 @@ import { ErrorComponent } from './components/error/error.component';
         IndexListComponent,
         ErrorComponent
     ],
-    providers: [IndexEntriesStore],
     exports: [IndexContainerComponent]
 })
 export class IndexModule {
@@ -48,9 +47,22 @@ export class IndexModule {
      *
      * @see https://angularfirst.com/the-ngmodule-forroot-convention/
      */
-    static forRoot(options: IndexOptions): ModuleWithProviders<IndexModule> {
-        return { ngModule: IndexModule, providers: [provideOptions(options)] };
+    static forRoot(options: IndexOptions, dataStore?: IndexEntriesStore): ModuleWithProviders<IndexModule> {
+        return !dataStore ?
+            { ngModule: IndexModule, providers: [provideOptions(options), IndexEntriesStore] }
+            :
+            { ngModule: IndexModule, providers: [provideOptions(options), provideEntriesStore(dataStore)] };
     }
+}
+
+
+/**
+ * provider function
+ *
+ * @export
+ */
+export function provideEntriesStore(dataStore: IndexEntriesStore): {}[] {
+    return [{ provide: IndexEntriesStore, useValue: dataStore }];
 }
 
 /**
