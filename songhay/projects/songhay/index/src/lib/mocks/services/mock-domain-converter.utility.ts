@@ -22,11 +22,19 @@ export class MockDomainConverterUtility {
         return options;
     }
 
-    private static getEntries(data: BlogEntry[]): DisplayItemModel[] {
+    private static getEntries(data: {}): DisplayItemModel[] {
         if (!data) {
+            throw Error('The expected {} data shape is not here.');
+        }
+        const wrapper = data as { index: [] };
+        if (!wrapper) {
+            throw Error('The expected { index: [] } data shape is not here.');
+        }
+        const index = wrapper.index as BlogEntry[];
+        if (!index) {
             throw Error('The expected BlogEntry[] data shape is not here.');
         }
-        const items = data.map(item => {
+        const items = index.map(item => {
             const entry: DisplayItemModel = {
                 description: item.content,
                 displayText: item.title,
@@ -47,13 +55,13 @@ export class MockDomainConverterUtility {
 
     private static getItemCategoryProperties(blogEntry: BlogEntry): object {
         const o = JSON.parse(`{ ${blogEntry.itemCategory} }`);
-        const topics = Object.keys(o).filter(function(v) {
+        const topics = Object.keys(o).filter(function (v) {
             return v ? v.indexOf('topic-') === 0 : false;
         });
         o.topic = _(topics).isEmpty()
             ? '<!--zzz-->[no topic]'
             : `<!-- ${_(topics).first()} --> ${o[_(topics).first()]}`;
-        o.topics = topics.map(function(v) {
+        o.topics = topics.map(function (v) {
             return {
                 key: v,
                 value: o[v]
@@ -70,7 +78,7 @@ export class MockDomainConverterUtility {
         if (!blogEntry.itemCategoryObject) {
             return '';
         }
-        const pad = function(num, size) {
+        const pad = function (num, size) {
             let s = String(num);
             while (s.length < size) {
                 s = `0${s}`;

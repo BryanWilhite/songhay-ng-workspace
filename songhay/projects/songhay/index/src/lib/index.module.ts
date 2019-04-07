@@ -1,13 +1,12 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from './material.module';
-import { RoutingModule } from './routing.module';
 
 import { IndexOptions } from './models/index-options';
 
@@ -18,6 +17,10 @@ import { IndexGroupsComponent } from './components/index-groups/index-groups.com
 import { IndexListComponent } from './components/index-list/index-list.component';
 import { ErrorComponent } from './components/error/error.component';
 
+const routes: Routes = [
+    { path: 'index/:style', component: IndexContainerComponent }
+];
+
 /**
  * Index App Module
  *
@@ -25,13 +28,12 @@ import { ErrorComponent } from './components/error/error.component';
  */
 @NgModule({
     imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        FlexLayoutModule,
+        CommonModule,
+        RouterModule.forChild(routes),
         HttpClientModule,
         MaterialModule,
         ReactiveFormsModule,
-        RoutingModule
+        FlexLayoutModule
     ],
     providers: [IndexEntriesStore],
     declarations: [
