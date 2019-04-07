@@ -51,7 +51,7 @@ describe(IndexEntriesStore.name, () => {
                         endpointMethod.toUpperCase()
                     );
 
-                    control.flush([...app.index]);
+                    control.flush({ index: app.index });
                 }
             )
         ));
@@ -74,7 +74,7 @@ describe(IndexEntriesStore.name, () => {
                         endpointMethod.toUpperCase()
                     );
 
-                    control.flush([...app.index]);
+                    control.flush({ index: app.index });
 
                     expect(spy).toHaveBeenCalledTimes(1);
                 }
