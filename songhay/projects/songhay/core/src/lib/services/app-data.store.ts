@@ -187,7 +187,6 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
 
     /**
      * indicate the error state
-     *
      */
     protected indicateError(uri: string, error: any): void {
         this.isError = true;
@@ -199,6 +198,38 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
             isBusy: this.isBusy,
             error
         });
+    }
+
+    /**
+     * sets up reactive members of this data store
+     *
+     * @remarks any sub-class setting up `options` will have to call this method again
+     */
+    protected setupObservables(): void {
+        if (this.options && this.options.errorConverter) {
+            const initialErrorState = this.options.errorConverter(null);
+            this.serviceErrorSubject = new BehaviorSubject(initialErrorState);
+            this.serviceError = this.serviceErrorSubject.asObservable();
+        } else {
+            this.serviceErrorSubject = new BehaviorSubject(null);
+            this.serviceError = this.serviceErrorSubject
+                .asObservable()
+                .pipe(skip(1)); // skip initial value, `null`
+        }
+
+        if (this.options && this.options.initialValue) {
+            const initialValue = this.options.initialValue();
+            this.domainSubject = new BehaviorSubject(initialValue);
+        } else {
+            this.domainSubject = new BehaviorSubject(null);
+        }
+
+        const filterOutAnyNullInitialValue = (x: TDomain, i: number) =>
+            i === 0 && !x ? false : true;
+
+        this.serviceData = this.domainSubject
+            .asObservable()
+            .pipe(filter(filterOutAnyNullInitialValue));
     }
 
     private getDomainData(data: object, method: SendMethods): TDomain {
@@ -228,32 +259,5 @@ export class AppDataStore<TDomain, TError> implements OnDestroy {
     private indicateLoadedState(): void {
         this.isLoaded = true;
         this.isBusy = false;
-    }
-
-    private setupObservables(): void {
-        if (this.options && this.options.errorConverter) {
-            const initialErrorState = this.options.errorConverter(null);
-            this.serviceErrorSubject = new BehaviorSubject(initialErrorState);
-            this.serviceError = this.serviceErrorSubject.asObservable();
-        } else {
-            this.serviceErrorSubject = new BehaviorSubject(null);
-            this.serviceError = this.serviceErrorSubject
-                .asObservable()
-                .pipe(skip(1)); // skip initial value, `null`
-        }
-
-        if (this.options && this.options.initialValue) {
-            const initialValue = this.options.initialValue();
-            this.domainSubject = new BehaviorSubject(initialValue);
-        } else {
-            this.domainSubject = new BehaviorSubject(null);
-        }
-
-        const filterOutAnyNullInitialValue = (x: TDomain, i: number) =>
-            i === 0 && !x ? false : true;
-
-        this.serviceData = this.domainSubject
-            .asObservable()
-            .pipe(filter(filterOutAnyNullInitialValue));
     }
 }
