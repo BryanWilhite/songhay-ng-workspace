@@ -2,16 +2,17 @@
     "name": "songhay-ng-workspace",
     "version": "0.0.0",
     "scripts": {
+        "e2e": "ng e2e",
         "ng": "ng",
-        "start": "ng serve --open",
         "build:core": "ng build @songhay/core",
         "build:index": "ng build @songhay/index",
         "build:player-video-you-tube": "ng build @songhay/player-video-you-tube",
         "build": "npm run build:core && npm run build:index && npm run build:player-video-you-tube && ng build client",
-        "test": "ng test",
         "lint": "ng lint",
-        "pack": "npm pack dist/songhay/core && npm pack dist/songhay/player-video-you-tube",
-        "e2e": "ng e2e"
+        "pack": "npm pack dist/songhay/core && npm pack dist/songhay/index && npm pack dist/songhay/player-video-you-tube",
+        "publish": "npm publish dist/songhay/core && npm publish dist/songhay/index && npm publish dist/songhay/player-video-you-tube",
+        "start": "ng serve --open",
+        "test": "ng test"
     },
     "repository": {
         "type": "git",
