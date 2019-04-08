@@ -91,13 +91,14 @@ export class MockDomainConverterUtility {
             return '';
         }
 
-        const pad = function (num, size) {
+        const pad = (num: string | number, size: number) => {
             let s = String(num);
             while (s.length < size) {
                 s = `0${s}`;
             }
             return s;
         };
+
         return (
             blogEntry.itemCategoryObject['year'] +
             '-' +
