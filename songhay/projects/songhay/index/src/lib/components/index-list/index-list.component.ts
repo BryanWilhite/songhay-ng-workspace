@@ -15,6 +15,7 @@ import {
 import { Observable, Subject } from 'rxjs';
 
 import { MenuDisplayItemModel } from 'songhay/core/models/menu-display-item.model';
+import { IndexOptions } from '../../models/index-options';
 
 import { IndexEntriesStore } from '../../services/index-entries.store';
 
@@ -26,8 +27,8 @@ import { IndexEntriesStore } from '../../services/index-entries.store';
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
     selector: 'rx-index-list',
-    styleUrls: ['./app-index-list.component.scss'],
-    templateUrl: './app-index-list.component.html'
+    styleUrls: ['./index-list.component.scss'],
+    templateUrl: './index-list.component.html'
 })
 export class IndexListComponent implements OnInit {
     /**
@@ -50,7 +51,9 @@ export class IndexListComponent implements OnInit {
     /**
      * Creates an instance of AppIndexListComponent.
      */
-    constructor(private indexEntriesStore: IndexEntriesStore) {
+    constructor(
+        public indexOptions: IndexOptions,
+        private indexEntriesStore: IndexEntriesStore) {
         this.filterIndexSubject = new Subject<string>();
     }
 

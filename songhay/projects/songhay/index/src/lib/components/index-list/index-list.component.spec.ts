@@ -12,6 +12,7 @@ import { MockDomainConverterUtility } from '../../mocks/services/mock-domain-con
 import { IndexEntriesStore } from '../../services/index-entries.store';
 
 import { IndexListComponent } from './index-list.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 const options: IndexOptions = new IndexOptions();
 options.appDataStoreOptions = MockDomainConverterUtility.getAppDataStoreOptions();
@@ -22,7 +23,11 @@ describe(IndexListComponent.name, () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule, RouterTestingModule],
+            imports: [
+                HttpClientTestingModule,
+                RouterTestingModule,
+                NgxPaginationModule
+            ],
             providers: [
                 { provide: IndexOptions, useValue: options },
                 IndexEntriesStore

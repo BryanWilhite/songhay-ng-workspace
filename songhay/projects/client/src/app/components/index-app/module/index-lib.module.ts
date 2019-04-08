@@ -8,8 +8,9 @@ import { MockDomainConverterUtility } from 'projects/songhay/index/src/lib/mocks
 const options: IndexOptions = {
     appDataStoreOptions: MockDomainConverterUtility.getAppDataStoreOptions(),
     defaultDisplayStyle: IndexStyles.List,
-    indexRouterLink: ['blog/entry'],
-    indexStoreUri: 'assets/index/data/app-songhay-blog-q2-2018.json'
+    indexStoreDataUri: 'assets/index/data/app-songhay-blog-q2-2018.json',
+    indexStoreItemUri: 'blog/entry',
+    indexStoreSpritesUri: 'assets/svg/sprites.svg'
 };
 
 @NgModule({
