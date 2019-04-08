@@ -27,11 +27,18 @@ export class IndexOptions {
      * location of the Index data
      * @remarks `./assets/data/app.json`
      */
-    indexStoreUri: string;
+    indexStoreDataUri: string;
 
     /**
-     * `routerLink` of the Index
-     * @remarks `['/blog/entry', j.slug]`
+     * first element of the Index `routerLink`
+     * @remarks `['/blog/entry', item.slug]`
      */
-    indexRouterLink: string[];
+    indexStoreItemUri: string;
+    // TODO: add `ngIf` for `DisplayItemModel.resourceIndicator`?
+
+    /**
+     * location of the Index data
+     * @remarks `./assets/svg/sprites.svg`
+     */
+    indexStoreSpritesUri: string;
 }

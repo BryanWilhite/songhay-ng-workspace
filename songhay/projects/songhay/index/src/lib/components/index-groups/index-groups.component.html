@@ -29,7 +29,7 @@
         <div fxLayout="row wrap">
             <mat-card *ngFor="let j of i.group">
                 <mat-card-content>
-                    <a [routerLink]="indexOptions.indexRouterLink" class="index" [innerHTML]="j.title"></a>
+                    <a [routerLink]="[indexOptions.indexStoreItemUri, j.id]" class="index" [innerHTML]="j.displayText"></a>
                 </mat-card-content>
                 <mat-card-footer>{{ j.inceptDate | date:'yyyy-MM-dd' }}</mat-card-footer>
             </mat-card>

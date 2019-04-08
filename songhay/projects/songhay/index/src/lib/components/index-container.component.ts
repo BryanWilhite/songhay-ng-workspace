@@ -26,12 +26,14 @@ export class IndexContainerComponent implements OnInit, OnDestroy {
         private indexOptions: IndexOptions,
         private sanitizer: DomSanitizer
     ) {
-        iconRegistry.addSvgIconSetInNamespace(
+        this.iconRegistry.addSvgIconSetInNamespace(
             'rx',
             this.sanitizer.bypassSecurityTrustResourceUrl(
-                'assets/svg/sprites.svg'
+                this.indexOptions.indexStoreSpritesUri
             )
         );
+
+        this.viewStyle = this.indexOptions.defaultDisplayStyle;
     }
 
     ngOnInit(): void {
