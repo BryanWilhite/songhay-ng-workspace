@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 
 import { IndexOptions } from './models/index-options';
+import { IndexRoutePaths } from './models/index-route-paths';
 
 import { IndexEntriesStore } from './services/index-entries.store';
 
@@ -18,7 +19,7 @@ import { IndexListComponent } from './components/index-list/index-list.component
 import { ErrorComponent } from './components/error/error.component';
 
 const routes: Routes = [
-    { path: 'index/:style', component: IndexContainerComponent }
+    { path: IndexRoutePaths.root, component: IndexContainerComponent }
 ];
 
 /**

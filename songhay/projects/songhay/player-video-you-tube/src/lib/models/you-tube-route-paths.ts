@@ -3,7 +3,6 @@
  * for the @type {YouTubeModule}
  *
  * @export
- * @enum {number}
  */
 export enum YouTubeRoutePaths {
 

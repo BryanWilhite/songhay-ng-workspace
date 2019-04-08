@@ -48,7 +48,9 @@ export class MockDomainConverterUtility {
                 displayText: item.title,
                 groupDisplayText: blogTopics.topic,
                 id: item.slug,
+                inceptDate: item.inceptDate,
                 map: MapObjectUtility.getMap(blogTopics.topics, (propertyName: string, propertyValue: any) => propertyValue),
+                modificationDate: item.modificationDate,
                 sortOrdinal: sortOrdinal
             };
             return entry;
