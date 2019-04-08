@@ -16,7 +16,7 @@ import {
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
-import { DisplayItemModel } from 'songhay/core/models/display-item.model';
+import { MenuDisplayItemModel } from 'songhay/core/models/menu-display-item.model';
 
 import { IndexFormGroup } from '../../models/index-form-group';
 import { IndexGroupingOption } from '../../models/index-grouping-option';
@@ -62,13 +62,13 @@ export class IndexGroupsComponent implements OnInit {
 
     private initializeIndexGroups(): void {
         const chainIntoGroups = (
-            entries: DisplayItemModel[],
+            entries: MenuDisplayItemModel[],
             indexGroupingOption: IndexGroupingOption
         ) => {
             return _(entries)
                 .chain()
-                .groupBy((i: DisplayItemModel) => i.itemCategory)
-                .map((items: DisplayItemModel[]) => {
+                .groupBy((i: MenuDisplayItemModel) => i.groupId)
+                .map((items: MenuDisplayItemModel[]) => {
                     if (!items || !items.length) {
                         console.log(
                             'The expected group of Blog entries are not here.'
@@ -76,7 +76,7 @@ export class IndexGroupsComponent implements OnInit {
                         return;
                     }
                     const firstEntry = items[0];
-                    const groupDisplayName = firstEntry.itemCategory;
+                    const groupDisplayName = firstEntry.groupDisplayText;
                     const indexGroup: IndexGroup = {
                         group: items,
                         groupDisplayName: this.sanitizer.bypassSecurityTrustHtml(

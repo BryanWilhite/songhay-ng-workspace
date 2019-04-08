@@ -20,18 +20,18 @@
     </div>
 </form>
 <mat-accordion>
-    <mat-expansion-panel *ngFor="let i of indexGroups$ | async; first as isFirst" [expanded]="isFirst">
+    <mat-expansion-panel *ngFor="let group of indexGroups$ | async; first as isFirst" [expanded]="isFirst">
         <mat-expansion-panel-header>
             <mat-panel-title>
-                <h2 [innerHTML]="i.groupDisplayName"></h2>
+                <h2 [innerHTML]="group.groupDisplayText"></h2>
             </mat-panel-title>
         </mat-expansion-panel-header>
         <div fxLayout="row wrap">
-            <mat-card *ngFor="let j of i.group">
+            <mat-card *ngFor="let item of group.childItems">
                 <mat-card-content>
-                    <a [routerLink]="[indexOptions.indexStoreItemUri, j.id]" class="index" [innerHTML]="j.displayText"></a>
+                    <a [routerLink]="[indexOptions.indexStoreItemUri, item.id]" class="index" [innerHTML]="item.displayText"></a>
                 </mat-card-content>
-                <mat-card-footer>{{ j.inceptDate | date:'yyyy-MM-dd' }}</mat-card-footer>
+                <mat-card-footer>{{ item.inceptDate | date:'yyyy-MM-dd' }}</mat-card-footer>
             </mat-card>
         </div>
     </mat-expansion-panel>

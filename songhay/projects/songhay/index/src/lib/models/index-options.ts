@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { DisplayItemModel } from 'songhay/core/models/display-item.model';
+import { MenuDisplayItemModel } from 'songhay/core/models/menu-display-item.model';
 import { AppDataStoreOptions } from '@songhay/core';
 
 import { IndexStyles } from './index-styles';
@@ -16,7 +16,7 @@ export class IndexOptions {
     /**
      * options for the underlying @type {AppDataStore}
      */
-    appDataStoreOptions: AppDataStoreOptions<DisplayItemModel[], any>;
+    appDataStoreOptions: AppDataStoreOptions<MenuDisplayItemModel[], any>;
 
     /**
      * default @type {IndexStyles}
@@ -34,7 +34,7 @@ export class IndexOptions {
      * @remarks `['/blog/entry', item.slug]`
      */
     indexStoreItemUri: string;
-    // TODO: add `ngIf` for `DisplayItemModel.resourceIndicator`?
+    // TODO: add `ngIf` for `MenuDisplayItemModel.resourceIndicator`?
 
     /**
      * location of the Index data

@@ -1,17 +1,23 @@
 import * as lodash_ from 'lodash';
 const _ = lodash_;
 
-import { DisplayItemModel } from 'songhay/core/models/display-item.model';
+import { MapObjectUtility } from 'songhay/core/utilities/map-object.utility';
+import { MenuDisplayItemModel } from 'songhay/core/models/menu-display-item.model';
 import { AppDataStoreOptions } from '@songhay/core';
 
 import { BlogEntry } from '../models/mock.models';
 
+export interface BlogTopics {
+    topic: string;
+    topics: { key: string; value: any; }[];
+}
+
 export class MockDomainConverterUtility {
     /**
-     * returns @type {AppDataStoreOptions<DisplayItemModel[], any>}
+     * returns @type {AppDataStoreOptions<MenuDisplayItemModel[], any>}
      */
-    static getAppDataStoreOptions(): AppDataStoreOptions<DisplayItemModel[], any> {
-        const options = new AppDataStoreOptions<DisplayItemModel[], any>();
+    static getAppDataStoreOptions(): AppDataStoreOptions<MenuDisplayItemModel[], any> {
+        const options = new AppDataStoreOptions<MenuDisplayItemModel[], any>();
         options.domainConverter = (method, data) => {
             switch (method) {
                 default:
@@ -22,7 +28,7 @@ export class MockDomainConverterUtility {
         return options;
     }
 
-    private static getEntries(data: {}): DisplayItemModel[] {
+    private static getEntries(data: {}): MenuDisplayItemModel[] {
         if (!data) {
             throw Error('The expected {} data shape is not here.');
         }
@@ -35,15 +41,15 @@ export class MockDomainConverterUtility {
             throw Error('The expected BlogEntry[] data shape is not here.');
         }
         const items = index.map(item => {
-            const entry: DisplayItemModel = {
+            const sortOrdinal = MockDomainConverterUtility.getSortOrdinal(item);
+            const blogTopics = item.itemCategoryObject as BlogTopics;
+            const entry: MenuDisplayItemModel = {
                 description: item.content,
                 displayText: item.title,
+                groupDisplayText: blogTopics.topic,
                 id: item.slug,
-                itemCategory: null,
-                itemName: null,
-                resourceIndicator: null,
-                sortOrdinal: MockDomainConverterUtility.getSortOrdinal(item),
-                tag: item.tag
+                map: MapObjectUtility.getMap(blogTopics.topics, (propertyName: string, propertyValue: any) => propertyValue),
+                sortOrdinal: sortOrdinal
             };
             return entry;
         });
@@ -53,8 +59,12 @@ export class MockDomainConverterUtility {
         return items;
     }
 
-    private static getItemCategoryProperties(blogEntry: BlogEntry): object {
-        const o = JSON.parse(`{ ${blogEntry.itemCategory} }`);
+    private static getItemCategoryProperties(blogEntry: BlogEntry): { [key: string]: any } {
+        const o = JSON.parse(`{ ${blogEntry.itemCategory} }`) as { [key: string]: any };
+        if (!o) {
+            throw new Error('The expected parsed category object is not here.');
+        }
+
         const topics = Object.keys(o).filter(function (v) {
             return v ? v.indexOf('topic-') === 0 : false;
         });
@@ -78,6 +88,7 @@ export class MockDomainConverterUtility {
         if (!blogEntry.itemCategoryObject) {
             return '';
         }
+
         const pad = function (num, size) {
             let s = String(num);
             while (s.length < size) {

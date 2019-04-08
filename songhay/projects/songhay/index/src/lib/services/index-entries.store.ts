@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { DisplayItemModel } from 'songhay/core/models/display-item.model';
-import { AppDataStore, AppDataStoreOptions } from '@songhay/core';
+import { MenuDisplayItemModel } from 'songhay/core/models/menu-display-item.model';
+import { AppDataStore } from '@songhay/core';
 
 import { IndexOptions } from '../models/index-options';
 
@@ -12,12 +12,12 @@ import { IndexOptions } from '../models/index-options';
  * @export
  */
 @Injectable()
-export class IndexEntriesStore extends AppDataStore<DisplayItemModel[], any> {
+export class IndexEntriesStore extends AppDataStore<MenuDisplayItemModel[], any> {
     /**
-     * filters @type {DisplayItemModel} entries
+     * filters @type {MenuDisplayItemModel} entries
      *
      */
-    static filterEntries(entries: DisplayItemModel[], particle: string): DisplayItemModel[] {
+    static filterEntries(entries: MenuDisplayItemModel[], particle: string): MenuDisplayItemModel[] {
         const contains = (needle: string, haystack: string) => {
             return (
                 needle &&

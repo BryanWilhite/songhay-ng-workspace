@@ -42,7 +42,7 @@ export class IndexContainerComponent implements OnInit, OnDestroy {
         });
 
         this.indexEntriesStore.load(
-            this.indexOptions.indexStoreUri
+            this.indexOptions.indexStoreDataUri
         );
 
         [sub1].forEach(sub => this.subscriptions.push(sub));
