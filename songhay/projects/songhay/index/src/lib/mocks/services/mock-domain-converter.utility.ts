@@ -69,18 +69,15 @@ export class MockDomainConverterUtility {
             throw new Error('The expected parsed category object is not here.');
         }
 
-        const topics = Object.keys(o).filter(function (v) {
+        const topics = Object.keys(o).filter(v => {
             return v ? v.indexOf('topic-') === 0 : false;
         });
+
         o.topic = isEmpty(topics)
             ? '<!--zzz-->[no topic]'
             : `<!-- ${first(topics)} --> ${o[first(topics)]}`;
-        o.topics = topics.map(function (v) {
-            return {
-                key: v,
-                value: o[v]
-            };
-        });
+
+        o.topics = topics.map(v => ({ key: v, value: o[v] }));
         return o;
     }
 
