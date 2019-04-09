@@ -1,5 +1,4 @@
-import * as lodash_ from 'lodash';
-const _ = lodash_;
+import { first, isEmpty } from 'lodash';
 
 import { MapObjectUtility } from 'songhay/core/utilities/map-object.utility';
 import { MenuDisplayItemModel } from 'songhay/core/models/menu-display-item.model';
@@ -43,13 +42,15 @@ export class MockDomainConverterUtility {
         const items = index.map(item => {
             const sortOrdinal = MockDomainConverterUtility.getSortOrdinal(item);
             const blogTopics = item.itemCategoryObject as BlogTopics;
+            const blogTopicsMap = MapObjectUtility.getMap(blogTopics.topics, (propertyName: string, propertyValue: any) => propertyValue);
             const entry: MenuDisplayItemModel = {
                 description: item.content,
                 displayText: item.title,
                 groupDisplayText: blogTopics.topic,
+                groupId: first(Array.from(blogTopicsMap.keys())),
                 id: item.slug,
                 inceptDate: item.inceptDate,
-                map: MapObjectUtility.getMap(blogTopics.topics, (propertyName: string, propertyValue: any) => propertyValue),
+                map: blogTopicsMap,
                 modificationDate: item.modificationDate,
                 sortOrdinal: sortOrdinal
             };
@@ -70,9 +71,9 @@ export class MockDomainConverterUtility {
         const topics = Object.keys(o).filter(function (v) {
             return v ? v.indexOf('topic-') === 0 : false;
         });
-        o.topic = _(topics).isEmpty()
+        o.topic = isEmpty(topics)
             ? '<!--zzz-->[no topic]'
-            : `<!-- ${_(topics).first()} --> ${o[_(topics).first()]}`;
+            : `<!-- ${first(topics)} --> ${o[first(topics)]}`;
         o.topics = topics.map(function (v) {
             return {
                 key: v,

@@ -1,5 +1,4 @@
-import * as lodash_ from 'lodash';
-const _ = lodash_;
+import { chain } from 'lodash';
 
 import { Observable } from 'rxjs';
 
@@ -65,8 +64,7 @@ export class IndexGroupsComponent implements OnInit {
             entries: MenuDisplayItemModel[],
             indexGroupingOption: IndexGroupingOption
         ) => {
-            return _(entries)
-                .chain()
+            return chain(entries)
                 .groupBy((i: MenuDisplayItemModel) => i.groupId)
                 .map((items: MenuDisplayItemModel[]) => {
                     if (!items || !items.length) {

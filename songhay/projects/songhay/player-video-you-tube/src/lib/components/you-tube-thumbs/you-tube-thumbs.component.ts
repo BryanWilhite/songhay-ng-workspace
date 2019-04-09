@@ -1,5 +1,4 @@
-import * as lodash_ from 'lodash';
-const _ = lodash_;
+import { chain, orderBy } from 'lodash';
 
 import * as moment_ from 'moment';
 const moment = moment_; // see https://github.com/BryanWilhite/songhay-ng-workspace/issues/2
@@ -310,7 +309,7 @@ export class YouTubeThumbsComponent implements AfterViewInit {
         if (!this.youTubeItems) {
             return;
         }
-        this.youTubeItems = _(this.youTubeItems)
+        this.youTubeItems = chain(this.youTubeItems)
             .orderBy(['snippet.publishedAt'], ['desc'])
             .value();
     }
