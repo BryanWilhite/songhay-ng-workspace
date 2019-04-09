@@ -1,3 +1,4 @@
+import * as numeral from 'numeral';
 import { first, isEmpty } from 'lodash';
 
 import { MapObjectUtility } from 'songhay/core/utilities/map-object.utility';
@@ -92,20 +93,12 @@ export class MockDomainConverterUtility {
             return '';
         }
 
-        const pad = (num: string | number, size: number) => {
-            let s = String(num);
-            while (s.length < size) {
-                s = `0${s}`;
-            }
-            return s;
-        };
-
         return (
             blogEntry.itemCategoryObject['year'] +
             '-' +
-            pad(blogEntry.itemCategoryObject['month'], 2) +
+            numeral(blogEntry.itemCategoryObject['month']).format('00') +
             '-' +
-            pad(blogEntry.itemCategoryObject['day'], 2) +
+            numeral(blogEntry.itemCategoryObject['day']).format('00') +
             '-' +
             blogEntry.slug
         );
