@@ -27,7 +27,7 @@
             </mat-panel-title>
         </mat-expansion-panel-header>
         <div fxLayout="row wrap">
-            <mat-card *ngFor="let item of group.childItems">
+            <mat-card *ngFor="let item of group.items">
                 <mat-card-content>
                     <a [routerLink]="[indexOptions.indexStoreItemUri, item.id]" class="index" [innerHTML]="item.displayText"></a>
                 </mat-card-content>
