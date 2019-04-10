@@ -43,7 +43,7 @@ export class MockDomainConverterUtility {
         const items = index.map(item => {
             const sortOrdinal = MockDomainConverterUtility.getSortOrdinal(item);
             const blogTopics = item.itemCategoryObject as BlogTopics;
-            const blogTopicsMap = MapObjectUtility.getMap(blogTopics.topics, (propertyName: string, propertyValue: any) => propertyValue);
+            const blogTopicsMap = MapObjectUtility.getMapFromKeyValuePairs(blogTopics.topics);
             const entry: MenuDisplayItemModel = {
                 description: item.content,
                 displayText: item.title,
@@ -77,7 +77,7 @@ export class MockDomainConverterUtility {
             ? '<!--zzz-->[no topic]'
             : `<!-- ${first(topics)} --> ${o[first(topics)]}`;
 
-        o.topics = topics.map(v => ({ key: v, value: o[v] }));
+        o.topics = topics.map(v => ({ key: v, value: `<!-- ${v} --> ${o[v]}` }));
         return o;
     }
 
