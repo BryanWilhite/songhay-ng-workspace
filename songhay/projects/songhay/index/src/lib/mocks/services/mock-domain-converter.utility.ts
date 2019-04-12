@@ -40,22 +40,27 @@ export class MockDomainConverterUtility {
         if (!index) {
             throw Error('The expected BlogEntry[] data shape is not here.');
         }
-        const items = index.map(item => {
-            const sortOrdinal = MockDomainConverterUtility.getSortOrdinal(item);
-            const blogTopics = item.itemCategoryObject as BlogTopics;
-            const blogTopicsMap = MapObjectUtility.getMapFromKeyValuePairs(blogTopics.topics);
-            const entry: MenuDisplayItemModel = {
-                description: item.content,
-                displayText: item.title,
-                groupDisplayText: blogTopics.topic,
-                groupId: first(Array.from(blogTopicsMap.keys())),
-                id: item.slug,
-                inceptDate: item.inceptDate,
-                map: blogTopicsMap,
-                modificationDate: item.modificationDate,
+        const items = index.map(entry => {
+            const sortOrdinal = MockDomainConverterUtility.getSortOrdinal(entry);
+            const blogTopics = entry.itemCategoryObject as BlogTopics;
+            const itemMap = MapObjectUtility.getMapFromKeyValuePairs(blogTopics.topics);
+
+            const key = `group-year-month-${entry.itemCategoryObject['year']}-${numeral(entry.itemCategoryObject['month']).format('00')}`;
+            const value = `${entry.itemCategoryObject['year']}/${numeral(entry.itemCategoryObject['month']).format('00')}`;
+            itemMap.set(key, value);
+
+            const item: MenuDisplayItemModel = {
+                description: entry.content,
+                displayText: entry.title,
+                groupDisplayText: value,
+                groupId: key,
+                id: entry.slug,
+                inceptDate: entry.inceptDate,
+                map: itemMap,
+                modificationDate: entry.modificationDate,
                 sortOrdinal: sortOrdinal
             };
-            return entry;
+            return item;
         });
         if (!items) {
             throw Error('The expected YouTubeItem[] data is not here.');
