@@ -1,5 +1,3 @@
-import { chain } from 'lodash';
-
 import { Observable } from 'rxjs';
 
 import { DomSanitizer } from '@angular/platform-browser';
@@ -16,10 +14,9 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 import { MenuDisplayItemModel } from 'songhay/core/models/menu-display-item.model';
+import { DisplayItemUtility } from 'songhay/core/utilities/display-item.utility';
 
 import { IndexFormGroup } from '../../models/index-form-group';
-import { IndexGroupingOption } from '../../models/index-grouping-option';
-import { IndexGroup } from '../../models/index-group';
 import { IndexOptions } from '../../models/index-options';
 
 import { IndexEntriesStore } from '../../services/index-entries.store';
@@ -33,63 +30,35 @@ import { IndexEntriesStore } from '../../services/index-entries.store';
 export class IndexGroupsComponent implements OnInit {
     indexFormGroup: FormGroup;
 
-    indexGroupingOptions: IndexGroupingOption[];
-
-    indexGroups$: Observable<IndexGroup[]>;
+    indexGroups$: Observable<MenuDisplayItemModel[]>;
 
     constructor(
         public indexEntriesStore: IndexEntriesStore,
         public indexOptions: IndexOptions,
-        private sanitizer: DomSanitizer
-    ) {}
+        public sanitizer: DomSanitizer
+    ) { }
 
     ngOnInit() {
-        this.initializeIndexGroupingOptions();
         this.initializeIndexFormGroup();
         this.initializeIndexGroups();
     }
 
     private initializeIndexFormGroup(): void {
         const defaultFilter = '';
+
+        if (!this.indexOptions.indexGroupingOptions || !this.indexOptions.indexGroupingOptions.length) {
+            throw new Error('The expected Index Grouping Options are not here.');
+        }
+
         this.indexFormGroup = new FormGroup({
             indexGroupingSelection: new FormControl(
-                this.indexGroupingOptions[0]
+                this.indexOptions.indexGroupingOptions[0]
             ),
             indexFilter: new FormControl(defaultFilter)
         });
     }
 
     private initializeIndexGroups(): void {
-        const chainIntoGroups = (
-            entries: MenuDisplayItemModel[],
-            indexGroupingOption: IndexGroupingOption
-        ) => {
-            return chain(entries)
-                .groupBy((i: MenuDisplayItemModel) => i.groupId)
-                .map((items: MenuDisplayItemModel[]) => {
-                    if (!items || !items.length) {
-                        console.log(
-                            'The expected group of Blog entries are not here.'
-                        );
-                        return;
-                    }
-                    const firstEntry = items[0];
-                    const groupDisplayName = firstEntry.groupDisplayText;
-                    const indexGroup: IndexGroup = {
-                        group: items,
-                        groupDisplayName: this.sanitizer.bypassSecurityTrustHtml(
-                            groupDisplayName
-                        ),
-                        isCollapsed: false
-                    };
-                    return indexGroup;
-                })
-                .orderBy(
-                    ['groupDisplayName'],
-                    [indexGroupingOption.sortDescending ? 'desc' : 'asc']
-                )
-                .value();
-        };
 
         this.indexGroups$ = this.indexFormGroup.valueChanges.pipe(
             debounceTime(300),
@@ -103,29 +72,11 @@ export class IndexGroupsComponent implements OnInit {
                             indexFormGroup.indexFilter
                         )
                     ),
-                    map(items =>
-                        chainIntoGroups(
-                            items,
-                            indexFormGroup.indexGroupingSelection
-                        )
-                    )
+                    map(items => DisplayItemUtility.displayInGroups(items,
+                        indexFormGroup.indexGroupingSelection.groupId,
+                        indexFormGroup.indexGroupingSelection.sortDescending))
                 )
             )
         );
-    }
-
-    private initializeIndexGroupingOptions(): void {
-        this.indexGroupingOptions = [
-            {
-                displayName: 'by Date',
-                groupId: 'dateGroup',
-                sortDescending: true
-            },
-            {
-                displayName: 'by Topic',
-                groupId: 'topic',
-                sortDescending: false
-            }
-        ];
     }
 }
