@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { MenuDisplayItemModel } from 'songhay/core/models/menu-display-item.model';
 import { AppDataStoreOptions } from '@songhay/core';
 
+import { IndexGroupingOption } from './index-grouping-option';
 import { IndexStyles } from './index-styles';
 
 /**
@@ -22,6 +23,11 @@ export class IndexOptions {
      * default @type {IndexStyles}
      */
     defaultDisplayStyle = IndexStyles.Groups;
+
+    /**
+     * @inheritdoc
+     */
+    indexGroupingOptions?: IndexGroupingOption[];
 
     /**
      * location of the Index data

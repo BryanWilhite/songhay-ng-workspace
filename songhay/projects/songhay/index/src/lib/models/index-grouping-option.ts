@@ -11,11 +11,12 @@ export interface IndexGroupingOption {
     displayName: string;
 
     /**
-     * the property name
-     * of the index backing object
-     * to group by
+     * the identifier or prefix
+     * for display-item grouping
+     *
+     * refers to @type {Groupable.groupId}
      */
-    groupByPropertyName: string;
+    groupId: string | number;
 
     /**
      * sort the group in descending order?

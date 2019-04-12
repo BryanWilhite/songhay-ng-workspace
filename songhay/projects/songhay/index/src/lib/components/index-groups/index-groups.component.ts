@@ -118,12 +118,12 @@ export class IndexGroupsComponent implements OnInit {
         this.indexGroupingOptions = [
             {
                 displayName: 'by Date',
-                groupByPropertyName: 'dateGroup',
+                groupId: 'dateGroup',
                 sortDescending: true
             },
             {
                 displayName: 'by Topic',
-                groupByPropertyName: 'topic',
+                groupId: 'topic',
                 sortDescending: false
             }
         ];
