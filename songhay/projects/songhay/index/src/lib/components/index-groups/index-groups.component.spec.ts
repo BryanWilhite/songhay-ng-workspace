@@ -25,8 +25,8 @@ import { IndexGroupsComponent } from './index-groups.component';
 const options: IndexOptions = new IndexOptions();
 options.appDataStoreOptions = MockDomainConverterUtility.getAppDataStoreOptions();
 options.indexGroupingOptions = [
+    { displayName: 'Group by Topic', groupId: 'topic-', sortDescending: false },
     { displayName: 'Group by Date', groupId: 'group-year-month-', sortDescending: true },
-    { displayName: 'Group by Topic', groupId: 'topic-', sortDescending: false }
 ];
 
 describe(IndexGroupsComponent.name, () => {
