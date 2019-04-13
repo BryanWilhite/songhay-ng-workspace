@@ -23,7 +23,7 @@
     <mat-expansion-panel *ngFor="let group of indexGroups$ | async; first as isFirst" [expanded]="isFirst">
         <mat-expansion-panel-header>
             <mat-panel-title>
-                <h2 [innerHTML]="sanitizer.bypassSecurityTrustHtml(group.groupDisplayText)"></h2>
+                <h2 [attr.id]="group.id" [innerHTML]="sanitizer.bypassSecurityTrustHtml(group.displayText)"></h2>
             </mat-panel-title>
         </mat-expansion-panel-header>
         <div fxLayout="row wrap">

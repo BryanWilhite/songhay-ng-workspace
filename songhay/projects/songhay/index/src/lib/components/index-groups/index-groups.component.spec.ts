@@ -98,7 +98,15 @@ describe(IndexGroupsComponent.name, () => {
             const childDatum = groups[i];
             expect(childDatum).toBeTruthy();
 
-            console.log(IndexGroupsComponent.name, { child, childDatum });
+            const header = child.query(By.css('h2'));
+            expect(header).toBeTruthy();
+
+            const h2 = header.nativeElement as HTMLHeadingElement;
+            expect(h2).toBeTruthy();
+            expect(h2.id).toEqual(childDatum.id as string);
+            expect(h2.innerHTML).toEqual(childDatum.displayText);
+
+            console.log(IndexGroupsComponent.name, { child, childDatum, h2 });
         });
 
         fixture.whenStable().then(() => {
