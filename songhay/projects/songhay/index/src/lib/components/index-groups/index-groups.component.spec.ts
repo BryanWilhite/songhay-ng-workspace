@@ -21,7 +21,6 @@ import { MockDomainConverterUtility } from '../../mocks/services/mock-domain-con
 import { IndexEntriesStore } from '../../services/index-entries.store';
 
 import { IndexGroupsComponent } from './index-groups.component';
-import { DisplayItemUtility } from 'songhay/core/utilities/display-item.utility';
 
 const options: IndexOptions = new IndexOptions();
 options.appDataStoreOptions = MockDomainConverterUtility.getAppDataStoreOptions();
