@@ -5,6 +5,8 @@ import {
     TestRequest
 } from '@angular/common/http/testing';
 
+import { DisplayItemUtility } from 'songhay/core/utilities/display-item.utility';
+
 import { IndexOptions } from '../models/index-options';
 import { IndexEntriesStore } from './index-entries.store';
 
@@ -64,7 +66,7 @@ describe(IndexEntriesStore.name, () => {
                     controller: HttpTestingController
                 ) => {
                     service.serviceData.subscribe(data =>
-                        console.log({ endpoint, data })
+                        console.log({ endpoint, data: DisplayItemUtility.stringifyAll(data) })
                     );
                     service.load(endpoint);
 
