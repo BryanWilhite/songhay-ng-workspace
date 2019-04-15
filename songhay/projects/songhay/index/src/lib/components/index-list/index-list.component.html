@@ -1,6 +1,6 @@
 <form [formGroup]="indexFormGroup">
     <div fxLayout="row wrap" fxLayoutAlign="space-evenly">
-        <div class="cell nav" fxFlex="50"><a class="index" [routerLink]="['/index/groups']" title="set groups view"><mat-icon color="accent" svgIcon="rx:mdi_eye_24px"></mat-icon><span fxHide.lt-md>set groups view</span></a></div>
+        <div class="cell nav" fxFlex="50"><a class="index" [routerLink]="['index/groups']" title="set groups view"><mat-icon color="accent" svgIcon="rx:mdi_eye_24px"></mat-icon><span fxHide.lt-md>set groups view</span></a></div>
         <div class="cell filter" fxFlex="50">
             <mat-form-field>
                 <input formControlName="indexFilter" matInput placeholder="filter index" />
