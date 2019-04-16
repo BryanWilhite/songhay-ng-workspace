@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { IndexRoutePaths } from '@songhay/index';
 import { YouTubeRoutePaths } from '@songhay/player-video-you-tube';
 
 const routes: Routes = [
@@ -10,8 +9,7 @@ const routes: Routes = [
         path: `${YouTubeRoutePaths.root}${YouTubeRoutePaths.uploads}`,
         loadChildren: './components/yt/module/you-tube-lib.module#YouTubeLibModule'
     },
-    { path: 'index-app', loadChildren: './components/index-app/module/index-lib.module#IndexLibModule' },
-    { path: IndexRoutePaths.root, loadChildren: './components/index-app/module/index-lib.module#IndexLibModule' }
+    { path: 'index-app', loadChildren: './components/index-app/module/index-lib.module#IndexLibModule' }
 ];
 
 @NgModule({

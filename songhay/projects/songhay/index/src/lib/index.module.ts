@@ -19,7 +19,8 @@ import { IndexListComponent } from './components/index-list/index-list.component
 import { ErrorComponent } from './components/error/error.component';
 
 const routes: Routes = [
-    { path: IndexRoutePaths.root, component: IndexContainerComponent }
+    { path: '', component: IndexContainerComponent },
+    { path: IndexRoutePaths.rootParameterized, component: IndexContainerComponent }
 ];
 
 /**

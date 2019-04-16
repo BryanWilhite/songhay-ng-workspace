@@ -14,7 +14,7 @@ import {
     HttpClientModule,
     MaterialModule,
     YouTubeModule
-],
+  ],
   exports: [
     YouTubeModule
   ]
