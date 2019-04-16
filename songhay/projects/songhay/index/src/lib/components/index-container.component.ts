@@ -43,8 +43,9 @@ export class IndexContainerComponent implements OnInit, OnDestroy {
             const param = params[ROUTE_PARAM_DISPLAY_STYLE] as IndexStyles;
 
             if (!param) {
-                const redirect = `${this.location.path()}/${IndexRoutePaths.root}/${this.indexOptions.defaultDisplayStyle}`;
-                this.location.go(redirect);
+                const swap = `${this.location.path()}/${IndexRoutePaths.root}/${this.indexOptions.defaultDisplayStyle}`;
+                this.viewStyle = this.indexOptions.defaultDisplayStyle;
+                this.location.replaceState(swap);
             } else {
                 this.viewStyle = param;
             }
