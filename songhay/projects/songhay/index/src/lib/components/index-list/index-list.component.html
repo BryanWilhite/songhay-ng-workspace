@@ -1,6 +1,6 @@
 <form [formGroup]="indexFormGroup">
     <div fxLayout="row wrap" fxLayoutAlign="space-evenly">
-        <div class="cell nav" fxFlex="50"><a class="index" [routerLink]="['index', 'groups']" title="set groups view"><mat-icon color="accent" svgIcon="rx:mdi_eye_24px"></mat-icon><span fxHide.lt-md>set groups view</span></a></div>
+        <div class="cell nav" fxFlex="50"><a mat-button class="index" (click)="navigateToGroups()" title="set groups view"><mat-icon color="accent" svgIcon="rx:mdi_eye_24px"></mat-icon><span fxHide.lt-md>set groups view</span></a></div>
         <div class="cell filter" fxFlex="50">
             <mat-form-field>
                 <input formControlName="indexFilter" matInput placeholder="filter index" />
@@ -14,6 +14,6 @@
 <mat-list>
     <mat-list-item *ngFor="let i of index$ | async | paginate: { itemsPerPage: 10, currentPage: currentPage }">
         <span class="incept-date">{{ i.inceptDate | date:'yyyy-MM-dd' }}:</span>
-        <a class="index" [routerLink]="[indexOptions.indexStoreItemUri, i.id]" [innerHTML]="i.displayText"></a>
+        <a class="index" [routerLink]="[indexOptions.indexStoreItemUri, i.id]" [innerHTML]="sanitizer.bypassSecurityTrustHtml(i.displayText)"></a>
     </mat-list-item>
 </mat-list>

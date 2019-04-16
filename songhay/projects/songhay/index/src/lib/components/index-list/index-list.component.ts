@@ -4,6 +4,8 @@ import {
     OnInit
 } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import {
     debounceTime,
@@ -16,6 +18,8 @@ import { Observable, Subject } from 'rxjs';
 
 import { MenuDisplayItemModel } from 'songhay/core/models/menu-display-item.model';
 import { IndexOptions } from '../../models/index-options';
+import { IndexRoutePaths } from '../../models/index-route-paths';
+import { IndexStyles } from '../../models/index-styles';
 
 import { IndexEntriesStore } from '../../services/index-entries.store';
 
@@ -53,7 +57,11 @@ export class IndexListComponent implements OnInit {
      */
     constructor(
         public indexOptions: IndexOptions,
-        private indexEntriesStore: IndexEntriesStore) {
+        public sanitizer: DomSanitizer,
+        private indexEntriesStore: IndexEntriesStore,
+        private route: ActivatedRoute,
+        private router: Router
+    ) {
         this.filterIndexSubject = new Subject<string>();
     }
 
@@ -71,6 +79,13 @@ export class IndexListComponent implements OnInit {
         this.initializeIndexFormGroup();
         this.initializeIndex();
         this.currentPage = 1;
+    }
+
+    navigateToGroups() {
+        this.router.navigate(
+            [IndexRoutePaths.root, IndexStyles.Groups],
+            { relativeTo: (this.route.parent || this.route) }
+        );
     }
 
     private initializeIndex(): void {

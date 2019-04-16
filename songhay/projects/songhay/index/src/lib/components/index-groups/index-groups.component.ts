@@ -1,7 +1,5 @@
 import { Observable } from 'rxjs';
 
-import { DomSanitizer } from '@angular/platform-browser';
-
 import {
     debounceTime,
     distinctUntilChanged,
@@ -10,14 +8,18 @@ import {
     switchMap
 } from 'rxjs/operators';
 
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Sanitizer } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { MenuDisplayItemModel } from 'songhay/core/models/menu-display-item.model';
 import { DisplayItemUtility } from 'songhay/core/utilities/display-item.utility';
 
 import { IndexFormGroup } from '../../models/index-form-group';
 import { IndexOptions } from '../../models/index-options';
+import { IndexRoutePaths } from '../../models/index-route-paths';
+import { IndexStyles } from '../../models/index-styles';
 
 import { IndexEntriesStore } from '../../services/index-entries.store';
 
@@ -35,12 +37,21 @@ export class IndexGroupsComponent implements OnInit {
     constructor(
         public indexEntriesStore: IndexEntriesStore,
         public indexOptions: IndexOptions,
-        public sanitizer: DomSanitizer
+        public sanitizer: DomSanitizer,
+        private route: ActivatedRoute,
+        private router: Router
     ) { }
 
     ngOnInit() {
         this.initializeIndexFormGroup();
         this.initializeIndexGroups();
+    }
+
+    navigateToList() {
+        this.router.navigate(
+            [IndexRoutePaths.root, IndexStyles.List],
+            { relativeTo: (this.route.parent || this.route) }
+        );
     }
 
     private initializeIndexFormGroup(): void {
