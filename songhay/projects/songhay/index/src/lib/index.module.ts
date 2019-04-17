@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from './material.module';
@@ -34,8 +33,7 @@ const routes: Routes = [
         RouterModule.forChild(routes),
         HttpClientModule,
         MaterialModule,
-        ReactiveFormsModule,
-        FlexLayoutModule
+        ReactiveFormsModule
     ],
     providers: [IndexEntriesStore],
     declarations: [
