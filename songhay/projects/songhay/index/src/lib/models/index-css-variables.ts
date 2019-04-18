@@ -1,0 +1,8 @@
+export type CssVariables =
+    '--link-color' |
+    '--link-text-decoration' |
+    '--link-active-color' |
+    '--link-hover-text-decoration' |
+    '--link-hover-text-decoration-color' |
+    '--link-visited-color'
+    ;

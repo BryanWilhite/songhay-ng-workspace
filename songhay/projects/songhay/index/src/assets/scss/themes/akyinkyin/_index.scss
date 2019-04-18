@@ -4,15 +4,24 @@
 // Material.io does not theme anchor elements that are not buttons:
 a {
     &.index {
-        &:active,
-        &:link,
+        &:link {
+            color: var(--link-color);
+        }
+        &:active {
+            color: var(--link-visited-color);
+        }
         &:visited {
-            color: $akyinkyin-light-tint;
-            text-decoration: none;
+            color: var(--link-visited-color);
+        }
+
+        &:link,
+        &:active,
+        &:visited {
+            text-decoration: var(--link-text-decoration);
         }
         &:hover {
-            text-decoration: underline;
-            text-decoration-color: $akyinkyin-base;
+            text-decoration: var(--link-hover-text-decoration);
+            text-decoration-color: var(--link-hover-text-decoration-color);
         }
     }
 }
