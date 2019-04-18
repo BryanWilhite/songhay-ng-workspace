@@ -1,4 +1,7 @@
-export type CssVariables =
+/**
+ * styling variables for this App
+ */
+export type IndexCssVariables =
     '--link-color' |
     '--link-text-decoration' |
     '--link-active-color' |

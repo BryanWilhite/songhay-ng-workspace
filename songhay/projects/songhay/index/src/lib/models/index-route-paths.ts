@@ -4,6 +4,8 @@
  */
 export const ROUTE_PARAM_DISPLAY_STYLE = 'style';
 
+const ROOT = 'index';
+
 /**
  * routing path data
  * for the @type {IndexModule}
@@ -15,11 +17,11 @@ export class IndexRoutePaths {
      * the root path to the components
      * in this library with parameter
      */
-    static root = 'index';
+    static root = ROOT;
 
     /**
      * the root path to the components
      * in this library with parameter
      */
-    static rootParameterized = `index/:${ROUTE_PARAM_DISPLAY_STYLE}`;
+    static rootParameterized = `${ROOT}/:${ROUTE_PARAM_DISPLAY_STYLE}`;
 }

@@ -19,7 +19,7 @@ import { DisplayItemUtility } from 'songhay/core/utilities/display-item.utility'
 import { IndexFormGroup } from '../../models/index-form-group';
 import { IndexOptions } from '../../models/index-options';
 import { IndexRoutePaths } from '../../models/index-route-paths';
-import { IndexStyles } from '../../models/index-styles';
+import { IndexFlowStyles } from '../../models/index-flow-styles';
 
 import { IndexEntriesStore } from '../../services/index-entries.store';
 
@@ -49,7 +49,7 @@ export class IndexGroupsComponent implements OnInit {
 
     navigateToList() {
         this.router.navigate(
-            [IndexRoutePaths.root, IndexStyles.List],
+            [IndexRoutePaths.root, IndexFlowStyles.List],
             { relativeTo: (this.route.parent || this.route) }
         );
     }
