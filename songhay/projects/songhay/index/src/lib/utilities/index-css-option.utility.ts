@@ -11,42 +11,34 @@ export class IndexCssOptionUtility {
      */
     public static getDefaultOptions(): IndexCssOption[] {
         return [
-            // $akyinkyin-base
             {
                 variableName: '--link-color',
-                variableValue: '#006633'
+                variableValue: '#006633' // $akyinkyin-base
             },
-
-            // $akyinkyin-base
             {
                 variableName: '--link-active-color',
-                variableValue: '#006633'
+                variableValue: '#006633' // $akyinkyin-base
             },
-
-            // $akyinkyin-base
             {
                 variableName: '--link-visited-color',
-                variableValue: '#006633'
+                variableValue: '#006633' // $akyinkyin-base
             },
-
-            // $akyinkyin-base
             {
                 variableName: '--link-hover-text-decoration-color',
-                variableValue: '#006633'
+                variableValue: '#006633' // $akyinkyin-base
             },
-
-            // $akyinkyin-background
             {
                 variableName: '--mat-card-background-color',
-                variableValue: '#1d241d'
+                variableValue: '#1d241d' // $akyinkyin-background
             },
-
-            // $akyinkyin-light-tint
             {
                 variableName: '--mat-option-selected-color',
-                variableValue: '#00ee3b'
+                variableValue: '#00ee3b' // $akyinkyin-light-tint
             },
-
+            {
+                variableName: '--ngx-pagination-page-number-selected-background-color',
+                variableValue: '#006633' // $akyinkyin-base
+            },
             {
                 variableName: '--link-text-decoration',
                 variableValue: 'none'
@@ -54,7 +46,7 @@ export class IndexCssOptionUtility {
             {
                 variableName: '--link-hover-text-decoration',
                 variableValue: 'underline'
-            },
+            }
         ];
     }
 

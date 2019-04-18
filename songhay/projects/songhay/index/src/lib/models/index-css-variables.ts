@@ -9,5 +9,8 @@ export type IndexCssVariables =
     '--link-hover-text-decoration-color' |
     '--link-visited-color' |
     '--mat-card-background-color' |
-    '--mat-option-selected-color'
+    '--mat-option-selected-color' |
+    '--mat-primary-text-dark-color' |
+    '--mat-primary-text-light-color' |
+    '--ngx-pagination-page-number-selected-background-color'
 ;

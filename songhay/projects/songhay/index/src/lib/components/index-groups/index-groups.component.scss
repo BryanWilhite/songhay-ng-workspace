@@ -1,11 +1,30 @@
 @import "../../../assets/scss/normalize-component";
 
-.mat-form-field-label {
-    padding-bottom: 0.25em;
-}
+form {
+    min-width: 25rem;
+    padding-bottom: 1rem;
 
-.mat-option.mat-selected:not(.mat-option-disabled) {
-    color: var(--mat-option-selected-color);
+    .mat-form-field-label {
+        padding-bottom: 0.25rem;
+    }
+
+    .mat-option.mat-selected:not(.mat-option-disabled) {
+        color: var(--mat-option-selected-color);
+    }
+
+    .cell.filter {
+        text-align: right;
+    }
+
+    .cell.filter,
+    .cell.grouping,
+    .cell.nav {
+        padding-top: 1rem;
+    }
+
+    .cell.nav {
+        padding-left: 1rem;
+    }
 }
 
 .mat-card {
@@ -21,14 +40,4 @@
     & > .mat-card-footer {
         padding-left: 1rem;
     }
-}
-
-.cell.filter,
-.cell.grouping,
-.cell.nav {
-    padding-top: 1rem;
-}
-
-.cell.nav {
-    padding-left: 1rem;
 }
