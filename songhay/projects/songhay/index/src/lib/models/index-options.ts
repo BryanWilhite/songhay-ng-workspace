@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { MenuDisplayItemModel } from 'songhay/core/models/menu-display-item.model';
 import { AppDataStoreOptions } from '@songhay/core';
 
-import { IndexCssOption } from './index-css-option';
+import { IndexCssOptionUtility } from '../utilities/index-css-option.utility';
 import { IndexGroupingOption } from './index-grouping-option';
 import { IndexFlowStyles } from './index-flow-styles';
 
@@ -28,7 +28,7 @@ export class IndexOptions {
     /**
      * @see @type {IndexCssOptions}
      */
-    indexCssOptions: IndexCssOption[];
+    indexCssOptions = IndexCssOptionUtility.getDefaultOptions();
 
     /**
      * @see @type {IndexGroupingOption}

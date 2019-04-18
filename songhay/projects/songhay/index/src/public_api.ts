@@ -5,7 +5,7 @@
 export * from './lib/index.module';
 
 /* models */
-export * from './lib/models/index-css-options';
+export * from './lib/models/index-css-option';
 export * from './lib/models/index-css-variables';
 export * from './lib/models/index-form-group';
 export * from './lib/models/index-group';

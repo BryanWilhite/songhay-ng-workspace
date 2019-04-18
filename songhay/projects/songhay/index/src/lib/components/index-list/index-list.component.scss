@@ -1,20 +1,19 @@
 @import '../../../assets/scss/normalize-component';
-@import '../../../assets/scss/themes/akyinkyin/palette';
 
 .mat-form-field-label {
     padding-bottom: 0.25em;
 }
 
 .mat-option.mat-selected:not(.mat-option-disabled) {
-    color: $akyinkyin-light-text;
+    color: var(--mat-option-selected-color);
 }
 
 .mat-stroked-button.mat-accent {
-    color: $light-primary-text;
+    color: var(--mat-search-button-accent-color);
 }
 
 .mat-card {
-    background-color: $akyinkyin-background;
+    background-color: var(--mat-card-background-color);
     height: 6rem;
     margin: 0.25rem;
     width: 14rem;
