@@ -9,6 +9,5 @@ export type IndexCssVariables =
     '--link-hover-text-decoration-color' |
     '--link-visited-color' |
     '--mat-card-background-color' |
-    '--mat-option-selected-color' |
-    '--mat-search-button-accent-color'
+    '--mat-option-selected-color'
 ;

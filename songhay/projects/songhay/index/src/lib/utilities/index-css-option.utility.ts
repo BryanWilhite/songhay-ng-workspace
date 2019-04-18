@@ -47,12 +47,6 @@ export class IndexCssOptionUtility {
                 variableValue: '#00ee3b'
             },
 
-            // $akyinkyin-light-tint
-            {
-                variableName: '--mat-search-button-accent-color',
-                variableValue: '#fff'
-            },
-
             {
                 variableName: '--link-text-decoration',
                 variableValue: 'none'

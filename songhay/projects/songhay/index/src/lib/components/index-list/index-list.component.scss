@@ -8,10 +8,6 @@
     color: var(--mat-option-selected-color);
 }
 
-.mat-stroked-button.mat-accent {
-    color: var(--mat-search-button-accent-color);
-}
-
 .mat-card {
     background-color: var(--mat-card-background-color);
     height: 6rem;
@@ -27,12 +23,67 @@
     }
 }
 
-.cell.filter,
-.cell.grouping,
-.cell.nav {
-    padding-top: 1rem;
+
+
+form {
+    min-width: 30rem;
+
+    & .mat-stroked-button.mat-accent {
+        color: $light-primary-text;
+    }
+
+    & .cell.filter {
+        text-align: right;
+    }
+
+    & .cell.filter,
+    & .cell.nav {
+        padding-top: 1rem;
+    }
+
+    & .cell.nav {
+        padding-left: 1rem;
+    }
+
+    & .index.pagination {
+        min-width: 25rem;
+
+        & ::ng-deep .ngx-pagination {
+            padding-left: 0;
+            text-align: center;
+            & > li.current {
+                background-color: $akyinkyin-base;
+            }
+            & li > a {
+                color: $light-primary-text;
+
+                &:active,
+                &:link,
+                &:visited {
+                    color: $light-primary-text;
+                }
+
+                &:hover {
+                    color: $dark-primary-text;
+                }
+            }
+        }
+    }
 }
 
-.cell.nav {
-    padding-left: 1rem;
+.mat-list-item {
+    & > .mat-list-item-content {
+        vertical-align: top;
+    }
+
+    & .incept-date {
+        display: inline-block;
+        margin-right: 0.5rem;
+        white-space: nowrap;
+    }
+
+    & a {
+        display: inline-block;
+        min-width: 30rem;
+    }
 }
