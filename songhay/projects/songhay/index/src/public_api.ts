@@ -5,12 +5,14 @@
 export * from './lib/index.module';
 
 /* models */
+export * from './lib/models/index-css-options';
+export * from './lib/models/index-css-variables';
 export * from './lib/models/index-form-group';
 export * from './lib/models/index-group';
 export * from './lib/models/index-grouping-option';
 export * from './lib/models/index-options';
 export * from './lib/models/index-route-paths';
-export * from './lib/models/index-styles';
+export * from './lib/models/index-flow-styles';
 
 /* services */
 export * from './lib/services/index-entries.store';

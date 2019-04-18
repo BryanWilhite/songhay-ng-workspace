@@ -7,7 +7,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
 import { IndexOptions } from '../models/index-options';
-import { IndexStyles } from '../models/index-styles';
+import { IndexFlowStyles } from '../models/index-flow-styles';
 import { IndexRoutePaths, ROUTE_PARAM_DISPLAY_STYLE } from '../models/index-route-paths';
 
 import { IndexEntriesStore } from '../services/index-entries.store';
@@ -18,7 +18,7 @@ import { IndexEntriesStore } from '../services/index-entries.store';
     styleUrls: ['./index-container.component.scss']
 })
 export class IndexContainerComponent implements OnInit, OnDestroy {
-    viewStyle: IndexStyles;
+    viewStyle: IndexFlowStyles;
 
     private subscriptions: Subscription[] = [];
 
@@ -40,7 +40,7 @@ export class IndexContainerComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         const sub1 = this.route.params.subscribe(params => {
-            const param = params[ROUTE_PARAM_DISPLAY_STYLE] as IndexStyles;
+            const param = params[ROUTE_PARAM_DISPLAY_STYLE] as IndexFlowStyles;
 
             if (!param) {
                 const swap = `${this.location.path()}/${IndexRoutePaths.root}/${this.indexOptions.defaultDisplayStyle}`;

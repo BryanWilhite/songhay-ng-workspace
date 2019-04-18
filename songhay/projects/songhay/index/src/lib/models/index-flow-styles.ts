@@ -1,10 +1,10 @@
 /**
- * defines named index layout styles
+ * defines named index flow/layout styles
  *
  * @export
  * @enum {number}
  */
-export enum IndexStyles {
+export enum IndexFlowStyles {
     /**
      * style
      */
