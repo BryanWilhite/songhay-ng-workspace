@@ -17,6 +17,9 @@ export * from './lib/models/index-flow-styles';
 /* services */
 export * from './lib/services/index-entries.store';
 
+/* utilities */
+export * from './lib/utilities/index-css-option.utility';
+
 /* components */
 export * from './lib/components/index-container.component';
 export * from './lib/components/index-groups/index-groups.component';

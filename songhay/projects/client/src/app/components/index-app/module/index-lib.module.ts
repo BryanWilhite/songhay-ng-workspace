@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { IndexModule, IndexOptions, IndexStyles } from '@songhay/index';
+import { IndexModule, IndexCssOptionUtility, IndexOptions, IndexFlowStyles } from '@songhay/index';
 
 import { MockDomainConverterUtility } from 'projects/songhay/index/src/lib/mocks/services/mock-domain-converter.utility';
 
 const options: IndexOptions = {
     appDataStoreOptions: MockDomainConverterUtility.getAppDataStoreOptions(),
-    defaultDisplayStyle: IndexStyles.List,
+    defaultDisplayStyle: IndexFlowStyles.List,
+    indexCssOptions: IndexCssOptionUtility.getDefaultOptions(),
     indexGroupingOptions: [
         { displayName: 'Group by Date', groupId: 'group-year-month-', sortDescending: true },
         { displayName: 'Group by Topic', groupId: 'topic-', sortDescending: false }
