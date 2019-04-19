@@ -13,7 +13,7 @@ const options: IndexOptions = {
         { displayName: 'Group by Date', groupId: 'group-year-month-', sortDescending: true },
         { displayName: 'Group by Topic', groupId: 'topic-', sortDescending: false }
     ],
-    indexStoreDataUri: 'assets/index/data/app-songhay-blog-q2-2018.json',
+    indexStoreDataUri: 'assets/data/app-songhay-blog-q2-2018.json',
     indexStoreItemUri: 'blog/entry',
     indexStoreSpritesUri: 'assets/svg/sprites.svg'
 };

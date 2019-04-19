@@ -1,9 +1,9 @@
 import { Subscription } from 'rxjs';
 
 import { Location } from '@angular/common';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, HostBinding, OnInit, OnDestroy } from '@angular/core';
 import { MatIconRegistry } from '@angular/material';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
 import { IndexOptions } from '../models/index-options';
@@ -11,6 +11,7 @@ import { IndexFlowStyles } from '../models/index-flow-styles';
 import { IndexRoutePaths, ROUTE_PARAM_DISPLAY_STYLE } from '../models/index-route-paths';
 
 import { IndexEntriesStore } from '../services/index-entries.store';
+import { IndexCssOptionUtility } from '../utilities/index-css-option.utility';
 
 @Component({
     selector: 'rx-index-container',
@@ -18,6 +19,9 @@ import { IndexEntriesStore } from '../services/index-entries.store';
     styleUrls: ['./index-container.component.scss']
 })
 export class IndexContainerComponent implements OnInit, OnDestroy {
+
+    @HostBinding('style') style: SafeStyle;
+
     viewStyle: IndexFlowStyles;
 
     private subscriptions: Subscription[] = [];
@@ -29,16 +33,19 @@ export class IndexContainerComponent implements OnInit, OnDestroy {
         private sanitizer: DomSanitizer,
         private indexOptions: IndexOptions,
         private location: Location
-    ) {
+    ) {}
+
+    ngOnInit(): void {
+        const css = IndexCssOptionUtility.getStyle(this.indexOptions.indexCssOptions);
+        this.style = this.sanitizer.bypassSecurityTrustStyle(css);
+
         this.iconRegistry.addSvgIconSetInNamespace(
             'rx',
             this.sanitizer.bypassSecurityTrustResourceUrl(
                 this.indexOptions.indexStoreSpritesUri
             )
         );
-    }
 
-    ngOnInit(): void {
         const sub1 = this.route.params.subscribe(params => {
             const param = params[ROUTE_PARAM_DISPLAY_STYLE] as IndexFlowStyles;
 
