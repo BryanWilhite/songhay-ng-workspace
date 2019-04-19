@@ -8,15 +8,23 @@ The miserable details around how to get the Angular library actually working in 
 
 ## `@songhay/core` project
 
-[These](songhay/projects/songhay/core) are the core types building on top of the more framework-agnostic `songhay-core` [repo](https://github.com/BryanWilhite/songhay-core).
+[These](songhay/projects/songhay/core) are the core types building on top of the more framework-agnostic `songhay-core` [repo](https://github.com/BryanWilhite/songhay-core). The featured type here is the Observable Data Store, `AppDataStore` [[GitHub](./songhay/projects/songhay/core/src/lib/services/app-data.store.ts)].
 
-:books: `typedoc` [documentation](https://bryanwilhite.github.io/songhay-ng-workspace/core) is available.
+:books: API [documentation](https://bryanwilhite.github.io/songhay-ng-workspace/core) is available.
+
+## `@songhay/index` project
+
+[This](songhay/projects/songhay/index) is the Songhay System Index App, literally an _index_ for a set of Web resources, defined by the `MenuDisplayItemModel` [[GitHub](https://github.com/BryanWilhite/songhay-core/blob/master/src/models/menu-display-item.model.ts)]. This app supports listing and grouping index items with the `Selectable.map` [[GitHub](https://github.com/BryanWilhite/songhay-core/blob/master/src/models/selectable.ts#L25)] of the `songhay-core`. This app also supports theming.
+
+![Songhay Index](./docs/bitmaps/songhay-index-app.gif)
+
+:books: API [documentation](https://bryanwilhite.github.io/songhay-ng-workspace/index) is available.
 
 ## `@songhay/player-video-you-tube` project
 
 [This](songhay/projects/songhay/player-video-you-tube) is the library for the YouTube video app of the b-roll player.
 
-:books: `typedoc` [documentation](https://bryanwilhite.github.io/songhay-ng-workspace/player-video-you-tube) is available.
+:books: API [documentation](https://bryanwilhite.github.io/songhay-ng-workspace/player-video-you-tube) is available.
 
 ## initial setup commands
 
