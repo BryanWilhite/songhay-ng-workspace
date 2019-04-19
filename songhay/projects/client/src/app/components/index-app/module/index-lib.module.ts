@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { IndexModule, IndexCssOptionUtility, IndexOptions, IndexFlowStyles } from '@songhay/index';
 
 import { MockDomainConverterUtility } from 'projects/songhay/index/src/lib/mocks/services/mock-domain-converter.utility';
@@ -21,6 +22,7 @@ const options: IndexOptions = {
 @NgModule({
     imports: [
         CommonModule,
+        FlexLayoutModule,
         IndexModule.forRoot(options)
     ],
     exports: [

@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
 
 import { IndexOptions } from './models/index-options';
@@ -30,10 +31,11 @@ const routes: Routes = [
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forChild(routes),
         HttpClientModule,
         MaterialModule,
-        ReactiveFormsModule
+        FlexLayoutModule,
+        ReactiveFormsModule,
+        RouterModule.forChild(routes)
     ],
     providers: [IndexEntriesStore],
     declarations: [
