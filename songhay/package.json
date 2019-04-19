@@ -9,10 +9,19 @@
         "build:player-video-you-tube": "ng build @songhay/player-video-you-tube",
         "build": "npm run build:core && npm run build:index && npm run build:player-video-you-tube && ng build client",
         "lint": "ng lint",
-        "pack": "npm pack dist/songhay/core && npm pack dist/songhay/index && npm pack dist/songhay/player-video-you-tube",
-        "publish": "npm publish dist/songhay/core && npm publish dist/songhay/index && npm publish dist/songhay/player-video-you-tube",
+        "pack:core": "npm pack dist/songhay/core",
+        "pack:index": "npm pack dist/songhay/index",
+        "pack:player-video-you-tube": "npm pack dist/songhay/player-video-you-tube",
+        "publish:core": "npm publish dist/songhay/core --access public",
+        "publish:index": "npm publish dist/songhay/index --access public",
+        "publish:player-video-you-tube": "npm publish dist/songhay/player-video-you-tube --access public",
+        "release:core": "npm run build:core && npm run pack:core && npm run publish:core",
+        "release:index": "npm run build:index && npm run pack:index && npm run publish:index",
+        "release:player-video-you-tube": "npm run build:player-video-you-tube && npm run pack:player-video-you-tube && npm run publish:player-video-you-tube",
         "start": "ng serve --open",
-        "test": "ng test"
+        "test:core": "ng test --project=@songhay/core",
+        "test:index": "ng test --project=@songhay/index",
+        "test:player-video-you-tube": "ng test --project=@songhay/player-video-you-tube"
     },
     "repository": {
         "type": "git",
@@ -28,7 +37,6 @@
         "url": "https://github.com/BryanWilhite/songhay-ng-workspace/issues"
     },
     "homepage": "https://github.com/BryanWilhite/songhay-ng-workspace#readme",
-    "private": true,
     "dependencies": {
         "@angular/animations": "^7.2.12",
         "@angular/cdk": "^7.3.7",

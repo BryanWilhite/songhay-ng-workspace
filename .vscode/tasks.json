@@ -26,6 +26,14 @@
         },
         {
             "type": "npm",
+            "script": "build:core",
+            "path": "songhay/",
+            "problemMatcher": [
+                "$tsc"
+            ]
+        },
+        {
+            "type": "npm",
             "script": "build:index",
             "path": "songhay/",
             "problemMatcher": [
@@ -34,7 +42,27 @@
         },
         {
             "type": "npm",
-            "script": "pack",
+            "script": "build:player-video-you-tube",
+            "path": "songhay/",
+            "problemMatcher": [
+                "$tsc"
+            ]
+        },
+        {
+            "type": "npm",
+            "script": "release:core",
+            "path": "songhay/",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "release:index",
+            "path": "songhay/",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "release:player-video-you-tube",
             "path": "songhay/",
             "problemMatcher": []
         },
