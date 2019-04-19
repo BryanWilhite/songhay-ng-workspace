@@ -36,16 +36,16 @@ form {
                 background-color: var(--ngx-pagination-page-number-selected-background-color);
             }
             & li > a {
-                color: var(--mat-primary-text-light-color);
+                color: var(--ngx-pagination-link-color);
 
                 &:active,
                 &:link,
                 &:visited {
-                    color: var(--mat-primary-text-light-color);
+                    color: var(--ngx-pagination-link-color);
                 }
 
                 &:hover {
-                    color: var(--mat-primary-text-dark-color);
+                    color: var(--ngx-pagination-link-hover-color);
                 }
             }
         }

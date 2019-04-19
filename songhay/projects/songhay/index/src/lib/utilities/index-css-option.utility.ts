@@ -16,6 +16,10 @@ export class IndexCssOptionUtility {
                 variableValue: '#006633' // $akyinkyin-base
             },
             {
+                variableName: '--link-light-color',
+                variableValue: '#00ee3b' // $akyinkyin-light-tint
+            },
+            {
                 variableName: '--link-active-color',
                 variableValue: '#006633' // $akyinkyin-base
             },
@@ -24,8 +28,24 @@ export class IndexCssOptionUtility {
                 variableValue: '#006633' // $akyinkyin-base
             },
             {
+                variableName: '--link-visited-light-color',
+                variableValue: '#00ee3b' // $akyinkyin-light-tint
+            },
+            {
+                variableName: '--link-text-decoration',
+                variableValue: 'none'
+            },
+            {
+                variableName: '--link-hover-text-decoration',
+                variableValue: 'underline'
+            },
+            {
                 variableName: '--link-hover-text-decoration-color',
                 variableValue: '#006633' // $akyinkyin-base
+            },
+            {
+                variableName: '--link-hover-text-decoration-light-color',
+                variableValue: '#00ee3b' // $akyinkyin-light-tint
             },
             {
                 variableName: '--mat-card-background-color',
@@ -36,17 +56,17 @@ export class IndexCssOptionUtility {
                 variableValue: '#00ee3b' // $akyinkyin-light-tint
             },
             {
-                variableName: '--ngx-pagination-page-number-selected-background-color',
+                variableName: '--ngx-pagination-link-color',
                 variableValue: '#006633' // $akyinkyin-base
             },
             {
-                variableName: '--link-text-decoration',
-                variableValue: 'none'
+                variableName: '--ngx-pagination-link-hover-color',
+                variableValue: '#000'
             },
             {
-                variableName: '--link-hover-text-decoration',
-                variableValue: 'underline'
-            }
+                variableName: '--ngx-pagination-page-number-selected-background-color',
+                variableValue: '#006633' // $akyinkyin-base
+            },
         ];
     }
 

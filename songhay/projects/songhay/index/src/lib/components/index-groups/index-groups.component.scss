@@ -2,6 +2,30 @@
 @import '../../../assets/scss/index';
 @import '../../../assets/scss/mat-spinner';
 
+a {
+    &.index.card {
+        &:link {
+            color: var(--link-light-color);
+        }
+        &:active {
+            color: var(--link-visited-light-color);
+        }
+        &:visited {
+            color: var(--link-visited-light-color);
+        }
+
+        &:link,
+        &:active,
+        &:visited {
+            text-decoration: var(--link-text-decoration);
+        }
+        &:hover {
+            text-decoration: var(--link-hover-text-decoration);
+            text-decoration-color: var(--link-hover-text-decoration-light-color);
+        }
+    }
+}
+
 form {
     min-width: 25rem;
     padding-bottom: 1rem;
