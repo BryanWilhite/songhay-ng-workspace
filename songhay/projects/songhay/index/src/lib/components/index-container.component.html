@@ -1,5 +1,7 @@
 <div class="index" fxLayout="column">
-    <mat-spinner *ngIf="indexEntriesStore.isBusy" color="accent" fxFlex="100"></mat-spinner>
+    <div *ngIf="indexEntriesStore.isBusy" fxFlex="100">
+        <mat-spinner color="accent"></mat-spinner>
+    </div>
     <rx-index-groups *ngIf="indexEntriesStore.isLoaded && viewStyle == 'groups'" class="view groups" fxFlex="100"></rx-index-groups>
     <rx-index-list *ngIf="indexEntriesStore.isLoaded && viewStyle == 'list'" class="view list" fxFlex="100"></rx-index-list>
     <rx-error *ngIf="indexEntriesStore.isError"></rx-error>
