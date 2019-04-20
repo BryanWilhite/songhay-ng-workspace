@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { YouTubeRoutePaths } from '@songhay/player-video-you-tube';
+import { MockBlogEntryComponent } from './components/index-app/mock-blog.entry.component';
 
 const routes: Routes = [
+    { path: 'index-app/blog/entry/:id', component: MockBlogEntryComponent },
     { path: 'yt', loadChildren: './components/yt/yt.module#YtModule' },
     {
         path: `${YouTubeRoutePaths.root}${YouTubeRoutePaths.uploads}`,
@@ -14,6 +16,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
+    declarations: [MockBlogEntryComponent],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }

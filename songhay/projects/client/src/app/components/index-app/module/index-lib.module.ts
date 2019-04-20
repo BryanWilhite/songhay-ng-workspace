@@ -15,7 +15,7 @@ const options: IndexOptions = {
         { displayName: 'Group by Topic', groupId: 'topic-', sortDescending: false }
     ],
     indexStoreDataUri: 'assets/data/app-songhay-blog-q2-2018.json',
-    indexStoreItemUri: 'blog/entry',
+    indexStoreItemUri: '../../blog/entry',
     indexStoreSpritesUri: 'assets/svg/sprites.svg'
 };
 
