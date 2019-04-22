@@ -26,6 +26,14 @@
         },
         {
             "type": "npm",
+            "script": "build:client",
+            "path": "songhay/",
+            "problemMatcher": [
+                "$tsc"
+            ]
+        },
+        {
+            "type": "npm",
             "script": "build:core",
             "path": "songhay/",
             "problemMatcher": [

@@ -6,12 +6,18 @@ import { MockBlogEntryComponent } from './components/index-app/mock-blog.entry.c
 
 const routes: Routes = [
     { path: 'index-app/blog/entry/:id', component: MockBlogEntryComponent },
-    { path: 'yt', loadChildren: './components/yt/yt.module#YtModule' },
+    {
+        path: 'yt',
+        loadChildren: './components/yt/you-tube-lib.module#YouTubeLibModule'
+    },
     {
         path: `${YouTubeRoutePaths.root}${YouTubeRoutePaths.uploads}`,
-        loadChildren: './components/yt/module/you-tube-lib.module#YouTubeLibModule'
+        loadChildren: './components/yt/you-tube-lib.module#YouTubeLibModule'
     },
-    { path: 'index-app', loadChildren: './components/index-app/module/index-lib.module#IndexLibModule' }
+    {
+        path: 'index-app',
+        loadChildren: './components/index-app/index-lib.module#IndexLibModule'
+    }
 ];
 
 @NgModule({

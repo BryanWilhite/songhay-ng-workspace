@@ -4,6 +4,7 @@
     "scripts": {
         "e2e": "ng e2e",
         "ng": "ng",
+        "build:client": "ng build client",
         "build:core": "ng build @songhay/core",
         "build:index": "ng build @songhay/index",
         "build:player-video-you-tube": "ng build @songhay/player-video-you-tube",
