@@ -8,7 +8,10 @@ export * from './lib/material.module';
 /* models */
 export * from './lib/models/generic-web-index';
 export * from './lib/models/you-tube-content-details';
+export * from './lib/models/you-tube-css-option';
+export * from './lib/models/you-tube-css-variables';
 export * from './lib/models/you-tube-item';
+export * from './lib/models/you-tube-options';
 export * from './lib/models/you-tube-presentation';
 export * from './lib/models/you-tube-presentation-style';
 export * from './lib/models/you-tube-resource-id';
@@ -34,4 +37,5 @@ export * from './lib/services/you-tube-presentation-data.services';
 
 /* utilities */
 export * from './lib/utilities/generic-web-index.utility';
+export * from './lib/utilities/you-tube-css-option.utility';
 export * from './lib/utilities/you-tube-route.utility';
