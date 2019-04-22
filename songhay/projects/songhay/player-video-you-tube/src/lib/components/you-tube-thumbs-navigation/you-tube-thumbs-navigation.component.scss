@@ -6,6 +6,7 @@ h1 {
     z-index: 3;
 
     & > span {
+        color: var(--thumbs-set-header-color);
         display: inline-block;
         vertical-align: bottom;
     }
