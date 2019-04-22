@@ -1,8 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { MaterialModule } from './material.module';
+
+import { YouTubeOptions } from './models/you-tube-options';
 
 import { YouTubeChannelDataStore } from './services/you-tube-channel-data.store';
 import { YouTubeChannelSetDataStore } from './services/you-tube-channel-set-data.store';
@@ -43,4 +45,23 @@ import { YouTubeThumbsSetComponent } from './components/you-tube-thumbs-set/you-
         YouTubeThumbsSetComponent
     ]
 })
-export class YouTubeModule { }
+export class YouTubeModule {
+    /**
+     * injects providers into this root-level module
+     *
+     * @see https://angularfirst.com/the-ngmodule-forroot-convention/
+     */
+    static forRoot(options: YouTubeOptions): ModuleWithProviders<YouTubeModule> {
+        return { ngModule: YouTubeModule, providers: [provideOptions(options)] };
+    }
+ }
+
+/**
+ * provider function
+ *
+ * @export
+ * @see https://github.com/angular/angular/blob/master/packages/router/src/router_module.ts#L158
+ */
+export function provideOptions(options: YouTubeOptions): {}[] {
+    return [{ provide: YouTubeOptions, useValue: options }];
+}

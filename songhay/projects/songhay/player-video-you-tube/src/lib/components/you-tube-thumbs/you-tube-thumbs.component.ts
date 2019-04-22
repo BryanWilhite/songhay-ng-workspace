@@ -1,4 +1,4 @@
-import { chain, orderBy } from 'lodash';
+import { chain } from 'lodash';
 
 import * as moment_ from 'moment';
 const moment = moment_; // see https://github.com/BryanWilhite/songhay-ng-workspace/issues/2
@@ -9,20 +9,26 @@ import {
     Component,
     ElementRef,
     Input,
-    ViewChild
+    ViewChild,
+    OnInit,
+    HostBinding
 } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml, SafeStyle } from '@angular/platform-browser';
 import { AnimationBuilder, AnimationPlayer } from '@angular/animations';
+import { MatIconRegistry } from '@angular/material';
 
 import { slideAnimations, slideAnimation } from './slide.animation';
 
 import { DomUtility } from 'songhay/core/utilities/dom.utility';
 import { DomSanitizerUtility } from '@songhay/core';
 
+import { YouTubeContentDetails } from '../../models/you-tube-content-details';
+import { YouTubeItem } from '../../models/you-tube-item';
+import { YouTubeOptions } from '../../models/you-tube-options';
 import { YouTubeScalars } from '../../models/you-tube-scalars';
 import { YouTubeSnippet } from '../../models/you-tube-snippet';
-import { YouTubeItem } from '../../models/you-tube-item';
-import { YouTubeContentDetails } from '../../models/you-tube-content-details';
+
+import { YouTubeCssOptionUtility } from '../../utilities/you-tube-css-option.utility';
 
 @Component({
     selector: 'rx-you-tube-thumbs',
@@ -30,27 +36,23 @@ import { YouTubeContentDetails } from '../../models/you-tube-content-details';
     styleUrls: ['./you-tube-thumbs.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class YouTubeThumbsComponent implements AfterViewInit {
-    @Input()
-    disableDefaultSort: boolean;
+export class YouTubeThumbsComponent implements OnInit, AfterViewInit {
 
-    @Input()
-    thumbsAnimationDuration: number;
+    @HostBinding('style') style: SafeStyle;
 
-    @Input()
-    thumbsHeaderLevel: number;
+    @Input() disableDefaultSort: boolean;
 
-    @Input()
-    thumbsTitle: string;
+    @Input() thumbsAnimationDuration: number;
 
-    @Input()
-    titleRouterLink: string;
+    @Input() thumbsHeaderLevel: number;
 
-    @Input()
-    youTubeItems: YouTubeItem[];
+    @Input() thumbsTitle: string;
 
-    @ViewChild('thumbsContainer')
-    thumbsContainer: ElementRef;
+    @Input() titleRouterLink: string;
+
+    @Input() youTubeItems: YouTubeItem[];
+
+    @ViewChild('thumbsContainer') thumbsContainer: ElementRef;
 
     private thumbsContainerDiv: HTMLDivElement;
     private thumbsContainerDivWrapper: HTMLDivElement;
@@ -58,10 +60,24 @@ export class YouTubeThumbsComponent implements AfterViewInit {
     private players: Map<string, AnimationPlayer>;
 
     constructor(
+        public iconRegistry: MatIconRegistry,
         private animationBuilder: AnimationBuilder,
-        private sanitizer: DomSanitizer
+        private sanitizer: DomSanitizer,
+        private youTubeOptions: YouTubeOptions
     ) {
         this.initialize();
+    }
+
+    ngOnInit(): void {
+        const css = YouTubeCssOptionUtility.getStyle(this.youTubeOptions.youTubeCssOptions);
+        this.style = this.sanitizer.bypassSecurityTrustStyle(css);
+
+        this.iconRegistry.addSvgIconSetInNamespace(
+            'rx',
+            this.sanitizer.bypassSecurityTrustResourceUrl(
+                this.youTubeOptions.youTubeSpritesUri
+            )
+        );
     }
 
     ngAfterViewInit(): void {

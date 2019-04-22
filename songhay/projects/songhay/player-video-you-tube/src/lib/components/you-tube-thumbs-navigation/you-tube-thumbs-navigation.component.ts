@@ -5,12 +5,18 @@ import {
     Component,
     OnInit,
     Input,
-    OnDestroy
+    OnDestroy,
+    HostBinding
 } from '@angular/core';
 import { Location } from '@angular/common';
+import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
+import { YouTubeOptions } from '../../models/you-tube-options';
+
 import { GenericWebIndexUtility } from '../../utilities/generic-web-index.utility';
+import { YouTubeCssOptionUtility } from '../../utilities/you-tube-css-option.utility';
+
 import { YouTubeChannelsIndexDataStore } from '../../services/you-tube-channels-index-data.store';
 
 @Component({
@@ -20,8 +26,10 @@ import { YouTubeChannelsIndexDataStore } from '../../services/you-tube-channels-
     changeDetection: ChangeDetectionStrategy.Default
 })
 export class YouTubeThumbsNavigationComponent implements OnInit, OnDestroy {
-    @Input()
-    channelsIndexName: string;
+
+    @HostBinding('style') style: SafeStyle;
+
+    @Input() channelsIndexName: string;
 
     channels: {
         clientId: string;
@@ -36,10 +44,15 @@ export class YouTubeThumbsNavigationComponent implements OnInit, OnDestroy {
     constructor(
         public youTubeChannelsIndexDataStore: YouTubeChannelsIndexDataStore,
         private location: Location,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private sanitizer: DomSanitizer,
+        private youTubeOptions: YouTubeOptions
     ) {}
 
     ngOnInit() {
+        const css = YouTubeCssOptionUtility.getStyle(this.youTubeOptions.youTubeCssOptions);
+        this.style = this.sanitizer.bypassSecurityTrustStyle(css);
+
         const sub = zip(
             this.route.params,
             this.youTubeChannelsIndexDataStore.serviceData
