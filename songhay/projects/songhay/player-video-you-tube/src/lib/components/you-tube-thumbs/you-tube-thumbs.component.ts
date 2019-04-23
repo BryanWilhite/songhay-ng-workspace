@@ -8,10 +8,10 @@ import {
     ChangeDetectionStrategy,
     Component,
     ElementRef,
+    HostBinding,
     Input,
-    ViewChild,
     OnInit,
-    HostBinding
+    ViewChild
 } from '@angular/core';
 import { DomSanitizer, SafeHtml, SafeStyle } from '@angular/platform-browser';
 import { AnimationBuilder, AnimationPlayer } from '@angular/animations';
@@ -29,6 +29,7 @@ import { YouTubeScalars } from '../../models/you-tube-scalars';
 import { YouTubeSnippet } from '../../models/you-tube-snippet';
 
 import { YouTubeCssOptionUtility } from '../../utilities/you-tube-css-option.utility';
+import { YouTubeRoutePaths } from '../../models/you-tube-route-paths';
 
 @Component({
     selector: 'rx-you-tube-thumbs',
@@ -49,6 +50,8 @@ export class YouTubeThumbsComponent implements OnInit, AfterViewInit {
     @Input() thumbsTitle: string;
 
     @Input() titleRouterLink: string;
+
+    titleRouterLinkBinding: string;
 
     @Input() youTubeItems: YouTubeItem[];
 
@@ -78,6 +81,10 @@ export class YouTubeThumbsComponent implements OnInit, AfterViewInit {
                 this.youTubeOptions.youTubeSpritesUri
             )
         );
+
+        if (this.titleRouterLink) {
+            this.titleRouterLinkBinding = `/${YouTubeRoutePaths.root}/${YouTubeRoutePaths.uploads}/${this.titleRouterLink}`;
+        }
     }
 
     ngAfterViewInit(): void {
@@ -85,8 +92,7 @@ export class YouTubeThumbsComponent implements OnInit, AfterViewInit {
             this.thumbsContainer
         );
 
-        this.thumbsContainerDivWrapper = this.thumbsContainerDiv
-            .firstElementChild as HTMLDivElement;
+        this.thumbsContainerDivWrapper = this.thumbsContainerDiv.firstElementChild as HTMLDivElement;
 
         this.thumbsContainerDivWrapperStyleDeclaration = DomUtility.getStyleDeclaration(
             this.thumbsContainerDivWrapper
@@ -164,7 +170,7 @@ export class YouTubeThumbsComponent implements OnInit, AfterViewInit {
             const snippet0 = this.youTubeItems[0].snippet;
             const channelHref = `https://www.youtube.com/channel/${
                 snippet0.channelId
-            }`;
+                }`;
 
             const a = document.createElement('a') as HTMLAnchorElement;
             a.href = channelHref;
@@ -232,7 +238,7 @@ export class YouTubeThumbsComponent implements OnInit, AfterViewInit {
         };
         const cannotSlideForward = () => wrapperLeft >= 0;
 
-        const getSlideForwardLength = function(): number {
+        const getSlideForwardLength = function (): number {
             const l = Math.abs(wrapperLeft);
             return l > wrapperContainerWidth ? wrapperContainerWidth : l;
         };
@@ -310,7 +316,7 @@ export class YouTubeThumbsComponent implements OnInit, AfterViewInit {
 
             this.thumbsContainerDivWrapperStyleDeclaration.left = `${
                 params.x2
-            }px`;
+                }px`;
         });
 
         this.players.set(uniqueId, player);
@@ -325,6 +331,7 @@ export class YouTubeThumbsComponent implements OnInit, AfterViewInit {
         if (!this.youTubeItems) {
             return;
         }
+
         this.youTubeItems = chain(this.youTubeItems)
             .orderBy(['snippet.publishedAt'], ['desc'])
             .value();

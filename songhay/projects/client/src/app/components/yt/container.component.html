@@ -1,9 +1,3 @@
-<ul>
-  <li>
-    <h2><a [routerLink]="['/yt/lib/uploads/songhay/news']">b-roll: YouTube Module</a></h2>
-  </li>
-</ul>
-
 <div *ngIf="youTubeChannelDataStore?.isBusy">loading thumbs…</div>
-<rx-you-tube-thumbs *ngIf="youTubeChannelDataStore?.isLoaded" [disableDefaultSort]="false" [thumbsAnimationDuration]="500" [thumbsHeaderLevel]="2" [thumbsTitle]="'songhay tube'" [titleRouterLink]="'/player/video/youtube/uploads/songhay/news'" [youTubeItems]="youTubeItems">
+<rx-you-tube-thumbs *ngIf="youTubeChannelDataStore?.isLoaded" [disableDefaultSort]="false" [thumbsAnimationDuration]="500" [thumbsHeaderLevel]="2" [thumbsTitle]="'songhay tube'" [titleRouterLink]="'songhay/news'" [youTubeItems]="youTubeItems">
 </rx-you-tube-thumbs>

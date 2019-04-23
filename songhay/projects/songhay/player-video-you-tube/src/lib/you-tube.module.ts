@@ -21,19 +21,19 @@ import { YouTubeThumbsSetComponent } from './components/you-tube-thumbs-set/you-
 
 const routes = [
     {
-        path: `${YouTubeRoutePaths.root}/${YouTubeRoutePaths.presentation}`,
+        path: `/${YouTubeRoutePaths.root}/${YouTubeRoutePaths.presentation}`,
         component: YouTubePresentationComponent
     },
     {
-        path: `${YouTubeRoutePaths.root}/${YouTubeRoutePaths.presentationParameterized}`,
+        path: `/${YouTubeRoutePaths.root}/${YouTubeRoutePaths.presentationParameterized}`,
         component: YouTubePresentationComponent
     },
     {
-        path: `${YouTubeRoutePaths.root}/${YouTubeRoutePaths.uploads}`,
+        path: `/${YouTubeRoutePaths.root}/${YouTubeRoutePaths.uploads}`,
         component: YouTubeThumbsSetComponent
     },
     {
-        path: `${YouTubeRoutePaths.root}/${YouTubeRoutePaths.uploadsParameterized}`,
+        path: `/${YouTubeRoutePaths.root}/${YouTubeRoutePaths.uploadsParameterized}`,
         component: YouTubeThumbsSetComponent
     },
 ];

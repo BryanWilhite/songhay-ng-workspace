@@ -8,7 +8,26 @@ import { MaterialModule, YouTubeOptions, YouTubeCssOptionUtility, YouTubeModule 
 import { ContainerComponent } from './container.component';
 
 const options: YouTubeOptions = {
-  youTubeCssOptions: YouTubeCssOptionUtility.getDefaultOptions(),
+  youTubeCssOptions: YouTubeCssOptionUtility
+    .getDefaultOptions()
+    .map(i => {
+      switch (i.variableName) {
+        case '--thumbs-header-link-color':
+          return {
+            variableName: i.variableName,
+            variableValue: '#000'
+          };
+
+        case '--thumbs-set-header-color':
+          return {
+            variableName: i.variableName,
+            variableValue: '#000'
+          };
+
+        default:
+          return i;
+      }
+    }),
   youTubeSpritesUri: 'assets/svg/sprites.svg'
 };
 
