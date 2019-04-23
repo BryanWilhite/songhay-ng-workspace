@@ -137,7 +137,7 @@ $key: 8-thumbs;
                 & > a {
                     &:link,
                     &:visited {
-                        color: #fff;
+                        color: var(--thumbs-header-link-color);
                         text-decoration: none;
                     }
                 }

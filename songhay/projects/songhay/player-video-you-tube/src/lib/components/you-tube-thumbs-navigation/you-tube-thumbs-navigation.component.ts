@@ -10,9 +10,10 @@ import {
 } from '@angular/core';
 import { Location } from '@angular/common';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { YouTubeOptions } from '../../models/you-tube-options';
+import { YouTubeRoutePaths } from '../../models/you-tube-route-paths';
 
 import { GenericWebIndexUtility } from '../../utilities/generic-web-index.utility';
 import { YouTubeCssOptionUtility } from '../../utilities/you-tube-css-option.utility';
@@ -45,6 +46,7 @@ export class YouTubeThumbsNavigationComponent implements OnInit, OnDestroy {
         public youTubeChannelsIndexDataStore: YouTubeChannelsIndexDataStore,
         private location: Location,
         private route: ActivatedRoute,
+        private router: Router,
         private sanitizer: DomSanitizer,
         private youTubeOptions: YouTubeOptions
     ) {}
@@ -93,7 +95,15 @@ export class YouTubeThumbsNavigationComponent implements OnInit, OnDestroy {
         }
     }
 
-    goBack() {
+    goBack(): void {
         this.location.back();
+    }
+
+    navigateToSet(id: string): void {
+        console.log('router state:', this.router.routerState);
+        this.router.navigate(
+            [YouTubeRoutePaths.root, YouTubeRoutePaths.uploads, this.channelSetId, id],
+            { relativeTo: (this.route.parent || this.route) }
+        );
     }
 }
