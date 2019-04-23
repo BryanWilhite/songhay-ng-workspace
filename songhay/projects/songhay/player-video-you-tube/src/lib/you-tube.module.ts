@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from './material.module';
 
 import { YouTubeOptions } from './models/you-tube-options';
+import { YouTubeRoutePaths } from './models/you-tube-route-paths';
 
 import { YouTubeChannelDataStore } from './services/you-tube-channel-data.store';
 import { YouTubeChannelSetDataStore } from './services/you-tube-channel-set-data.store';
@@ -18,11 +19,30 @@ import { YouTubeThumbsComponent } from './components/you-tube-thumbs/you-tube-th
 import { YouTubeThumbsNavigationComponent } from './components/you-tube-thumbs-navigation/you-tube-thumbs-navigation.component';
 import { YouTubeThumbsSetComponent } from './components/you-tube-thumbs-set/you-tube-thumbs-set.component';
 
+const routes = [
+    {
+        path: `${YouTubeRoutePaths.root}/${YouTubeRoutePaths.presentation}`,
+        component: YouTubePresentationComponent
+    },
+    {
+        path: `${YouTubeRoutePaths.root}/${YouTubeRoutePaths.presentationParameterized}`,
+        component: YouTubePresentationComponent
+    },
+    {
+        path: `${YouTubeRoutePaths.root}/${YouTubeRoutePaths.uploads}`,
+        component: YouTubeThumbsSetComponent
+    },
+    {
+        path: `${YouTubeRoutePaths.root}/${YouTubeRoutePaths.uploadsParameterized}`,
+        component: YouTubeThumbsSetComponent
+    },
+];
+
 @NgModule({
     imports: [
         CommonModule,
         MaterialModule,
-        RouterModule.forChild([{ path: '', component: YouTubeThumbsSetComponent }])
+        RouterModule.forChild(routes)
     ],
     declarations: [
         YouTubePresentationComponent,

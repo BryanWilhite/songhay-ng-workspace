@@ -13,7 +13,8 @@ export class YouTubeRouteUtility {
     public static getUploadsRoute(suffix: string, id: string) {
         return '/' +
             YouTubeRoutePaths.root +
-            YouTubeRoutePaths.uploads
+            '/' +
+            YouTubeRoutePaths.uploadsParameterized
                 .replace(':suffix', suffix)
                 .replace(':id', id);
     }
