@@ -32,7 +32,7 @@ const options: YouTubeOptions = {
 };
 
 const routes: Routes = [
-  { path: '', component: ContainerComponent }
+  { path: '', component: ContainerComponent, pathMatch: 'full' }
 ];
 
 @NgModule({

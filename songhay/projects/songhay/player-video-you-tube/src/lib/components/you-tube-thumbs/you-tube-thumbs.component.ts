@@ -1,7 +1,6 @@
 import { chain } from 'lodash';
 
-import * as moment_ from 'moment';
-const moment = moment_; // see https://github.com/BryanWilhite/songhay-ng-workspace/issues/2
+import moment from 'moment';
 
 import {
     AfterViewInit,
@@ -83,7 +82,7 @@ export class YouTubeThumbsComponent implements OnInit, AfterViewInit {
         );
 
         if (this.titleRouterLink) {
-            this.titleRouterLinkBinding = `/${YouTubeRoutePaths.root}/${YouTubeRoutePaths.uploads}/${this.titleRouterLink}`;
+            this.titleRouterLinkBinding = `${YouTubeRoutePaths.root}/${YouTubeRoutePaths.uploads}/${this.titleRouterLink}`;
         }
     }
 
