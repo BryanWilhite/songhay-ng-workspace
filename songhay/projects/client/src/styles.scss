@@ -1,2 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+a {
+    &:link {
+        color: #c3002f;
+    }
+    &:active {
+        color: #c3002f;
+    }
+    &:visited {
+        color: #c3002f;
+    }
+
+    &:link,
+    &:active,
+    &:visited {
+        text-decoration: none;
+    }
+    &:hover {
+        text-decoration: underline;
+        text-decoration-color: #c3002f;
+    }
+}
