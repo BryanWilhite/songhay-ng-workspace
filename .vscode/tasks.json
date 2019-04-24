@@ -58,6 +58,24 @@
         },
         {
             "type": "npm",
+            "script": "version:patch",
+            "path": "songhay/projects/songhay/core/",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "version:patch",
+            "path": "songhay/projects/songhay/index/",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "version:patch",
+            "path": "songhay/projects/songhay/player-video-you-tube/",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
             "script": "release:core",
             "path": "songhay/",
             "problemMatcher": []
