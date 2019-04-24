@@ -30,6 +30,12 @@ const options: YouTubeOptions = {
             variableValue: 'static'
           };
 
+        case '--thumbs-set-padding-top':
+          return {
+            variableName: i.variableName,
+            variableValue: '0'
+          };
+
         default:
           return i;
       }

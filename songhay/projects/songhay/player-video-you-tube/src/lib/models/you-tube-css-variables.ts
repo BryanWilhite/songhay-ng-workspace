@@ -10,5 +10,6 @@ export type YouTubeCssVariables =
     /* thumbs set */
     '--thumbs-set-header-color' |
     '--thumbs-set-background-color' |
-    '--thumbs-set-header-position'
+    '--thumbs-set-header-position' |
+    '--thumbs-set-padding-top'
     ;

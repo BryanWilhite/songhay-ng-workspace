@@ -2,7 +2,7 @@
 
 .b-roll.yt-set {
     background-color: var(--thumbs-set-background-color);
-    padding-top: 7em;
+    padding-top:  var(--thumbs-set-padding-top);
 
     & > .mat-spinner {
         margin: 0 auto;

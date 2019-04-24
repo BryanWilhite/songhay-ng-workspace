@@ -31,6 +31,10 @@ export class YouTubeCssOptionUtility {
                 variableName: '--thumbs-set-header-position',
                 variableValue: 'fixed'
             },
+            {
+                variableName: '--thumbs-set-padding-top',
+                variableValue: '7em'
+            },
         ];
     }
 

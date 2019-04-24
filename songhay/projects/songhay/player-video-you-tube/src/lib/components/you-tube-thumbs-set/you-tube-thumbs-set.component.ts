@@ -1,17 +1,14 @@
 import { Subscription } from 'rxjs';
 
 import { Location } from '@angular/common';
-import {
-    ChangeDetectionStrategy,
-    Component,
-    Input,
-    OnInit,
-    OnDestroy
-} from '@angular/core';
+import { ChangeDetectionStrategy, HostBinding, Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
-import { YouTubeChannelSetDataStore } from '../../services/you-tube-channel-set-data.store';
 import { YouTubeItem } from '../../models/you-tube-item';
+import { YouTubeOptions } from '../../models/you-tube-options';
+import { YouTubeChannelSetDataStore } from '../../services/you-tube-channel-set-data.store';
+import { YouTubeCssOptionUtility } from '../../utilities/you-tube-css-option.utility';
 
 @Component({
     selector: 'rx-you-tube-thumbs-set',
@@ -20,8 +17,10 @@ import { YouTubeItem } from '../../models/you-tube-item';
     changeDetection: ChangeDetectionStrategy.Default
 })
 export class YouTubeThumbsSetComponent implements OnInit, OnDestroy {
-    @Input()
-    thumbsSetSuffix: string;
+
+    @HostBinding('style') style: SafeStyle;
+
+    @Input() thumbsSetSuffix: string;
 
     youTubeItemsKeys: string[];
     youTubeItemsMap: Map<string, YouTubeItem[]>;
@@ -31,10 +30,15 @@ export class YouTubeThumbsSetComponent implements OnInit, OnDestroy {
     constructor(
         public youTubeChannelSetDataStore: YouTubeChannelSetDataStore,
         private location: Location,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private sanitizer: DomSanitizer,
+        private youTubeOptions: YouTubeOptions
     ) {}
 
     ngOnInit() {
+        const css = YouTubeCssOptionUtility.getStyle(this.youTubeOptions.youTubeCssOptions);
+        this.style = this.sanitizer.bypassSecurityTrustStyle(css);
+
         const gotoNotFound = error => {
             console.warn({ component: YouTubeThumbsSetComponent.name, error });
             this.location.replaceState('/not-found');
