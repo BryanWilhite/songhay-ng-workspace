@@ -1,13 +1,6 @@
 import { Subscription, zip } from 'rxjs';
 
-import {
-    ChangeDetectionStrategy,
-    Component,
-    OnInit,
-    Input,
-    OnDestroy,
-    HostBinding
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Input, OnDestroy, HostBinding } from '@angular/core';
 import { Location } from '@angular/common';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -32,10 +25,7 @@ export class YouTubeThumbsNavigationComponent implements OnInit, OnDestroy {
 
     @Input() channelsIndexName: string;
 
-    channels: {
-        clientId: string;
-        title: string;
-    }[];
+    channels: { clientId: string; title: string; }[];
     channelsName: string;
     channelTitle: string;
 
@@ -49,7 +39,7 @@ export class YouTubeThumbsNavigationComponent implements OnInit, OnDestroy {
         private router: Router,
         private sanitizer: DomSanitizer,
         private youTubeOptions: YouTubeOptions
-    ) {}
+    ) { }
 
     ngOnInit() {
         const css = YouTubeCssOptionUtility.getStyle(this.youTubeOptions.youTubeCssOptions);
@@ -59,30 +49,26 @@ export class YouTubeThumbsNavigationComponent implements OnInit, OnDestroy {
             this.route.params,
             this.youTubeChannelsIndexDataStore.serviceData
         ).subscribe(data => {
-            console.log({
-                component: YouTubeThumbsNavigationComponent.name,
-                zip: data
-            });
-
             const params = data[0];
             const index = data[1];
 
+            console.log(YouTubeThumbsNavigationComponent.name, { params, index });
+
             this.channelSetId = params['id'] as string;
+
+            this.channels = index.documents as { clientId: string; title: string; }[];
 
             this.channelsName = GenericWebIndexUtility.getChannelsSetDisplayName(
                 index
             );
-            this.channels = index.documents as {
-                clientId: string;
-                title: string;
-            }[];
+
             this.channelTitle = GenericWebIndexUtility.getChannelsSetTitle(
                 this.channelSetId,
                 index
             );
-
-            this.subscriptions.push(sub);
         });
+
+        this.subscriptions.push(sub);
 
         this.youTubeChannelsIndexDataStore.load(
             YouTubeChannelsIndexDataStore.getUri('get', this.channelsIndexName)
@@ -100,9 +86,8 @@ export class YouTubeThumbsNavigationComponent implements OnInit, OnDestroy {
     }
 
     navigateToSet(id: string): void {
-        console.log('router state:', this.router.routerState);
         this.router.navigate(
-            [YouTubeRoutePaths.root, YouTubeRoutePaths.uploads, this.channelSetId, id],
+            [YouTubeRoutePaths.root, YouTubeRoutePaths.uploads, this.channelsIndexName, id],
             { relativeTo: (this.route.parent || this.route) }
         );
     }
