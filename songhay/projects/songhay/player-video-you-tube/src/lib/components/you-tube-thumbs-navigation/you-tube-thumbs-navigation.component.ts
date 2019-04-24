@@ -1,4 +1,4 @@
-import { Subscription, zip } from 'rxjs';
+import { Subscription, combineLatest, zip } from 'rxjs';
 
 import { ChangeDetectionStrategy, Component, OnInit, Input, OnDestroy, HostBinding } from '@angular/core';
 import { Location } from '@angular/common';
@@ -45,7 +45,7 @@ export class YouTubeThumbsNavigationComponent implements OnInit, OnDestroy {
         const css = YouTubeCssOptionUtility.getStyle(this.youTubeOptions.youTubeCssOptions);
         this.style = this.sanitizer.bypassSecurityTrustStyle(css);
 
-        const sub = zip(
+        const sub = combineLatest(
             this.route.params,
             this.youTubeChannelsIndexDataStore.serviceData
         ).subscribe(data => {
