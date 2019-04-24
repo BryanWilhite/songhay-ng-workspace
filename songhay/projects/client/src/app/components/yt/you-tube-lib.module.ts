@@ -24,6 +24,12 @@ const options: YouTubeOptions = {
             variableValue: '#000'
           };
 
+        case '--thumbs-set-header-position':
+          return {
+            variableName: i.variableName,
+            variableValue: 'static'
+          };
+
         default:
           return i;
       }

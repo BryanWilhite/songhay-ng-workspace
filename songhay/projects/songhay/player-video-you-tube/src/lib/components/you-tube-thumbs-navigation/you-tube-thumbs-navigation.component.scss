@@ -1,7 +1,7 @@
 h1 {
     font-size: 2.4rem;
     padding: 1rem;
-    position: fixed;
+    position: var(--thumbs-set-header-position);
     width: 100%;
     z-index: 3;
 

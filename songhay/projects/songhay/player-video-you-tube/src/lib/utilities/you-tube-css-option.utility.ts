@@ -23,6 +23,10 @@ export class YouTubeCssOptionUtility {
                 variableName: '--thumbs-set-header-color',
                 variableValue: '#fff'
             },
+            {
+                variableName: '--thumbs-set-header-position',
+                variableValue: 'fixed'
+            },
         ];
     }
 

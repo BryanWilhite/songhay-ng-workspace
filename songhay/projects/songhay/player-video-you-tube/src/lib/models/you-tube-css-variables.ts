@@ -6,5 +6,8 @@ export type YouTubeCssVariables =
     /* html anchor */
     '--thumbs-header-link-color' |
     '--thumbs-header-link-text-decoration' |
-    '--thumbs-set-header-color'
+
+    /* headers */
+    '--thumbs-set-header-color' |
+    '--thumbs-set-header-position'
     ;

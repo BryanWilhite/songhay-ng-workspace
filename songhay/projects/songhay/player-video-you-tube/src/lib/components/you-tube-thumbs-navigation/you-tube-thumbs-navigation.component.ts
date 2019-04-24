@@ -1,4 +1,4 @@
-import { Subscription, combineLatest, zip } from 'rxjs';
+import { Subscription, combineLatest } from 'rxjs';
 
 import { ChangeDetectionStrategy, Component, OnInit, Input, OnDestroy, HostBinding } from '@angular/core';
 import { Location } from '@angular/common';
