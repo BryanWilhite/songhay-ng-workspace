@@ -101,6 +101,24 @@
             ]
         },
         {
+            "type": "npm",
+            "script": "test:core",
+            "path": "songhay/",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "test:index",
+            "path": "songhay/",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "test:player-video-you-tube",
+            "path": "songhay/",
+            "problemMatcher": []
+        },
+        {
             "label": "typedoc for @songhay/core: generate docs",
             "type": "shell",
             "command": "typedoc",
