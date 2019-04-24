@@ -1,6 +1,7 @@
 @import '../../../assets/scss/normalize-component';
 
 .b-roll.yt-set {
+    background-color: var(--thumbs-set-background-color);
     padding-top: 7em;
 
     & > .mat-spinner {

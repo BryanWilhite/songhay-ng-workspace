@@ -20,6 +20,10 @@ export class YouTubeCssOptionUtility {
                 variableValue: 'none'
             },
             {
+                variableName: '--thumbs-set-background-color',
+                variableValue: 'inherit'
+            },
+            {
                 variableName: '--thumbs-set-header-color',
                 variableValue: '#fff'
             },
