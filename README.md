@@ -32,6 +32,8 @@ The miserable details around how to get the Angular library actually working in 
 
 :books: API [documentation](https://bryanwilhite.github.io/songhay-ng-workspace/player-video-you-tube) is available.
 
+![Songhay Index](./docs/bitmaps/b-roll-player-yt.gif)
+
 ## initial setup commands
 
 Starting in the root folder of this repo:
