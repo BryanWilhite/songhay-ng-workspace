@@ -2,7 +2,6 @@
  * defines named index flow/layout styles
  *
  * @export
- * @enum {number}
  */
 export enum IndexFlowStyles {
     /**
