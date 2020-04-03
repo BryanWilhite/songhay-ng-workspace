@@ -7,11 +7,11 @@ const routes: Routes = [
     { path: 'index-app/blog/entry/:id', component: MockBlogEntryComponent },
     {
         path: 'yt',
-        loadChildren: './components/yt/you-tube-lib.module#YouTubeLibModule'
+        loadChildren: () => import('./components/yt/you-tube-lib.module').then(m => m.YouTubeLibModule)
     },
     {
         path: 'index-app',
-        loadChildren: './components/index-app/index-lib.module#IndexLibModule'
+        loadChildren: () => import('./components/index-app/index-lib.module').then(m => m.IndexLibModule)
     }
 ];
 

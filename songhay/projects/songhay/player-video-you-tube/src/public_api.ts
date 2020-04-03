@@ -32,8 +32,6 @@ export * from './lib/services/you-tube-channel-data.store';
 export * from './lib/services/you-tube-channel-set-data.store';
 export * from './lib/services/you-tube-channels-index-data.store';
 export * from './lib/services/you-tube-presentation-data.store';
-export * from './lib/services/you-tube-data.service';
-export * from './lib/services/you-tube-presentation-data.services';
 
 /* utilities */
 export * from './lib/utilities/generic-web-index.utility';

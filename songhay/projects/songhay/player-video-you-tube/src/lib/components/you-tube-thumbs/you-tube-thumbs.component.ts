@@ -54,7 +54,7 @@ export class YouTubeThumbsComponent implements OnInit, AfterViewInit {
 
     @Input() youTubeItems: YouTubeItem[];
 
-    @ViewChild('thumbsContainer') thumbsContainer: ElementRef;
+    @ViewChild('thumbsContainer', {static: true}) thumbsContainer: ElementRef;
 
     private thumbsContainerDiv: HTMLDivElement;
     private thumbsContainerDivWrapper: HTMLDivElement;

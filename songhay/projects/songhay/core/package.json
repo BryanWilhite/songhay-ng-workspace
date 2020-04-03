@@ -3,8 +3,8 @@
     "description": "core, shared definitions for Angular applications",
     "version": "0.0.2",
     "peerDependencies": {
-        "@angular/common": "^7.2.0",
-        "@angular/core": "^7.2.0"
+        "@angular/common": "^8.2.14",
+        "@angular/core": "^8.2.14"
     },
     "scripts": {
         "version:major": "npm version major -m \":rocket: :snowflake: version major up to %s\"",
