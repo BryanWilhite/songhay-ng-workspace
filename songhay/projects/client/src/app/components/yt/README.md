@@ -42,7 +42,8 @@ This route has be at the root of the app:
 ```typescript
 {
     path: `${YouTubeRoutePaths.root}${YouTubeRoutePaths.uploads}`,
-    loadChildren: './components/yt/module/you-tube-lib.module#YouTubeLibModule'
+    loadChildren: () => import('./components/yt/you-tube-lib.module').then(m => m.YouTubeLibModule)
+
 }
 ```
 
