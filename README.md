@@ -52,7 +52,6 @@ Note that a library-generation command like `ng generate library @songhay/player
 Also for studio-specific and historical reasons these commands are also needed:
 
 ```console
-npm i @angular/http@7.2.0
 npm i songhay
 ```
 
