@@ -63,10 +63,10 @@ describe(IndexGroupsComponent.name, () => {
     it('should display accordion headers', async(() => {
         const endpoint = './api/mock';
 
-        const service = TestBed.get(IndexEntriesStore) as IndexEntriesStore;
+        const service = TestBed.inject(IndexEntriesStore);
         expect(service).toBeTruthy();
 
-        const controller = TestBed.get(HttpTestingController) as HttpTestingController;
+        const controller = TestBed.inject(HttpTestingController);
         expect(controller).toBeTruthy();
 
         service.load(endpoint);
