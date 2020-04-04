@@ -2,7 +2,7 @@ import { Subscription } from 'rxjs';
 
 import { Location } from '@angular/common';
 import { Component, HostBinding, OnInit, OnDestroy } from '@angular/core';
-import { MatIconRegistry } from '@angular/material';
+import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 

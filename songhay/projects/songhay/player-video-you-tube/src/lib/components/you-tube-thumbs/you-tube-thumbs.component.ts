@@ -14,7 +14,7 @@ import {
 } from '@angular/core';
 import { DomSanitizer, SafeHtml, SafeStyle } from '@angular/platform-browser';
 import { AnimationBuilder, AnimationPlayer } from '@angular/animations';
-import { MatIconRegistry } from '@angular/material';
+import { MatIconRegistry } from '@angular/material/icon';
 
 import { slideAnimations, slideAnimation } from './slide.animation';
 
