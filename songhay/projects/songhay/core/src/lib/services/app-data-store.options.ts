@@ -1,10 +1,12 @@
 import { SendMethods } from '../models/send-methods.type';
+import { Injectable } from "@angular/core";
 
 /**
  * defines options for @type {AppDataStore}
  *
  * @export
  */
+@Injectable()
 export class AppDataStoreOptions<TDomain, TError> {
 
     /**

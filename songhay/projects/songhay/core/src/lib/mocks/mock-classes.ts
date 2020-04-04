@@ -6,10 +6,12 @@ import { AppDataStoreOptions } from '../services/app-data-store.options';
 import { AppTabularDataStore } from '../services/app-tabular-data.store';
 import { AppDataStore } from '../services/app-data.store';
 
+@Injectable()
 export class MockClassOne {
     values = ['one', 'two'];
 }
 
+@Injectable()
 export class MockClassTwo {
     values = ['three', 'four'];
 }
