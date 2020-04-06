@@ -5,7 +5,7 @@
     "peerDependencies": {
         "@angular/common": "^9.1.0",
         "@angular/core": "^9.1.0",
-        "songhay": "~0.0.2",
+        "songhay": "^0.1.17",
         "@songhay/core": "~0.0.2"
     },
     "scripts": {
