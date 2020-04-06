@@ -1,10 +1,10 @@
 {
     "name": "@songhay/core",
     "description": "core, shared definitions for Angular applications",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "peerDependencies": {
-        "@angular/common": "^8.2.14",
-        "@angular/core": "^8.2.14"
+        "@angular/common": "^9.1.0",
+        "@angular/core": "^9.1.0"
     },
     "scripts": {
         "version:major": "npm version major -m \":rocket: :snowflake: version major up to %s\"",

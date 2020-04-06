@@ -1,10 +1,10 @@
 {
     "name": "@songhay/index",
     "description": "Songhay Index App",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "peerDependencies": {
-        "@angular/common": "^8.2.14",
-        "@angular/core": "^8.2.14",
+        "@angular/common": "^9.1.0",
+        "@angular/core": "^9.1.0",
         "songhay": "~0.0.2",
         "@songhay/core": "~0.0.2"
     },
