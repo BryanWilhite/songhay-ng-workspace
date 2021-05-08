@@ -57,7 +57,7 @@
     "@angular/router": "^9.1.12",
     "@types/numeral": "0.0.25",
     "core-js": "^2.6.9",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "ngx-pagination": "^5.0.0",
     "normalize.css": "^8.0.1",
