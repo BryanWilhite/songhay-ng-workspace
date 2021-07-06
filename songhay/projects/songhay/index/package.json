@@ -1,12 +1,12 @@
 {
     "name": "@songhay/index",
     "description": "Songhay Index App",
-    "version": "0.1.0",
+    "version": "0.12.0",
     "peerDependencies": {
-        "@angular/common": "^9.1.0",
-        "@angular/core": "^9.1.0",
-        "songhay": "^0.1.17",
-        "@songhay/core": "~0.0.2"
+        "@angular/common": "^12.1.1",
+        "@angular/core": "^12.1.1",
+        "songhay": "^0.1.18",
+        "@songhay/core": "~0.12.0"
     },
     "scripts": {
         "version:major": "npm version major -m \":rocket: :snowflake: version major up to %s\"",
