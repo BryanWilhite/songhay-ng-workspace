@@ -1,5 +1,5 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import {
     HttpClientTestingModule,
     HttpTestingController
@@ -20,7 +20,7 @@ describe(IndexContainerComponent.name, () => {
     let component: IndexContainerComponent;
     let fixture: ComponentFixture<IndexContainerComponent>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule, RouterTestingModule],
             providers: [

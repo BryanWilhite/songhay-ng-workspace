@@ -1,7 +1,7 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { AnimationBuilder } from '@angular/animations';
 
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { YouTubeOptions } from '../../models/you-tube-options';
 import { YouTubeCssOptionUtility } from '../../utilities/you-tube-css-option.utility';
@@ -20,7 +20,7 @@ describe(YouTubeThumbsComponent.name, () => {
     let component: YouTubeThumbsComponent;
     let fixture: ComponentFixture<YouTubeThumbsComponent>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             declarations: [YouTubeThumbsComponent],
             providers: [

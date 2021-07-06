@@ -3,7 +3,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientTestingModule, HttpTestingController, TestRequest } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { YouTubeOptions } from '../../models/you-tube-options';
 import { YouTubeChannelSetDataStore } from '../../services/you-tube-channel-set-data.store';
@@ -20,7 +20,7 @@ describe(YouTubeThumbsSetComponent.name, () => {
     let component: YouTubeThumbsSetComponent;
     let fixture: ComponentFixture<YouTubeThumbsSetComponent>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule, RouterTestingModule],
             declarations: [YouTubeThumbsSetComponent],

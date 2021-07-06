@@ -1,4 +1,4 @@
-import { TestBed, inject, async } from '@angular/core/testing';
+import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
 import { Typicode } from '../mocks/typicode.models';
 import { MockDomainStore, LIVE_API_BASE_URI, MockPhotoDomainStore } from '../mocks/mock-classes';
@@ -25,7 +25,7 @@ describe(`${
             }
         ));
 
-        it('should load initial value', async(
+        it('should load initial value', waitForAsync(
             inject([AppDataStore], (service: AppDataStore<object, any>) => {
                 let isNext = false;
 
@@ -48,7 +48,7 @@ describe(`${
             })
         ));
 
-        it('should throw a 404 from live server', async(
+        it('should throw a 404 from live server', waitForAsync(
             inject([AppDataStore], (service: AppDataStore<object, any>) => {
                 const userId = 11;
                 const uri = `${LIVE_API_BASE_URI}/users/${userId}`;
@@ -75,7 +75,7 @@ describe(`${
                 });
             });
 
-            it('should not load null initial value', async(
+            it('should not load null initial value', waitForAsync(
                 inject(
                     [AppDataStore],
                     (service: AppDataStore<Typicode.Photo, any>) => {
@@ -98,7 +98,7 @@ describe(`${
                 )
             ));
 
-            it('should get Photo from live server', async(
+            it('should get Photo from live server', waitForAsync(
                 inject(
                     [AppDataStore],
                     (service: AppDataStore<Typicode.Photo, any>) => {
@@ -118,7 +118,7 @@ describe(`${
                 )
             ));
 
-            it('should delete Photo from live server', async(
+            it('should delete Photo from live server', waitForAsync(
                 inject(
                     [AppDataStore],
                     (service: AppDataStore<Typicode.Photo, any>) => {

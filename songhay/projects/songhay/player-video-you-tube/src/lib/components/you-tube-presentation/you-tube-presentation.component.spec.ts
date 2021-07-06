@@ -6,7 +6,7 @@ import {
     TestRequest
 } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { YouTubeChannelDataStore } from '../../services/you-tube-channel-data.store';
 import { YouTubePresentationDataStore } from '../../services/you-tube-presentation-data.store';
@@ -16,7 +16,7 @@ describe(YouTubePresentationComponent.name, () => {
     let component: YouTubePresentationComponent;
     let fixture: ComponentFixture<YouTubePresentationComponent>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule, RouterTestingModule],
             declarations: [YouTubePresentationComponent],

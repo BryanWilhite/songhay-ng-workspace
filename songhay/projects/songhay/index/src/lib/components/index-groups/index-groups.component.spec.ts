@@ -1,5 +1,5 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 import {
@@ -33,7 +33,7 @@ describe(IndexGroupsComponent.name, () => {
     let component: IndexGroupsComponent;
     let fixture: ComponentFixture<IndexGroupsComponent>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             imports: [
                 HttpClientTestingModule,
@@ -60,7 +60,7 @@ describe(IndexGroupsComponent.name, () => {
         expect(component).toBeTruthy();
     });
 
-    it('should display accordion headers', async(() => {
+    it('should display accordion headers', waitForAsync(() => {
         const endpoint = './api/mock';
 
         const service = TestBed.inject(IndexEntriesStore);

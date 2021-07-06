@@ -1,4 +1,4 @@
-import { TestBed, inject, async } from '@angular/core/testing';
+import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import {
     HttpClientTestingModule,
     HttpTestingController,
@@ -29,7 +29,7 @@ describe(`${YouTubeChannelDataStore.name} observable data service`, () => {
     const endpointMethod = 'get';
     const endpoint = YouTubeChannelDataStore.getUri(endpointMethod, '{id}');
     describe(`endpoint: ${endpoint}`, () => {
-        it(`should ${endpointMethod} \`${id}\` once`, async(
+        it(`should ${endpointMethod} \`${id}\` once`, waitForAsync(
             inject(
                 [YouTubeChannelDataStore, HttpTestingController],
                 (
@@ -54,7 +54,7 @@ describe(`${YouTubeChannelDataStore.name} observable data service`, () => {
         ));
 
         const methodName = 'getItems';
-        it(`should call ${methodName} once and convert items to the domain`, async(
+        it(`should call ${methodName} once and convert items to the domain`, waitForAsync(
             inject(
                 [YouTubeChannelDataStore, HttpTestingController],
                 (
@@ -91,7 +91,7 @@ describe(`${YouTubeChannelDataStore.name} observable data service`, () => {
         '{id}'
     );
     describe(`endpoint: ${presentation_endpoint}`, () => {
-        it(`should ${endpointMethod} \`${presentation_id}\` once`, async(
+        it(`should ${endpointMethod} \`${presentation_id}\` once`, waitForAsync(
             inject(
                 [YouTubeChannelDataStore, HttpTestingController],
                 (
@@ -116,7 +116,7 @@ describe(`${YouTubeChannelDataStore.name} observable data service`, () => {
         ));
 
         const methodName = 'getItems';
-        it(`should call ${methodName} once and convert items to the domain`, async(
+        it(`should call ${methodName} once and convert items to the domain`, waitForAsync(
             inject(
                 [YouTubeChannelDataStore, HttpTestingController],
                 (

@@ -1,4 +1,4 @@
-import { TestBed, inject, async } from '@angular/core/testing';
+import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import {
     HttpClientTestingModule,
     HttpTestingController,
@@ -38,7 +38,7 @@ describe(IndexEntriesStore.name, () => {
     const endpointMethod = 'get';
     const propertyName = 'domainConverter';
     describe(`endpoint: ${endpoint}`, () => {
-        it(`should ${endpointMethod} once`, async(
+        it(`should ${endpointMethod} once`, waitForAsync(
             inject(
                 [IndexEntriesStore, HttpTestingController],
                 (
@@ -58,7 +58,7 @@ describe(IndexEntriesStore.name, () => {
             )
         ));
 
-        it(`should call ${propertyName} once and convert items to the domain`, async(
+        it(`should call ${propertyName} once and convert items to the domain`, waitForAsync(
             inject(
                 [IndexEntriesStore, HttpTestingController],
                 (

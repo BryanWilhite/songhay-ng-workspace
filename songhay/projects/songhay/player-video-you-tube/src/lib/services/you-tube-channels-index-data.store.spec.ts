@@ -1,4 +1,4 @@
-import { TestBed, inject, async } from '@angular/core/testing';
+import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import {
     HttpClientTestingModule,
     HttpTestingController,
@@ -33,7 +33,7 @@ describe(`${YouTubeChannelsIndexDataStore.name} observable data service`, () => 
         '{id}'
     );
     describe(`endpoint: ${endpoint}`, () => {
-        it(`should ${endpointMethod} \`${id}\` once`, async(
+        it(`should ${endpointMethod} \`${id}\` once`, waitForAsync(
             inject(
                 [YouTubeChannelsIndexDataStore, HttpTestingController],
                 (
@@ -56,7 +56,7 @@ describe(`${YouTubeChannelsIndexDataStore.name} observable data service`, () => 
         ));
 
         const methodName = 'getGenericWebIndex';
-        it(`should call ${methodName} once and convert items to the domain`, async(
+        it(`should call ${methodName} once and convert items to the domain`, waitForAsync(
             inject(
                 [YouTubeChannelsIndexDataStore, HttpTestingController],
                 (

@@ -1,4 +1,4 @@
-import { TestBed, inject, async } from '@angular/core/testing';
+import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { Typicode } from '../mocks/typicode.models';
 import { MockTabularDomainStore, MockUserDomainStore, LIVE_API_BASE_URI } from '../mocks/mock-classes';
@@ -34,7 +34,7 @@ describe(`${
                 });
             });
 
-            it('should get Users from live server', async(
+            it('should get Users from live server', waitForAsync(
                 inject(
                     [AppTabularDataStore],
                     (service: AppTabularDataStore<Typicode.Photo, any>) => {

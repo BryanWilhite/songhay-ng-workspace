@@ -10,7 +10,7 @@
       "prefix": "rx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/songhay/core/tsconfig.lib.json",
             "project": "projects/songhay/core/ng-package.json"
@@ -50,7 +50,7 @@
       "prefix": "rx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/songhay/index/tsconfig.lib.json",
             "project": "projects/songhay/index/ng-package.json"
@@ -90,7 +90,7 @@
       "prefix": "rx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/songhay/player-video-you-tube/tsconfig.lib.json",
             "project": "projects/songhay/player-video-you-tube/ng-package.json"
@@ -163,7 +163,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
