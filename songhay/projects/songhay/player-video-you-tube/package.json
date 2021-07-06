@@ -26,5 +26,8 @@
     "bugs": {
         "url": "https://github.com/BryanWilhite/songhay-ng-workspace/issues"
     },
+    "dependencies": {
+      "tslib": "^2.0.0"
+    },
     "homepage": "https://github.com/BryanWilhite/songhay-ng-workspace#readme"
 }
